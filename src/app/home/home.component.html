@@ -1,0 +1,3 @@
+<button name="createSession" (click)="createSession()">Create session</button>
+<p *ngIf="loading">Loading...</p>
+<p *ngIf="success">{{success | json}}</p>
