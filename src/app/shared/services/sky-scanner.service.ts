@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AService } from './aservice.service';
 import { Observable } from 'rxjs';
-import { Place } from '../models';
+import { Place, SkySession } from '../models';
 import { map } from 'rxjs/operators'
 
 
@@ -15,8 +15,8 @@ export class SkyScannerService extends AService {
     super(http);
   }
 
-  createSession(): Observable<any> {
-    return this.http.post<any>(this.apiUrl + SUFFIX + '/createSession', null);
+  createSession(session: SkySession): Observable<any> {
+    return this.http.post<any>(this.apiUrl + SUFFIX + '/createSession', session);
   }
 
   getPlaces(query: string): Observable<any> {

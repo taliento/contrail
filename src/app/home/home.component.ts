@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
 
   createSession() {
     this.loading = true;
-    this.skyScanner.createSession()
+    this.skyScanner.createSession(this.profileForm.value)
     .subscribe(result => {
       console.log(result);
       this.loading = false;

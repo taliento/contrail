@@ -83,17 +83,17 @@ app.post("/api/skyscanner/createSession", function(req, res) {
 
     unirest.post("https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/pricing/v1.0")
     .header("Content-Type", "application/x-www-form-urlencoded")
-    .header("X-Mashape-Key", "pLTDASYd1MmshDRKoLhd7NqkPlFep16lZnXjsnG5p2akxL02RU")
+    .header("X-Mashape-Key", process.env.SKYSCANNER-KEY)
     .header("X-Mashape-Host", "skyscanner-skyscanner-flight-search-v1.p.mashape.com")
-    .send("country=US")
-    .send("currency=USD")
-    .send("locale=en-US")
-    .send("originPlace=SFO-sky")
-    .send("destinationPlace=LHR-sky")
+    .send("country=IT") //FIXME CLIENT INFO
+    .send("currency=EUR") //FIXME CLIENT INFO
+    .send("locale=it") //FIXME CLIENT INFO
+    .send("originPlace="+req.body.originPlace.PlaceId)
+    .send("destinationPlace="+req.body.destinationPlace.PlaceId)
     .send("outboundDate=2018-11-01")
     .send("inboundDate=2018-11-10")
     .send("cabinClass=business")
-    .send("adults=1")
+    .send("adults="+req.body.adults)
     .send("children=0")
     .send("infants=0")
     .send("includeCarriers=")
