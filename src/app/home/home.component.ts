@@ -22,8 +22,9 @@ export class HomeComponent implements OnInit {
 
   success: any;
   loading: boolean = false;
-
+  searching: boolean = false;
   session: SkySession;
+  searchFailed: boolean;
 
   constructor(private skyScanner: SkyScannerService) { }
 
@@ -67,12 +68,15 @@ export class HomeComponent implements OnInit {
       distinctUntilChanged(),
       tap(() => this.searching = true),
       switchMap(term =>
-        this._service.search(term).pipe(
+        this.skyScanner.getPlaces(term)
+        .pipe(
           tap(() => this.searchFailed = false),
-          catchError(() => {
+          catchError((error) => {
+            console.log(error);
             this.searchFailed = true;
             return of([]);
           }))
+
       ),
       tap(() => this.searching = false)
     )

@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { AService } from './aservice.service';
 import { Observable } from 'rxjs';
 import { Place } from '../models';
+import { map } from 'rxjs/operators'
+
 
 const SUFFIX = '/skyscanner';
 
@@ -17,8 +19,10 @@ export class SkyScannerService extends AService {
     return this.http.post<any>(this.apiUrl + SUFFIX + '/createSession', null);
   }
 
-  getPlaces(query: string): Observable<Array<Place>> {
-    return this.http.get<Array<Place>>(this.apiUrl + SUFFIX + `/getPlaces/${query}`);
+  getPlaces(query: string): Observable<any> {
+    return this.http.get<any>(this.apiUrl + SUFFIX + `/getPlaces/${query}`).pipe(
+        map(response => response.Places)
+      );
   }
 
 }

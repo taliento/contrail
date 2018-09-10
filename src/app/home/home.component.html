@@ -28,7 +28,10 @@
 
         <div class="form-group">
           <label for="originPlace">Departure:</label>
-          <input id="originPlace" type="text" class="form-control" [class.is-invalid]="searchFailed" formControlName="originPlace" [ngbTypeahead]="search" placeholder="Origin place search" />
+          <ng-template #rt let-r="result" let-t="term">
+            <ngb-highlight [result]="r.PlaceName" [term]="t"></ngb-highlight>
+          </ng-template>
+          <input id="originPlace" type="text" class="form-control" [class.is-invalid]="searchFailed" formControlName="originPlace" [ngbTypeahead]="search" placeholder="Origin place search" [resultTemplate]="rt" />
           <span *ngIf="searching">searching...</span>
           <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
         </div>
