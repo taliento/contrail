@@ -112,7 +112,7 @@ app.post("/api/skyscanner/createSession", function(req, res) {
 
 app.get("/api/skyscanner/getPlaces/:query", function(req, res) {
   unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=" + req.params.query)
-  .header("X-Mashape-Key", "pLTDASYd1MmshDRKoLhd7NqkPlFep16lZnXjsnG5p2akxL02RU")
+  .header("X-Mashape-Key", process.env.SKYSCANNER-KEY)
   .header("X-Mashape-Host", "skyscanner-skyscanner-flight-search-v1.p.mashape.com")
   .end(function (result) {
     console.log(result.status, result.headers, result.body);
