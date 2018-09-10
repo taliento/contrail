@@ -81,6 +81,6 @@ export class HomeComponent implements OnInit {
       tap(() => this.searching = false)
     )
 
-
+    formatter = (x: {PlaceName: string, CountryName: string}) => x.PlaceName + ' - ' + x.CountryName;
 
 }
