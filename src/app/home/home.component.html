@@ -1,3 +1,64 @@
-<button name="createSession" (click)="createSession()">Create session</button>
-<p *ngIf="loading">Loading...</p>
-<p *ngIf="success">{{success | json}}</p>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-6">
+      <form [formGroup]="profileForm" (ngSubmit)="createSession()">
+        <div class="form-group">
+          <label for="firstName">
+            First Name:
+          </label>
+          <input  id="firstName" type="text" class="form-control" [ngClass]="{'invalid': profileForm.get('firstName').invalid}" formControlName="firstName" required >
+          <div *ngIf="firstName.invalid" class="invalid-feedback">
+            Please choose a firstName.
+          </div>
+          <div *ngIf="firstName.valid" class="valid-feedback">
+            Looks great!
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input id="lastName" type="text" class="form-control" class="form-control"  formControlName="lastName" required >
+          <div *ngIf="lastName.invalid" class="invalid-feedback">
+            Please choose a lastName.
+          </div>
+          <div *ngIf="lastName.valid" class="valid-feedback">
+            Looks great!
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="originPlace">Departure:</label>
+          <input id="originPlace" type="text" class="form-control" [class.is-invalid]="searchFailed" formControlName="originPlace" [ngbTypeahead]="search" placeholder="Origin place search" />
+          <span *ngIf="searching">searching...</span>
+          <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Adults:</label>
+          <input id="adults" type="number" class="form-control" class="form-control"  formControlName="adults" required >
+          <div *ngIf="adults.invalid" class="invalid-feedback">
+            Number of adults (16+ years). Must be between 1 and 8.
+          </div>
+          <div *ngIf="adults.valid" class="valid-feedback">
+            Looks great!
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="!profileForm.valid || loading" name="createSession" class="btn btn-primary">
+          <span *ngIf="loading">
+            <i class='fa fa-circle-o-notch fa-spin'></i> Processing
+          </span>
+          <span *ngIf="!loading">
+            Create session
+          </span>
+        </button>
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <p *ngIf="success">{{success | json}}</p>
+    </div>
+
+  </div>
+
+</div>

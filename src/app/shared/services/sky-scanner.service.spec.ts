@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { SkyScannerService } from './sky-skanner.service';
+import { SkyScannerService } from './sky-scanner.service';
 
 describe('SkyScannerService', () => {
   beforeEach(() => {
