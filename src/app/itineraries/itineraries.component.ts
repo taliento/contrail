@@ -32,7 +32,7 @@ export class ItinerariesComponent implements OnInit {
   }
 
   findLegById(legId :string): Leg {
-    return this.pollSessionResult.Legs.find(x => x.Id == legId)[0];
+    return this.pollSessionResult.Legs.find(x => x.Id == legId);
   }
 
 }
