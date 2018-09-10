@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-12">
       <form [formGroup]="profileForm" (ngSubmit)="createSession()">
         <div class="form-group">
           <label for="firstName">
@@ -28,12 +28,62 @@
 
         <div class="form-group">
           <label for="originPlace">Departure:</label>
-          <ng-template #rt let-r="result" let-t="term">
-            <ngb-highlight [result]="r.PlaceName + ' - ' + r.CountryName" [term]="t"></ngb-highlight>
-          </ng-template>
-          <input id="originPlace" type="text" class="form-control" [inputFormatter]="formatter" [class.is-invalid]="searchFailed" formControlName="originPlace" [ngbTypeahead]="search" placeholder="Origin place search" [resultTemplate]="rt" />
+          <input id="originPlace" type="text" class="form-control" [inputFormatter]="formatter" [class.is-invalid]="searchFailed" formControlName="originPlace" [ngbTypeahead]="searchOriginPlace" placeholder="Origin place search" [resultTemplate]="rt" required/>
           <span *ngIf="searching">searching...</span>
           <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
+          <div *ngIf="originPlace.invalid && !searchFailed" class="invalid-feedback">
+            Please choose a location.
+          </div>
+          <div *ngIf="originPlace.valid" class="valid-feedback">
+            Looks great!
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="destinationPlace">Destination:</label>
+          <input id="destinationPlace" type="text" class="form-control" [inputFormatter]="formatter" [class.is-invalid]="searchDestinationFailed" formControlName="destinationPlace" [ngbTypeahead]="searchDestinationPlace" placeholder="Destination place search" [resultTemplate]="rt" required/>
+          <span *ngIf="searchingDestination">searching...</span>
+          <div class="invalid-feedback" *ngIf="searchDestinationFailed">Sorry, suggestions could not be loaded.</div>
+          <div *ngIf="destinationPlace.invalid && !searchDestinationFailed" class="invalid-feedback">
+            Please choose a location.
+          </div>
+          <div *ngIf="destinationPlace.valid" class="valid-feedback">
+            Looks great!
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inboundDate">Andata:</label>
+          <div class="input-group">
+            <input id="inboundDate" class="form-control" placeholder="yyyy-mm-dd"
+                   formControlName="inboundDate" ngbDatepicker #inboundDatePicker="ngbDatepicker" required>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" (click)="inboundDatePicker.toggle()" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div *ngIf="inboundDate.invalid" class="invalid-feedback">
+            Please choose a Date.
+          </div>
+          <div *ngIf="inboundDate.valid" class="valid-feedback">
+            Looks great!
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="outboundDate">Ritorno:</label>
+          <div class="input-group">
+            <input id="outboundDate" class="form-control" placeholder="yyyy-mm-dd"
+                  formControlName="outboundDate" ngbDatepicker #outboundDatePicker="ngbDatepicker" required>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" (click)="outboundDatePicker.toggle()" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div *ngIf="outboundDate.invalid" class="invalid-feedback">
+            Please choose a Date.
+          </div>
+          <div *ngIf="outboundDate.valid" class="valid-feedback">
+            Looks great!
+          </div>
         </div>
 
         <div class="form-group">
@@ -57,11 +107,9 @@
         </button>
       </form>
     </div>
-
-    <div class="col-md-6">
-      <p *ngIf="success">{{success | json}}</p>
-    </div>
-
   </div>
-
 </div>
+
+<ng-template #rt let-r="result" let-t="term">
+  <ngb-highlight [result]="r.PlaceName + ' - ' + r.CountryName" [term]="t"></ngb-highlight>
+</ng-template>

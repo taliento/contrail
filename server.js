@@ -83,7 +83,7 @@ app.post("/api/skyscanner/createSession", function(req, res) {
 
     unirest.post("https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/pricing/v1.0")
     .header("Content-Type", "application/x-www-form-urlencoded")
-    .header("X-Mashape-Key", process.env.SKYSCANNER-KEY)
+    .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
     .header("X-Mashape-Host", "skyscanner-skyscanner-flight-search-v1.p.mashape.com")
     .send("country=IT") //FIXME CLIENT INFO
     .send("currency=EUR") //FIXME CLIENT INFO
@@ -111,8 +111,22 @@ app.post("/api/skyscanner/createSession", function(req, res) {
 
 
 app.get("/api/skyscanner/getPlaces/:query", function(req, res) {
-  unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=" + req.params.query)
-  .header("X-Mashape-Key", process.env.SKYSCANNER-KEY)
+  unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/autosuggest/v1.0/IT/EUR/it/?query=" + req.params.query) //FIXME CLIENT INFO
+  .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
+  .header("X-Mashape-Host", "skyscanner-skyscanner-flight-search-v1.p.mashape.com")
+  .end(function (result) {
+    console.log(result.status, result.headers, result.body);
+
+    return (result.status >= 200 && result.status < 300) ?
+            res.send(result.body) :
+            res.status(400).send(result.body);
+  });
+});
+
+
+app.get("/api/skyscanner/pollSessionResults/:sessionkey" ,function(req, res) {
+  unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/pricing/uk2/v1.0/" + req.params.sessionkey + "/?pageIndex=0&pageSize=10") //FIXME PAGING
+  .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
   .header("X-Mashape-Host", "skyscanner-skyscanner-flight-search-v1.p.mashape.com")
   .end(function (result) {
     console.log(result.status, result.headers, result.body);

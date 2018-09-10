@@ -13,13 +13,17 @@ import { HomeComponent } from './home/home.component';
 import { routing } from './app.routing';
 
 import { SkyScannerService } from './shared/services';
+import { ItinerariesComponent } from './itineraries/itineraries.component';
+import { ItineraryComponent } from './itinerary/itinerary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserDetailsComponent,
     UserListComponent,
-    HomeComponent
+    HomeComponent,
+    ItinerariesComponent,
+    ItineraryComponent
   ],
   imports: [
     routing,
