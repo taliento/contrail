@@ -1,7 +1,8 @@
 <div class="card">
   <div class="card-body">
-    <p>{{inboundLeg | json}}</p>
-    <p>{{outboundLeg | json}}</p>
+
+    <app-leg [leg]="findLegById(itinerary.InboundLegId)"></app-leg>
+    <app-leg [leg]="findLegById(itinerary.OutboundLegId)"></app-leg>
     <p>{{itinerary.PricingOptions | json}}</p>
   </div>
 </div>

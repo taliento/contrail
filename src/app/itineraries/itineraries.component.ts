@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { SkySession, Itinerary, PollSessionResult, Leg } from '../shared/models';
-import { SkyScannerService } from '../shared/services';
+import { Component, OnInit } from "@angular/core";
+import {
+  SkySession,
+  Itinerary,
+  PollSessionResult,
+  Leg
+} from "../shared/models";
+import { SkyScannerService } from "../shared/services";
 
 @Component({
-  selector: 'app-itineraries',
-  templateUrl: './itineraries.component.html',
-  styleUrls: ['./itineraries.component.scss']
+  selector: "app-itineraries",
+  templateUrl: "./itineraries.component.html",
+  styleUrls: ["./itineraries.component.scss"]
 })
 export class ItinerariesComponent implements OnInit {
-
   session: SkySession;
   pollSessionResult: PollSessionResult;
   loading: boolean;
@@ -23,16 +27,13 @@ export class ItinerariesComponent implements OnInit {
 
   load() {
     this.loading = true;
-    this.skyScanner.pollSessionResults(this.session.sessionkey)
-    .subscribe(result => {
-      this.pollSessionResult = result;
-      this.loading = false;
-    },
-    error => console.log(error));
+    this.skyScanner.pollSessionResults(this.session.sessionkey).subscribe(
+      result => {
+        this.pollSessionResult = result;
+        this.skyScanner.cachePollSessionResults(result);
+        this.loading = false;
+      },
+      error => console.log(error)
+    );
   }
-
-  findLegById(legId :string): Leg {
-    return this.pollSessionResult.Legs.find(x => x.Id == legId);
-  }
-
 }

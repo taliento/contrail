@@ -15,6 +15,7 @@ import { routing } from './app.routing';
 import { SkyScannerService } from './shared/services';
 import { ItinerariesComponent } from './itineraries/itineraries.component';
 import { ItineraryComponent } from './itinerary/itinerary.component';
+import { LegComponent } from './leg/leg.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ItineraryComponent } from './itinerary/itinerary.component';
     UserListComponent,
     HomeComponent,
     ItinerariesComponent,
-    ItineraryComponent
+    ItineraryComponent,
+    LegComponent
   ],
   imports: [
     routing,

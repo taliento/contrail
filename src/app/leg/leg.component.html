@@ -1,0 +1,11 @@
+<div class="row">
+  <!-- <p>
+    {{leg | json}}
+  </p> -->
+  <div class="card-text">
+    <p><span>Departure: </span>{{ leg.Departure | date:'long' }}</p>
+    <p><span>Arrival: </span>{{ leg.Arrival | date:'long' }}</p>
+    <p><span>Duration(Hours): </span>{{ leg.Duration / 60 }}</p>
+    <p><span>Directionality: </span>{{leg.Directionality}}</p>
+  </div>
+</div>
