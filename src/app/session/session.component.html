@@ -10,79 +10,89 @@
     <div class="row">
       <div class="col-md-8">
         <form [formGroup]="profileForm" (ngSubmit)="createSession()">
-          <div class="form-row align-items-center">
-            <div class="col-md-4 form-group">
-              <label for="originPlace" i18n>From</label>
-              <input id="originPlace" [disabled]="searching" type="text" class="form-control" [inputFormatter]="formatter" [class.is-invalid]="searchFailed" formControlName="originPlace" [ngbTypeahead]="searchOriginPlace" placeholder="Origin place search" [resultTemplate]="rt" required/>
-              <div class="invalid-feedback" *ngIf="searchFailed"><span i18n>Sorry, suggestions could not be loaded.</span></div>
-              <div *ngIf="originPlace.invalid && !searchFailed" class="invalid-feedback">
-                <span i18n>Please choose a location.</span>
-              </div>
-              <div *ngIf="originPlace.valid" class="valid-feedback">
-                <span i18n>Looks great!</span>
+          <div class="form-row">
+            <div class="col-md-6 form-group row">
+              <label for="originPlace" class="col-sm-2 col-form-label" i18n>From</label>
+              <div class="col-sm-10">
+                <input id="originPlace" [disabled]="searching" type="text" class="form-control" [inputFormatter]="formatter" [class.is-invalid]="searchFailed" formControlName="originPlace" [ngbTypeahead]="searchOriginPlace" placeholder="Origin place search" [resultTemplate]="rt" required/>
+                <div class="invalid-feedback" *ngIf="searchFailed"><span i18n>Sorry, suggestions could not be loaded.</span></div>
+                <div *ngIf="originPlace.invalid && !searchFailed" class="invalid-feedback">
+                  <span i18n>Please choose a location.</span>
+                </div>
+                <div *ngIf="originPlace.valid" class="valid-feedback">
+                  <span i18n>Looks great!</span>
+                </div>
               </div>
             </div>
             <div class="col-auto">
               <button type="button" class="btn btn-outline-primary" (click)="switchPlace()"><span><i class="fa fa-arrows-alt-h"></i></span></button>
             </div>
-            <div class="col-auto form-group">
-              <label for="destinationPlace" i18n>To</label>
-              <input id="destinationPlace" [disabled]="searching" type="text" class="form-control" [inputFormatter]="formatter" [class.is-invalid]="searchDestinationFailed" formControlName="destinationPlace" [ngbTypeahead]="searchDestinationPlace" placeholder="Destination place search" [resultTemplate]="rt" required/>
-              <div class="invalid-feedback" *ngIf="searchDestinationFailed"><span i18n>Sorry, suggestions could not be loaded.</span></div>
-              <div *ngIf="destinationPlace.invalid && !searchDestinationFailed" class="invalid-feedback">
-                <span i18n>Please choose a location.</span>
-              </div>
-              <div *ngIf="destinationPlace.valid" class="valid-feedback">
-                <span i18n>Looks great!</span>
+            <div class="col-auto form-group row">
+              <label for="destinationPlace" class="col-sm-2 col-form-label" i18n>To</label>
+              <div class="col-sm-10">
+                <input id="destinationPlace" [disabled]="searching" type="text" class="form-control" [inputFormatter]="formatter" [class.is-invalid]="searchDestinationFailed" formControlName="destinationPlace" [ngbTypeahead]="searchDestinationPlace" placeholder="Destination place search" [resultTemplate]="rt" required/>
+                <div class="invalid-feedback" *ngIf="searchDestinationFailed"><span i18n>Sorry, suggestions could not be loaded.</span></div>
+                <div *ngIf="destinationPlace.invalid && !searchDestinationFailed" class="invalid-feedback">
+                  <span i18n>Please choose a location.</span>
+                </div>
+                <div *ngIf="destinationPlace.valid" class="valid-feedback">
+                  <span i18n>Looks great!</span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="form-row align-items-center">
-            <div class="col-md-4 form-group">
-              <label for="outboundDate" i18n>Depart</label>
-              <div class="input-group">
-                <input id="outboundDate" class="form-control" placeholder="yyyy-mm-dd"
-                      formControlName="outboundDate" ngbDatepicker #outboundDatePicker="ngbDatepicker" required>
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" (click)="outboundDatePicker.toggle()" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+          <div class="form-row">
+            <div class="col-md-6 form-group row">
+              <label for="outboundDate" class="col-sm-2 col-form-label" i18n>Depart</label>
+              <div class="col-sm-10">
+                <div class="input-group">
+                  <input id="outboundDate" class="form-control" placeholder="yyyy-mm-dd"
+                        formControlName="outboundDate" ngbDatepicker #outboundDatePicker="ngbDatepicker" required>
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" (click)="outboundDatePicker.toggle()" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+                  </div>
                 </div>
-              </div>
-              <div *ngIf="outboundDate.invalid" class="invalid-feedback">
-                <span i18n>Please choose a Date.</span>
-              </div>
-              <div *ngIf="outboundDate.valid" class="valid-feedback">
-                <span i18n>Looks great!</span>
+                <div *ngIf="outboundDate.invalid" class="invalid-feedback">
+                  <span i18n>Please choose a Date.</span>
+                </div>
+                <div *ngIf="outboundDate.valid" class="valid-feedback">
+                  <span i18n>Looks great!</span>
+                </div>
               </div>
             </div>
             <div class="col-auto">
               <button type="button" class="btn btn-outline-primary" (click)="switchDate()"><span><i class="fa fa-arrows-alt-h"></i></span></button>
             </div>
-            <div class="col-auto form-group">
-              <label for="inboundDate" i18n>Return</label>
-              <div class="input-group">
-                <input id="inboundDate" class="form-control" placeholder="yyyy-mm-dd"
-                       formControlName="inboundDate" ngbDatepicker #inboundDatePicker="ngbDatepicker" required>
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" (click)="inboundDatePicker.toggle()" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+            <div class="col-auto form-group row">
+              <label for="inboundDate" class="col-sm-2 col-form-label" i18n>Return</label>
+              <div class="col-sm-10">
+                <div class="input-group">
+                  <input id="inboundDate" class="form-control" placeholder="yyyy-mm-dd"
+                         formControlName="inboundDate" ngbDatepicker #inboundDatePicker="ngbDatepicker" required>
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" (click)="inboundDatePicker.toggle()" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+                  </div>
                 </div>
-              </div>
-              <div *ngIf="inboundDate.invalid" class="invalid-feedback">
-                <span i18n>Please choose a Date.</span>
-              </div>
-              <div *ngIf="inboundDate.valid" class="valid-feedback">
-                <span i18n>Looks great!</span>
+                <div *ngIf="inboundDate.invalid" class="invalid-feedback">
+                  <span i18n>Please choose a Date.</span>
+                </div>
+                <div *ngIf="inboundDate.valid" class="valid-feedback">
+                  <span i18n>Looks great!</span>
+                </div>
               </div>
             </div>
           </div>
           <div class="form-row">
-            <div class="col-md-6 form-group">
-              <label for="lastName" i18n>Adults</label>
-              <input id="adults" type="number" class="form-control" class="form-control"  formControlName="adults" required >
-              <div *ngIf="adults.invalid" class="invalid-feedback">
-                <span i18n>Number of adults (16+ years). Must be between 1 and 8.</span>
-              </div>
-              <div *ngIf="adults.valid" class="valid-feedback">
-                <span i18n>Looks great!</span>
+            <div class="col-md-6 form-group row">
+              <label for="lastName" class="col-sm-2 col-form-label" i18n>Adults</label>
+              <div class="col-sm-10">
+                <input id="adults" type="number" class="form-control" class="form-control"  formControlName="adults" required >
+                <div *ngIf="adults.invalid" class="invalid-feedback">
+                  <span i18n>Number of adults (16+ years). Must be between 1 and 8.</span>
+                </div>
+                <div *ngIf="adults.valid" class="valid-feedback">
+                  <span i18n>Looks great!</span>
+                </div>
               </div>
             </div>
           </div>
@@ -90,9 +100,7 @@
             <span *ngIf="loading">
               <i class='fa fa-circle-o-notch fa-spin'></i><span i18n> Processing</span>
             </span>
-            <span *ngIf="!loading" i18n>
-              Search
-            </span>
+            <span *ngIf="!loading" i18n>Search</span>
           </button>
         </form>
       </div>
