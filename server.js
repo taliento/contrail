@@ -92,8 +92,8 @@ app.post("/api/skyscanner/createSession", function(req, res) {
     .send("locale=it") //FIXME CLIENT INFO
     .send("originPlace=" + req.body.originPlace.PlaceId)
     .send("destinationPlace=" + req.body.destinationPlace.PlaceId)
-    .send("outboundDate=2018-11-01")
-    .send("inboundDate=2018-11-10")
+    .send("outboundDate=" + req.body.outboundDate)
+    .send("inboundDate=" + req.body.inboundDate)
     .send("cabinClass=business")
     .send("adults=" + req.body.adults)
     .send("children=0")

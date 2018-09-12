@@ -17,11 +17,11 @@ export class SkyScannerService extends AService {
     super(http);
   }
 
-  setCurrentSession(session: SkySession): void {
+  setCurrentSession(session: SkySession): void { //FIXME MONGO
     this.currentSession = session;
   }
 
-  getCurrentSession(): SkySession {
+  getCurrentSession(): SkySession { //FIXME MONGO
     return this.currentSession;
   }
 
@@ -38,7 +38,7 @@ export class SkyScannerService extends AService {
       );
   }
 
-  getPlaces(query: string): Observable<any> {
+  getPlaces(query: string): Observable<any> {  //FIXME MONGO cache
     return this.http
       .get<any>(this.apiUrl + SUFFIX + `/getPlaces/${query}`)
       .pipe(map(response => response.Places));
@@ -50,11 +50,11 @@ export class SkyScannerService extends AService {
     );
   }
 
-  cachePollSessionResults(result: PollSessionResult) {
+  cachePollSessionResults(result: PollSessionResult) { //FIXME MONGO
     this.pollSessionResult = result;
   }
 
-  getCachedPollSessionResult() : PollSessionResult {
+  getCachedPollSessionResult() : PollSessionResult { //FIXME MONGO
     return this.pollSessionResult;
   }
 }
