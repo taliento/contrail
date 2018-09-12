@@ -40,8 +40,6 @@ export class SessionComponent implements OnInit {
     this.session = new SkySession();
 
     this.profileForm = new FormGroup({
-      firstName: new FormControl(this.session.firstName, Validators.required),
-      lastName: new FormControl(this.session.lastName, Validators.required),
       adults: new FormControl(this.session.adults, [
         Validators.min(1),
         Validators.max(8),
@@ -86,12 +84,15 @@ export class SessionComponent implements OnInit {
     this.profileForm.get("adults").setValue(1);
   }
 
-  get firstName() {
-    return this.profileForm.get("firstName");
+  switchPlace() {
+    var origin = this.profileForm.get("originPlace").value;
+    var destination = this.profileForm.get("destinationPlace").value;
+    this.profileForm.get("originPlace").setValue(destination);
+    this.profileForm.get("destinationPlace").setValue(origin);
   }
 
-  get lastName() {
-    return this.profileForm.get("lastName");
+  switchDate() {
+
   }
 
   get adults() {

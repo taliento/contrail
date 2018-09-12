@@ -3,9 +3,9 @@
     {{leg | json}}
   </p> -->
   <div class="card-text">
-    <p><span>Departure: </span>{{ leg.Departure | date:'long' }}</p>
-    <p><span>Arrival: </span>{{ leg.Arrival | date:'long' }}</p>
-    <p><span>Duration(Hours): </span>{{ leg.Duration / 60 }}</p>
-    <p><span>Directionality: </span>{{leg.Directionality}}</p>
+    <p><span i18n>Departure: </span>{{ leg.Departure | date:'long' }}</p>
+    <p><span i18n>Arrival: </span>{{ leg.Arrival | date:'long' }}</p>
+    <p><span i18n>Duration(Hours): </span>{{ leg.Duration / 60 }}</p>
+    <p><span i18n>Directionality: </span>{{leg.Directionality}}</p>
   </div>
 </div>

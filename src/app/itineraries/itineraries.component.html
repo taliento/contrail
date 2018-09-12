@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      filtri
+      <span>TODO...</span>
     </div>
     <div class="col-md-8">
       <span *ngIf="loading">
-        <i class='fa fa-circle-o-notch fa-spin'></i> Processing
+        <i class='fa fa-circle-o-notch fa-spin'></i><span i18n>Processing</span>
       </span>
       <ul class="list-group" *ngIf="pollSessionResult">
         <li class="list-group-item" *ngFor="let it of pollSessionResult.Itineraries">
