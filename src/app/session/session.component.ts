@@ -40,25 +40,24 @@ export class SessionComponent implements OnInit {
     this.session = new SkySession();
 
     this.profileForm = new FormGroup({
-      adults: new FormControl(this.session.adults, [
+      adults: new FormControl(null, [
         Validators.min(1),
         Validators.max(8),
         Validators.required
       ]),
+      children: new FormControl(null, [Validators.max(8)]),
       originPlace: new FormControl(
-        this.session.originPlace,
+        { disabled: this.searching, value: null },
         Validators.required
       ),
       destinationPlace: new FormControl(
-        this.session.destinationPlace,
+        { disabled: this.searchingDestination, value: null },
         Validators.required
       ),
-      inboundDate: new FormControl(
-        this.session.inboundDate,
-        Validators.required
-      ),
-      outboundDate: new FormControl(
-        this.session.outboundDate,
+      inboundDate: new FormControl(null, Validators.required),
+      outboundDate: new FormControl(null, Validators.required),
+      cabinClass: new FormControl(
+        { disabled: true, value: "economy" },
         Validators.required
       )
     });
@@ -92,11 +91,18 @@ export class SessionComponent implements OnInit {
   }
 
   switchDate() {
-
+    var inboundDate = this.profileForm.get("inboundDate").value;
+    var outboundDate = this.profileForm.get("outboundDate").value;
+    this.profileForm.get("inboundDate").setValue(outboundDate);
+    this.profileForm.get("outboundDate").setValue(inboundDate);
   }
 
   get adults() {
     return this.profileForm.get("adults");
+  }
+
+  get children() {
+    return this.profileForm.get("children");
   }
 
   get originPlace() {
@@ -113,6 +119,10 @@ export class SessionComponent implements OnInit {
 
   get outboundDate() {
     return this.profileForm.get("outboundDate");
+  }
+
+  get cabinClass() {
+    return this.profileForm.get("cabinClass");
   }
 
   createSession() {
