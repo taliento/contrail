@@ -16,6 +16,9 @@ import { SkyScannerService } from './shared/services';
 import { ItinerariesComponent } from './itineraries/itineraries.component';
 import { ItineraryComponent } from './itinerary/itinerary.component';
 import { LegComponent } from './leg/leg.component';
+import { SessionComponent } from './session/session.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { LegComponent } from './leg/leg.component';
     HomeComponent,
     ItinerariesComponent,
     ItineraryComponent,
-    LegComponent
+    LegComponent,
+    SessionComponent,
+    NavBarComponent,
+    FooterComponent
   ],
   imports: [
     routing,

@@ -1,19 +1,26 @@
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ItinerariesComponent } from './itineraries/itineraries.component';
+import { SessionComponent } from './session/session.component';
 
 const appRoutes: Routes = [
   {
-    path: 'itineraries',
-    component: ItinerariesComponent
-  },
-  {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    children: [
+      {
+        path: 'session',
+        component: SessionComponent
+      },
+      {
+        path: 'itineraries',
+        component: ItinerariesComponent
+      }
+    ]
   },
   {
     path: '**',
-    redirectTo: 'home'
+    redirectTo: 'home/session'
   }
 ];
 
