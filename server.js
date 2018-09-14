@@ -79,7 +79,6 @@ app.delete("/api/users/:id", function(req, res) {});
 // FLIGHT api
 
 app.post("/api/skyscanner/createSession", function(req, res) {
-
   console.log("creating session...");
   console.log(JSON.stringify(req.body));
 
@@ -114,12 +113,14 @@ app.post("/api/skyscanner/createSession", function(req, res) {
 });
 
 app.get("/api/skyscanner/getPlaces/:query", function(req, res) {
+  //FIXME CLIENT INFO
+  var uri =
+    skyScannerEndPoint +
+    "/autosuggest/v1.0/IT/EUR/it/?query=" +
+    req.params.query;
+
   unirest
-    .get(
-      skyScannerEndPoint +
-        "/autosuggest/v1.0/IT/EUR/it/?query=" +
-        req.params.query
-    ) //FIXME CLIENT INFO
+    .get(uri)
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
     .header(
       "X-Mashape-Host",
@@ -134,14 +135,23 @@ app.get("/api/skyscanner/getPlaces/:query", function(req, res) {
     });
 });
 
-app.get("/api/skyscanner/pollSessionResults/:sessionkey", function(req, res) {
+app.get("/api/skyscanner/pollSessionResults/:sessionkey/:stops", function(
+  req,
+  res
+) {
+  //FIXME PAGING
+  var uri =
+    skyScannerEndPoint +
+    "/pricing/uk2/v1.0/" +
+    req.params.sessionkey +
+    "/?pageIndex=0&pageSize=10";
+
+  if (req.params.stops >= 0) {
+    uri += "&stops=" + req.params.stops;
+  }
+
   unirest
-    .get(
-      skyScannerEndPoint +
-        "/pricing/uk2/v1.0/" +
-        req.params.sessionkey +
-        "/?pageIndex=0&pageSize=10"
-    ) //FIXME PAGING
+    .get(uri)
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
     .header(
       "X-Mashape-Host",

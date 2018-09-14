@@ -10,6 +10,7 @@
     <div class="row">
       <div class="col-md-12">
         <form [formGroup]="profileForm" (ngSubmit)="createSession()">
+          <fieldset [disabled]="loading">
           <div class="form-row">
             <div class="col-md-6 form-group row">
               <label for="originPlace" class="col-sm-2 col-form-label" i18n>From</label>
@@ -119,9 +120,10 @@
               </div>
             </div>
           </div>
+          </fieldset>
           <button type="submit" [disabled]="!profileForm.valid || loading" name="createSession" class="btn btn-primary">
             <span *ngIf="loading">
-              <i class='fa fa-circle-o-notch fa-spin'></i><span i18n> Processing</span>
+              <i class='fa fa-spinner fa-spin'></i><span i18n> Processing</span>
             </span>
             <span *ngIf="!loading" i18n>Search</span>
           </button>

@@ -24,6 +24,9 @@
       <div class="col-md-12">
         <span>{{ leg.Duration | hoursMinutes}}</span>
       </div>
+      <div class="col-md-12">
+        <span [ngClass]="{'text-danger':leg.Stops.length > 0,'text-success':leg.Stops.length === 0}" [innerText]="getFlightType()"></span>
+      </div>
     </div>
   </div>
   <div class="col-md-4 text-center">

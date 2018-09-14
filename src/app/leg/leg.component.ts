@@ -29,4 +29,8 @@ export class LegComponent implements OnInit {
     return this.pollSessionResult.Carriers.find(x => x.Id === id);
   }
 
+  getFlightType() {
+    return this.leg.Stops.length > 0 ? "1+ Stops" : "Direct";
+  }
+
 }
