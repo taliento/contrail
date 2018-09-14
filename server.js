@@ -78,7 +78,9 @@ app.delete("/api/users/:id", function(req, res) {});
 
 // FLIGHT api
 
-app.post("/api/skyscanner/createSession", function(req, res) {
+const SUFFIX = "/api/skyscanner/";
+
+app.post(SUFFIX + "createSession", function(req, res) {
   console.log("creating session...");
   console.log(JSON.stringify(req.body));
 
@@ -112,7 +114,7 @@ app.post("/api/skyscanner/createSession", function(req, res) {
     });
 });
 
-app.get("/api/skyscanner/getPlaces/:query", function(req, res) {
+app.get(SUFFIX + "getPlaces/:query", function(req, res) {
   //FIXME CLIENT INFO
   var uri =
     skyScannerEndPoint +
@@ -135,10 +137,7 @@ app.get("/api/skyscanner/getPlaces/:query", function(req, res) {
     });
 });
 
-app.get("/api/skyscanner/pollSessionResults/:sessionkey/:stops", function(
-  req,
-  res
-) {
+app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
   //FIXME PAGING
   var uri =
     skyScannerEndPoint +

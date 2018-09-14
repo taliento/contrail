@@ -122,8 +122,8 @@
           </div>
           </fieldset>
           <button type="submit" [disabled]="!profileForm.valid || loading" name="createSession" class="btn btn-primary">
-            <span *ngIf="loading">
-              <i class='fa fa-spinner fa-spin'></i><span i18n> Processing</span>
+            <span *ngIf="loading" i18n> Search
+              <i class='fa fa-spinner fa-spin'></i>
             </span>
             <span *ngIf="!loading" i18n>Search</span>
           </button>

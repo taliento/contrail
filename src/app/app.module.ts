@@ -22,6 +22,7 @@ import localeIt from '@angular/common/locales/it';
 import { HoursMinutesPipe } from './shared/pipes';
 import { PlaceComponent } from './place/place.component';
 import { CarrierComponent } from './carrier/carrier.component';
+import { BookingDetailComponent } from './booking-detail/booking-detail.component';
 
 registerLocaleData(localeIt);
 
@@ -39,7 +40,8 @@ registerLocaleData(localeIt);
     FooterComponent,
     HoursMinutesPipe,
     PlaceComponent,
-    CarrierComponent
+    CarrierComponent,
+    BookingDetailComponent
   ],
   imports: [
     routing,

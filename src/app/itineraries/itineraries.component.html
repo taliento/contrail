@@ -11,17 +11,15 @@
         </div>
         </fieldset>
         <button type="submit" [disabled]="!filterForm.valid || loading" name="filter" class="btn btn-primary">
-          <span *ngIf="loading">
-            <i class='fa fa-spinner fa-spin'></i><span i18n> Processing</span>
-          </span>
+          <span *ngIf="loading" i18n>Search <i class='fa fa-spinner fa-spin'></i></span>
           <span *ngIf="!loading" i18n>Search</span>
         </button>
       </form>
     </div>
     <div class="col-md-8">
-      <span *ngIf="loading">
-        <i class='fa fa-spinner fa-spin'></i><span i18n>Processing</span>
-      </span>
+      <div class="text-center">
+        <h5 *ngIf="loading" i18n>Loading <i class='fa fa-spinner fa-spin'></i></h5>
+      </div>
       <div class="list-group" *ngIf="pollSessionResult && !loading">
         <app-itinerary class="mt-3" *ngFor="let it of pollSessionResult.Itineraries" [itinerary]="it"></app-itinerary>
       </div>
