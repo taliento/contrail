@@ -1,40 +1,38 @@
-<div class="card-text">
-  <div class="row">
-    <div class="col-md-2 text-center">
-      <div class="row">
-        <div class="col-md-12" *ngFor="let carrierId of leg.Carriers">
-          <app-carrier [carrier]="getCarrier(carrierId)"></app-carrier>
-        </div>
+<div class="row">
+  <div class="col-md-2 text-center">
+    <div class="row">
+      <div class="col-md-12" *ngFor="let carrierId of leg.Carriers">
+        <app-carrier [carrier]="getCarrier(carrierId)"></app-carrier>
       </div>
     </div>
-    <div class="col-md-4 text-center">
-      <div class="row">
-        <div class="col-md-12">
-          <span>{{ leg.Departure | date:'short' }}</span>&nbsp;<span><i class="fa fa-plane-departure"></i></span>
-        </div>
-        <div class="col-md-12">
-          <app-place [place]="getPlace(leg.OriginStation)" [badgeClass]="'badge-success'"></app-place>
-        </div>
+  </div>
+  <div class="col-md-4 text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <span>{{ leg.Departure | date:'short' }}</span>&nbsp;<span><i class="fa fa-plane-departure"></i></span>
+      </div>
+      <div class="col-md-12">
+        <app-place [place]="getPlace(leg.OriginStation)" [badgeClass]="'badge-success'"></app-place>
       </div>
     </div>
-    <div class="col-md-2 text-center">
-      <div class="row">
-        <div class="col-md-12">
-          <span><i class="fa fa-plane"></i></span>
-        </div>
-        <div class="col-md-12">
-          <span>{{ leg.Duration | hoursMinutes}}</span>
-        </div>
+  </div>
+  <div class="col-md-2 text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <span><i class="fa fa-plane"></i></span>
+      </div>
+      <div class="col-md-12">
+        <span>{{ leg.Duration | hoursMinutes}}</span>
       </div>
     </div>
-    <div class="col-md-4 text-center">
-      <div class="row">
-        <div class="col-md-12">
-          <span><i class="fa fa-plane-arrival"></i></span>&nbsp;<span>{{ leg.Arrival | date:'short' }}</span>
-        </div>
-        <div class="col-md-12">
-          <app-place [place]="getPlace(leg.DestinationStation)" [badgeClass]="'badge-danger'"></app-place>
-        </div>
+  </div>
+  <div class="col-md-4 text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <span><i class="fa fa-plane-arrival"></i></span>&nbsp;<span>{{ leg.Arrival | date:'short' }}</span>
+      </div>
+      <div class="col-md-12">
+        <app-place [place]="getPlace(leg.DestinationStation)" [badgeClass]="'badge-danger'"></app-place>
       </div>
     </div>
   </div>
