@@ -37,7 +37,7 @@ export class SessionComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.session = new SkySession();
+    this.session = new SkySession(null);
 
     this.profileForm = new FormGroup({
       adults: new FormControl(null, [
@@ -56,10 +56,7 @@ export class SessionComponent implements OnInit {
       ),
       inboundDate: new FormControl(null, Validators.required),
       outboundDate: new FormControl(null, Validators.required),
-      cabinClass: new FormControl(
-        { disabled: true, value: "economy" },
-        Validators.required
-      )
+      cabinClass: new FormControl(null, Validators.required)
     });
 
     this.setDefaults();
@@ -81,6 +78,8 @@ export class SessionComponent implements OnInit {
       day: today.getDate()
     });
     this.profileForm.get("adults").setValue(1);
+    this.profileForm.get("children").setValue(0);
+    this.profileForm.get("cabinClass").setValue("economy");
   }
 
   switchPlace() {
@@ -126,9 +125,11 @@ export class SessionComponent implements OnInit {
   }
 
   createSession() {
+    console.log("searching...");
     this.loading = true;
 
     var formValue = this.profileForm.value;
+    console.log("form values: " + JSON.stringify(formValue));
 
     formValue.inboundDate = this.ngbDateParserFormatter.format(
       formValue.inboundDate

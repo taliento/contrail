@@ -22,11 +22,13 @@ export class ItinerariesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.load();
+    // this.load();
+    this.mockLoad();
   }
 
   load() {
     this.loading = true;
+
     this.skyScanner.pollSessionResults(this.session.sessionkey).subscribe(
       result => {
         this.pollSessionResult = result;
@@ -35,5 +37,9 @@ export class ItinerariesComponent implements OnInit {
       },
       error => console.log(error)
     );
+  }
+
+  mockLoad() {
+    this.pollSessionResult = this.skyScanner.getCachedPollSessionResult();
   }
 }

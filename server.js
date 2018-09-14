@@ -79,6 +79,10 @@ app.delete("/api/users/:id", function(req, res) {});
 // FLIGHT api
 
 app.post("/api/skyscanner/createSession", function(req, res) {
+
+  console.log("creating session...");
+  console.log(JSON.stringify(req.body));
+
   unirest
     .post(skyScannerEndPoint + "/pricing/v1.0")
     .header("Content-Type", "application/x-www-form-urlencoded")

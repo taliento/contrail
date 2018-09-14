@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Leg, PollSessionResult } from '../shared/models';
+import { Leg, PollSessionResult, PollResultPlace, Carrier } from '../shared/models';
 import { SkyScannerService } from "../shared/services";
 
 @Component({
@@ -19,6 +19,14 @@ export class LegComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  getPlace(id: number): PollResultPlace {
+    return this.pollSessionResult.Places.find(x => x.Id === id);
+  }
+
+  getCarrier(id: number): Carrier {
+    return this.pollSessionResult.Carriers.find(x => x.Id === id);
   }
 
 }

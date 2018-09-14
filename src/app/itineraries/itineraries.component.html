@@ -11,11 +11,7 @@
       <span *ngIf="loading">
         <i class='fa fa-circle-o-notch fa-spin'></i><span i18n>Processing</span>
       </span>
-      <ul class="list-group" *ngIf="pollSessionResult">
-        <li class="list-group-item" *ngFor="let it of pollSessionResult.Itineraries">
-          <app-itinerary [itinerary]="it"></app-itinerary>
-        </li>
-      </ul>
+      <app-itinerary *ngFor="let it of pollSessionResult.Itineraries" [itinerary]="it"></app-itinerary>
     </div>
   </div>
 </div>

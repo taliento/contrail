@@ -1,0 +1,2405 @@
+{
+  "SessionKey":
+    "3520228ae425407ca8ebcdf2e3aac081_rrsqbjcb_06a13f0a788e803fcc56e78802891a26",
+  "Query": {
+    "Country": "IT",
+    "Currency": "EUR",
+    "Locale": "it-it",
+    "Adults": 1,
+    "Children": 0,
+    "Infants": 0,
+    "OriginPlace": "17109",
+    "DestinationPlace": "4698",
+    "OutboundDate": "2018-09-12",
+    "InboundDate": "2018-09-19",
+    "LocationSchema": "Default",
+    "CabinClass": "Economy",
+    "GroupPricing": false
+  },
+  "Status": "UpdatesComplete",
+  "Itineraries": [
+    {
+      "OutboundLegId": "17109-1809121800--32478-1-13554-1809122135",
+      "InboundLegId": "13554-1809191105--32478-1-17109-1809191725",
+      "PricingOptions": [
+        {
+          "Agents": [3940738],
+          "QuoteAgeInMinutes": 1199,
+          "Price": 240.52,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fsnbr%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-32478%7c3196%7c17109%7c2018-09-12T18%3a00%7c10141%7c2018-09-12T19%3a35%7c95%3bflight%7c-32478%7c2103%7c10141%7c2018-09-12T21%3a25%7c13554%7c2018-09-12T21%3a35%7c70%2cflight%7c-32478%7c2094%7c13554%7c2018-09-19T11%3a05%7c10141%7c2018-09-19T13%3a15%7c70%3bflight%7c-32478%7c3195%7c10141%7c2018-09-19T15%3a45%7c17109%7c2018-09-19T17%3a25%7c100%26carriers%3d-32478%26operators%3d-32492%3b-32478%2c-32478%3b-32492%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d240.52%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-central-1.prod_eed36e63193a4d971f673e66f5afc00d%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-11T19%3a52%3a37%26source_website_id%3dampc"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri":
+          "/apiservices/pricing/v1.0/3520228ae425407ca8ebcdf2e3aac081_rrsqbjcb_06a13f0a788e803fcc56e78802891a26/booking",
+        "Body":
+          "OutboundLegId=17109-1809121800--32478-1-13554-1809122135&InboundLegId=13554-1809191105--32478-1-17109-1809191725",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "17109-1809122050--32588-1-13554-1809131215",
+      "InboundLegId": "13554-1809192000--32588-1-17109-1809201155",
+      "PricingOptions": [
+        {
+          "Agents": [2042580],
+          "QuoteAgeInMinutes": 2,
+          "Price": 345.99,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fbfit%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-32588%7c209%7c13554%7c2018-09-19T20%3a00%7c11493%7c2018-09-19T23%3a30%7c150%3bflight%7c-32588%7c1413%7c11493%7c2018-09-20T10%3a40%7c17109%7c2018-09-20T11%3a55%7c75%26carriers%3d-32588%26operators%3d-32588%3b-32588%2c-32588%3b-32588%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d345.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_7dc043a5b02d1b922ce0f8857330a45e%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a35"
+        },
+        {
+          "Agents": [3503316],
+          "QuoteAgeInMinutes": 2,
+          "Price": 358.22,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fopit%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-32588%7c209%7c13554%7c2018-09-19T20%3a00%7c11493%7c2018-09-19T23%3a30%7c150%3bflight%7c-32588%7c1413%7c11493%7c2018-09-20T10%3a40%7c17109%7c2018-09-20T11%3a55%7c75%26carriers%3d-32588%26operators%3d-32588%3b-32588%2c-32588%3b-32588%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d358.22%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_aa4b657153bfc31a11c3b6a0abafd444%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a45"
+        },
+        {
+          "Agents": [1945812],
+          "QuoteAgeInMinutes": 2,
+          "Price": 362.59,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2falit%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-32588%7c209%7c13554%7c2018-09-19T20%3a00%7c11493%7c2018-09-19T23%3a30%7c150%3bflight%7c-32588%7c1413%7c11493%7c2018-09-20T10%3a40%7c17109%7c2018-09-20T11%3a55%7c75%26carriers%3d-32588%26operators%3d-32588%3b-32588%2c-32588%3b-32588%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d362.59%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_c01b473ff82d45850f3bfad58b093cce%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a32"
+        },
+        {
+          "Agents": [2369748],
+          "QuoteAgeInMinutes": 2,
+          "Price": 362.6,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fedit%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-32588%7c209%7c13554%7c2018-09-19T20%3a00%7c11493%7c2018-09-19T23%3a30%7c150%3bflight%7c-32588%7c1413%7c11493%7c2018-09-20T10%3a40%7c17109%7c2018-09-20T11%3a55%7c75%26carriers%3d-32588%26operators%3d-32588%3b-32588%2c-32588%3b-32588%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d362.60%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_edcd014613598e9c2b8e42449a242e8d%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a45"
+        },
+        {
+          "Agents": [3164628],
+          "QuoteAgeInMinutes": 2,
+          "Price": 362.99,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2flmit%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-32588%7c209%7c13554%7c2018-09-19T20%3a00%7c11493%7c2018-09-19T23%3a30%7c150%3bflight%7c-32588%7c1413%7c11493%7c2018-09-20T10%3a40%7c17109%7c2018-09-20T11%3a55%7c75%26carriers%3d-32588%26operators%3d-32588%3b-32588%2c-32588%3b-32588%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d362.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_0ffad79039f1790aaef628f923ef729f%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a35"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri":
+          "/apiservices/pricing/v1.0/3520228ae425407ca8ebcdf2e3aac081_rrsqbjcb_06a13f0a788e803fcc56e78802891a26/booking",
+        "Body":
+          "OutboundLegId=17109-1809122050--32588-1-13554-1809131215&InboundLegId=13554-1809192000--32588-1-17109-1809201155",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "17109-1809122050--32588-1-13554-1809131215",
+      "InboundLegId": "13554-1809191340--32588-1-17109-1809192150",
+      "PricingOptions": [
+        {
+          "Agents": [3503316],
+          "QuoteAgeInMinutes": 2,
+          "Price": 358.22,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fopit%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-32588%7c211%7c13554%7c2018-09-19T13%3a40%7c11493%7c2018-09-19T17%3a10%7c150%3bflight%7c-32588%7c1427%7c11493%7c2018-09-19T20%3a40%7c17109%7c2018-09-19T21%3a50%7c70%26carriers%3d-32588%26operators%3d-32588%3b-32588%2c-32588%3b-32588%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d358.22%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_f8f5b6afdc3ee43dd218876c177412ae%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a45"
+        },
+        {
+          "Agents": [1945812],
+          "QuoteAgeInMinutes": 2,
+          "Price": 362.59,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2falit%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-32588%7c211%7c13554%7c2018-09-19T13%3a40%7c11493%7c2018-09-19T17%3a10%7c150%3bflight%7c-32588%7c1427%7c11493%7c2018-09-19T20%3a40%7c17109%7c2018-09-19T21%3a50%7c70%26carriers%3d-32588%26operators%3d-32588%3b-32588%2c-32588%3b-32588%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d362.59%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_0683d3d8e54d8d921d1b27bcd826bd27%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a32"
+        },
+        {
+          "Agents": [2369748],
+          "QuoteAgeInMinutes": 2,
+          "Price": 362.6,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fedit%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-32588%7c211%7c13554%7c2018-09-19T13%3a40%7c11493%7c2018-09-19T17%3a10%7c150%3bflight%7c-32588%7c1427%7c11493%7c2018-09-19T20%3a40%7c17109%7c2018-09-19T21%3a50%7c70%26carriers%3d-32588%26operators%3d-32588%3b-32588%2c-32588%3b-32588%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d362.60%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_0ac6f804aa450f6c8912abe902085154%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a45"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri":
+          "/apiservices/pricing/v1.0/3520228ae425407ca8ebcdf2e3aac081_rrsqbjcb_06a13f0a788e803fcc56e78802891a26/booking",
+        "Body":
+          "OutboundLegId=17109-1809122050--32588-1-13554-1809131215&InboundLegId=13554-1809191340--32588-1-17109-1809192150",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "17109-1809121910--32588-1-13554-1809131215",
+      "InboundLegId": "13554-1809191340--32588-1-17109-1809192150",
+      "PricingOptions": [
+        {
+          "Agents": [1945812],
+          "QuoteAgeInMinutes": 2,
+          "Price": 362.59,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2falit%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-32588%7c1430%7c17109%7c2018-09-12T19%3a10%7c11493%7c2018-09-12T20%3a25%7c75%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-32588%7c211%7c13554%7c2018-09-19T13%3a40%7c11493%7c2018-09-19T17%3a10%7c150%3bflight%7c-32588%7c1427%7c11493%7c2018-09-19T20%3a40%7c17109%7c2018-09-19T21%3a50%7c70%26carriers%3d-32588%26operators%3d-32588%3b-32588%2c-32588%3b-32588%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d362.59%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_bb23559939c7b252779e75166f551894%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a32"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri":
+          "/apiservices/pricing/v1.0/3520228ae425407ca8ebcdf2e3aac081_rrsqbjcb_06a13f0a788e803fcc56e78802891a26/booking",
+        "Body":
+          "OutboundLegId=17109-1809121910--32588-1-13554-1809131215&InboundLegId=13554-1809191340--32588-1-17109-1809192150",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "17109-1809121910--32588-1-13554-1809131215",
+      "InboundLegId": "13554-1809192000--32588-1-17109-1809201155",
+      "PricingOptions": [
+        {
+          "Agents": [1945812],
+          "QuoteAgeInMinutes": 2,
+          "Price": 362.59,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2falit%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-32588%7c1430%7c17109%7c2018-09-12T19%3a10%7c11493%7c2018-09-12T20%3a25%7c75%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-32588%7c209%7c13554%7c2018-09-19T20%3a00%7c11493%7c2018-09-19T23%3a30%7c150%3bflight%7c-32588%7c1413%7c11493%7c2018-09-20T10%3a40%7c17109%7c2018-09-20T11%3a55%7c75%26carriers%3d-32588%26operators%3d-32588%3b-32588%2c-32588%3b-32588%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d362.59%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_be7b6422418d0ff439b80738f9de71c1%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a32"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri":
+          "/apiservices/pricing/v1.0/3520228ae425407ca8ebcdf2e3aac081_rrsqbjcb_06a13f0a788e803fcc56e78802891a26/booking",
+        "Body":
+          "OutboundLegId=17109-1809121910--32588-1-13554-1809131215&InboundLegId=13554-1809192000--32588-1-17109-1809201155",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "17109-1809122050--32588-1-13554-1809131215",
+      "InboundLegId": "13542-1809192140--31685-1-17109-1809200905",
+      "PricingOptions": [
+        {
+          "Agents": [2042580],
+          "QuoteAgeInMinutes": 2,
+          "Price": 364.99,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fbfit%2f2%2f17109.4698.2018-09-12%2c4698.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-31685%7c7833%7c13542%7c2018-09-19T21%3a40%7c9772%7c2018-09-20T00%3a45%7c125%3bflight%7c-31685%7c6514%7c9772%7c2018-09-20T07%3a35%7c17109%7c2018-09-20T09%3a05%7c90%26carriers%3d-32588%2c-31685%26operators%3d-32588%3b-32588%2c-31685%3b-31685%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d364.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_aefc1ecd8a78022738584c4bdc0d061f%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a35"
+        },
+        {
+          "Agents": [3503316],
+          "QuoteAgeInMinutes": 2,
+          "Price": 384.95,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fopit%2f2%2f17109.4698.2018-09-12%2c4698.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-31685%7c7833%7c13542%7c2018-09-19T21%3a40%7c9772%7c2018-09-20T00%3a45%7c125%3bflight%7c-31685%7c6514%7c9772%7c2018-09-20T07%3a35%7c17109%7c2018-09-20T09%3a05%7c90%26carriers%3d-32588%2c-31685%26operators%3d-32588%3b-32588%2c-31685%3b-31685%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d384.95%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_1072b0ef31b2413ddb2191ba01b6e4d0%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a45"
+        },
+        {
+          "Agents": [2369748],
+          "QuoteAgeInMinutes": 2,
+          "Price": 384.96,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fedit%2f2%2f17109.4698.2018-09-12%2c4698.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-31685%7c7833%7c13542%7c2018-09-19T21%3a40%7c9772%7c2018-09-20T00%3a45%7c125%3bflight%7c-31685%7c6514%7c9772%7c2018-09-20T07%3a35%7c17109%7c2018-09-20T09%3a05%7c90%26carriers%3d-32588%2c-31685%26operators%3d-32588%3b-32588%2c-31685%3b-31685%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d384.96%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_904ff96901c7a8a953ff73b208421b7d%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a45"
+        },
+        {
+          "Agents": [3164628],
+          "QuoteAgeInMinutes": 2,
+          "Price": 384.99,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2flmit%2f2%2f17109.4698.2018-09-12%2c4698.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-31685%7c7833%7c13542%7c2018-09-19T21%3a40%7c9772%7c2018-09-20T00%3a45%7c125%3bflight%7c-31685%7c6514%7c9772%7c2018-09-20T07%3a35%7c17109%7c2018-09-20T09%3a05%7c90%26carriers%3d-32588%2c-31685%26operators%3d-32588%3b-32588%2c-31685%3b-31685%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d384.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_c7ef7847f61dc3e4d0131a5be2cdc3ea%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a35"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri":
+          "/apiservices/pricing/v1.0/3520228ae425407ca8ebcdf2e3aac081_rrsqbjcb_06a13f0a788e803fcc56e78802891a26/booking",
+        "Body":
+          "OutboundLegId=17109-1809122050--32588-1-13554-1809131215&InboundLegId=13542-1809192140--31685-1-17109-1809200905",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "17109-1809121800--32478-1-13554-1809122135",
+      "InboundLegId": "13554-1809190650--32478-1-17109-1809191725",
+      "PricingOptions": [
+        {
+          "Agents": [3940738],
+          "QuoteAgeInMinutes": 1199,
+          "Price": 366.52,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fsnbr%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-32478%7c3196%7c17109%7c2018-09-12T18%3a00%7c10141%7c2018-09-12T19%3a35%7c95%3bflight%7c-32478%7c2103%7c10141%7c2018-09-12T21%3a25%7c13554%7c2018-09-12T21%3a35%7c70%2cflight%7c-32478%7c2104%7c13554%7c2018-09-19T06%3a50%7c10141%7c2018-09-19T09%3a00%7c70%3bflight%7c-32478%7c3195%7c10141%7c2018-09-19T15%3a45%7c17109%7c2018-09-19T17%3a25%7c100%26carriers%3d-32478%26operators%3d-32492%3b-32478%2c-32478%3b-32492%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d366.52%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-central-1.prod_246e64d2c1fe4c9749573085676c9de7%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-11T19%3a52%3a37%26source_website_id%3dampc"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri":
+          "/apiservices/pricing/v1.0/3520228ae425407ca8ebcdf2e3aac081_rrsqbjcb_06a13f0a788e803fcc56e78802891a26/booking",
+        "Body":
+          "OutboundLegId=17109-1809121800--32478-1-13554-1809122135&InboundLegId=13554-1809190650--32478-1-17109-1809191725",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "17109-1809122050--32588-1-13554-1809131215",
+      "InboundLegId": "13542-1809190945--31685-1-17109-1809191555",
+      "PricingOptions": [
+        {
+          "Agents": [2042580],
+          "QuoteAgeInMinutes": 2,
+          "Price": 366.99,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fbfit%2f2%2f17109.4698.2018-09-12%2c4698.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-31685%7c7823%7c13542%7c2018-09-19T09%3a45%7c9772%7c2018-09-19T12%3a50%7c125%3bflight%7c-31685%7c6514%7c9772%7c2018-09-19T14%3a25%7c17109%7c2018-09-19T15%3a55%7c90%26carriers%3d-32588%2c-31685%26operators%3d-32588%3b-32588%2c-31685%3b-31685%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d366.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_6934918e37999cc2998e102d1bb37b89%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a35"
+        },
+        {
+          "Agents": [3503316],
+          "QuoteAgeInMinutes": 2,
+          "Price": 384.95,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fopit%2f2%2f17109.4698.2018-09-12%2c4698.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-31685%7c7823%7c13542%7c2018-09-19T09%3a45%7c9772%7c2018-09-19T12%3a50%7c125%3bflight%7c-31685%7c6514%7c9772%7c2018-09-19T14%3a25%7c17109%7c2018-09-19T15%3a55%7c90%26carriers%3d-32588%2c-31685%26operators%3d-32588%3b-32588%2c-31685%3b-31685%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d384.95%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_0fa3e0a281a3bffb438791e27c884435%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a45"
+        },
+        {
+          "Agents": [2369748],
+          "QuoteAgeInMinutes": 2,
+          "Price": 384.96,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fedit%2f2%2f17109.4698.2018-09-12%2c4698.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-31685%7c7823%7c13542%7c2018-09-19T09%3a45%7c9772%7c2018-09-19T12%3a50%7c125%3bflight%7c-31685%7c6514%7c9772%7c2018-09-19T14%3a25%7c17109%7c2018-09-19T15%3a55%7c90%26carriers%3d-32588%2c-31685%26operators%3d-32588%3b-32588%2c-31685%3b-31685%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d384.96%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_d2af696ada11619216f3adf5d8b0f3eb%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a45"
+        },
+        {
+          "Agents": [3164628],
+          "QuoteAgeInMinutes": 2,
+          "Price": 387.99,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2flmit%2f2%2f17109.4698.2018-09-12%2c4698.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-31685%7c7823%7c13542%7c2018-09-19T09%3a45%7c9772%7c2018-09-19T12%3a50%7c125%3bflight%7c-31685%7c6514%7c9772%7c2018-09-19T14%3a25%7c17109%7c2018-09-19T15%3a55%7c90%26carriers%3d-32588%2c-31685%26operators%3d-32588%3b-32588%2c-31685%3b-31685%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d387.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_04df42c381a66bed0d341646cfaa7f13%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a35"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri":
+          "/apiservices/pricing/v1.0/3520228ae425407ca8ebcdf2e3aac081_rrsqbjcb_06a13f0a788e803fcc56e78802891a26/booking",
+        "Body":
+          "OutboundLegId=17109-1809122050--32588-1-13554-1809131215&InboundLegId=13542-1809190945--31685-1-17109-1809191555",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "17109-1809122045--32677-1-13554-1809131830",
+      "InboundLegId": "13554-1809191550--32677-1-17109-1809200935",
+      "PricingOptions": [
+        {
+          "Agents": [2185428],
+          "QuoteAgeInMinutes": 2,
+          "Price": 381,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fctit%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32677%7c1203%7c17109%7c2018-09-12T20%3a45%7c10413%7c2018-09-12T22%3a15%7c90%3bflight%7c-32677%7c1080%7c10413%7c2018-09-13T18%3a15%7c13554%7c2018-09-13T18%3a30%7c75%2cflight%7c-32677%7c1781%7c13554%7c2018-09-19T15%3a50%7c10413%7c2018-09-19T18%3a05%7c75%3bflight%7c-32677%7c1102%7c10413%7c2018-09-20T07%3a50%7c17109%7c2018-09-20T09%3a35%7c105%26carriers%3d-32677%26operators%3d-32226%3b-32677%2c-32677%3b-32226%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dtrue%26ticket_price%3d381.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_d95c39abc775a46886ea5c2dc70b0927%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a39"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri":
+          "/apiservices/pricing/v1.0/3520228ae425407ca8ebcdf2e3aac081_rrsqbjcb_06a13f0a788e803fcc56e78802891a26/booking",
+        "Body":
+          "OutboundLegId=17109-1809122045--32677-1-13554-1809131830&InboundLegId=13554-1809191550--32677-1-17109-1809200935",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "17109-1809122050--32588-1-13554-1809131215",
+      "InboundLegId": "13554-1809190725--32588-1-17109-1809200950",
+      "PricingOptions": [
+        {
+          "Agents": [2042580],
+          "QuoteAgeInMinutes": 2,
+          "Price": 396.99,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2fbfit%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-32588%7c201%7c13554%7c2018-09-19T07%3a25%7c11493%7c2018-09-19T10%3a55%7c150%3bflight%7c-32588%7c1421%7c11493%7c2018-09-20T08%3a35%7c17109%7c2018-09-20T09%3a50%7c75%26carriers%3d-32588%26operators%3d-32588%3b-32588%2c-32588%3b-32588%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d396.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_01644afe6802a0b5a1581a6ec0597d79%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a35"
+        },
+        {
+          "Agents": [3164628],
+          "QuoteAgeInMinutes": 2,
+          "Price": 412.99,
+          "DeeplinkUrl":
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fIT%2fit-it%2fEUR%2flmit%2f2%2f17109.13554.2018-09-12%2c13554.17109.2018-09-19%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32588%7c1416%7c17109%7c2018-09-12T20%3a50%7c11493%7c2018-09-12T22%3a00%7c70%3bflight%7c-32588%7c212%7c11493%7c2018-09-13T10%3a25%7c13554%7c2018-09-13T12%3a15%7c170%2cflight%7c-32588%7c201%7c13554%7c2018-09-19T07%3a25%7c11493%7c2018-09-19T10%3a55%7c150%3bflight%7c-32588%7c1421%7c11493%7c2018-09-20T08%3a35%7c17109%7c2018-09-20T09%3a50%7c75%26carriers%3d-32588%26operators%3d-32588%3b-32588%2c-32588%3b-32588%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d412.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d51499533-41d6-420e-bf56-4039d861bc36%26deeplink_ids%3deu-west-1.prod_af7320debc5869048b4d93b875e13e82%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-09-12T15%3a49%3a35"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri":
+          "/apiservices/pricing/v1.0/3520228ae425407ca8ebcdf2e3aac081_rrsqbjcb_06a13f0a788e803fcc56e78802891a26/booking",
+        "Body":
+          "OutboundLegId=17109-1809122050--32588-1-13554-1809131215&InboundLegId=13554-1809190725--32588-1-17109-1809200950",
+        "Method": "PUT"
+      }
+    }
+  ],
+  "Legs": [
+    {
+      "Id": "17109-1809122050--32588-1-13554-1809131215",
+      "SegmentIds": [0, 4],
+      "OriginStation": 17109,
+      "DestinationStation": 13554,
+      "Departure": "2018-09-12T20:50:00",
+      "Arrival": "2018-09-13T12:15:00",
+      "Duration": 985,
+      "JourneyMode": "Flight",
+      "Stops": [11493],
+      "Carriers": [858],
+      "OperatingCarriers": [858],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        { "FlightNumber": "1416", "CarrierId": 858 },
+        { "FlightNumber": "212", "CarrierId": 858 }
+      ]
+    },
+    {
+      "Id": "17109-1809122045--32677-1-13554-1809131830",
+      "SegmentIds": [81, 82],
+      "OriginStation": 17109,
+      "DestinationStation": 13554,
+      "Departure": "2018-09-12T20:45:00",
+      "Arrival": "2018-09-13T18:30:00",
+      "Duration": 1365,
+      "JourneyMode": "Flight",
+      "Stops": [10413],
+      "Carriers": [838],
+      "OperatingCarriers": [821, 838],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        { "FlightNumber": "1203", "CarrierId": 838 },
+        { "FlightNumber": "1080", "CarrierId": 838 }
+      ]
+    },
+    {
+      "Id": "17109-1809121910--32588-1-13554-1809131215",
+      "SegmentIds": [92, 4],
+      "OriginStation": 17109,
+      "DestinationStation": 13554,
+      "Departure": "2018-09-12T19:10:00",
+      "Arrival": "2018-09-13T12:15:00",
+      "Duration": 1085,
+      "JourneyMode": "Flight",
+      "Stops": [11493],
+      "Carriers": [858],
+      "OperatingCarriers": [858],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        { "FlightNumber": "212", "CarrierId": 858 },
+        { "FlightNumber": "1430", "CarrierId": 858 }
+      ]
+    },
+    {
+      "Id": "17109-1809121800--32478-1-13554-1809122135",
+      "SegmentIds": [93, 94],
+      "OriginStation": 17109,
+      "DestinationStation": 13554,
+      "Departure": "2018-09-12T18:00:00",
+      "Arrival": "2018-09-12T21:35:00",
+      "Duration": 275,
+      "JourneyMode": "Flight",
+      "Stops": [10141],
+      "Carriers": [1710],
+      "OperatingCarriers": [1057, 1710],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        { "FlightNumber": "3196", "CarrierId": 1710 },
+        { "FlightNumber": "2103", "CarrierId": 1710 }
+      ]
+    },
+    {
+      "Id": "13542-1809190945--31685-1-17109-1809191555",
+      "SegmentIds": [13, 14],
+      "OriginStation": 13542,
+      "DestinationStation": 17109,
+      "Departure": "2018-09-19T09:45:00",
+      "Arrival": "2018-09-19T15:55:00",
+      "Duration": 310,
+      "JourneyMode": "Flight",
+      "Stops": [9772],
+      "Carriers": [7],
+      "OperatingCarriers": [7],
+      "Directionality": "Inbound",
+      "FlightNumbers": [
+        { "FlightNumber": "7823", "CarrierId": 7 },
+        { "FlightNumber": "6514", "CarrierId": 7 }
+      ]
+    },
+    {
+      "Id": "13542-1809192140--31685-1-17109-1809200905",
+      "SegmentIds": [21, 22],
+      "OriginStation": 13542,
+      "DestinationStation": 17109,
+      "Departure": "2018-09-19T21:40:00",
+      "Arrival": "2018-09-20T09:05:00",
+      "Duration": 625,
+      "JourneyMode": "Flight",
+      "Stops": [9772],
+      "Carriers": [7],
+      "OperatingCarriers": [7],
+      "Directionality": "Inbound",
+      "FlightNumbers": [
+        { "FlightNumber": "7833", "CarrierId": 7 },
+        { "FlightNumber": "6514", "CarrierId": 7 }
+      ]
+    },
+    {
+      "Id": "13554-1809190725--32588-1-17109-1809200950",
+      "SegmentIds": [27, 28],
+      "OriginStation": 13554,
+      "DestinationStation": 17109,
+      "Departure": "2018-09-19T07:25:00",
+      "Arrival": "2018-09-20T09:50:00",
+      "Duration": 1525,
+      "JourneyMode": "Flight",
+      "Stops": [11493],
+      "Carriers": [858],
+      "OperatingCarriers": [858],
+      "Directionality": "Inbound",
+      "FlightNumbers": [
+        { "FlightNumber": "201", "CarrierId": 858 },
+        { "FlightNumber": "1421", "CarrierId": 858 }
+      ]
+    },
+    {
+      "Id": "13554-1809191105--32478-1-17109-1809191725",
+      "SegmentIds": [33, 34],
+      "OriginStation": 13554,
+      "DestinationStation": 17109,
+      "Departure": "2018-09-19T11:05:00",
+      "Arrival": "2018-09-19T17:25:00",
+      "Duration": 320,
+      "JourneyMode": "Flight",
+      "Stops": [10141],
+      "Carriers": [1710],
+      "OperatingCarriers": [1710, 1057],
+      "Directionality": "Inbound",
+      "FlightNumbers": [
+        { "FlightNumber": "2094", "CarrierId": 1710 },
+        { "FlightNumber": "3195", "CarrierId": 1710 }
+      ]
+    },
+    {
+      "Id": "13554-1809191340--32588-1-17109-1809192150",
+      "SegmentIds": [40, 3],
+      "OriginStation": 13554,
+      "DestinationStation": 17109,
+      "Departure": "2018-09-19T13:40:00",
+      "Arrival": "2018-09-19T21:50:00",
+      "Duration": 430,
+      "JourneyMode": "Flight",
+      "Stops": [11493],
+      "Carriers": [858],
+      "OperatingCarriers": [858],
+      "Directionality": "Inbound",
+      "FlightNumbers": [
+        { "FlightNumber": "1427", "CarrierId": 858 },
+        { "FlightNumber": "211", "CarrierId": 858 }
+      ]
+    },
+    {
+      "Id": "13554-1809192000--32588-1-17109-1809201155",
+      "SegmentIds": [56, 57],
+      "OriginStation": 13554,
+      "DestinationStation": 17109,
+      "Departure": "2018-09-19T20:00:00",
+      "Arrival": "2018-09-20T11:55:00",
+      "Duration": 895,
+      "JourneyMode": "Flight",
+      "Stops": [11493],
+      "Carriers": [858],
+      "OperatingCarriers": [858],
+      "Directionality": "Inbound",
+      "FlightNumbers": [
+        { "FlightNumber": "209", "CarrierId": 858 },
+        { "FlightNumber": "1413", "CarrierId": 858 }
+      ]
+    },
+    {
+      "Id": "13554-1809191550--32677-1-17109-1809200935",
+      "SegmentIds": [43, 36],
+      "OriginStation": 13554,
+      "DestinationStation": 17109,
+      "Departure": "2018-09-19T15:50:00",
+      "Arrival": "2018-09-20T09:35:00",
+      "Duration": 1005,
+      "JourneyMode": "Flight",
+      "Stops": [10413],
+      "Carriers": [838],
+      "OperatingCarriers": [838, 821],
+      "Directionality": "Inbound",
+      "FlightNumbers": [
+        { "FlightNumber": "1102", "CarrierId": 838 },
+        { "FlightNumber": "1781", "CarrierId": 838 }
+      ]
+    },
+    {
+      "Id": "13554-1809190650--32478-1-17109-1809191725",
+      "SegmentIds": [95, 34],
+      "OriginStation": 13554,
+      "DestinationStation": 17109,
+      "Departure": "2018-09-19T06:50:00",
+      "Arrival": "2018-09-19T17:25:00",
+      "Duration": 575,
+      "JourneyMode": "Flight",
+      "Stops": [10141],
+      "Carriers": [1710],
+      "OperatingCarriers": [1710, 1057],
+      "Directionality": "Inbound",
+      "FlightNumbers": [
+        { "FlightNumber": "3195", "CarrierId": 1710 },
+        { "FlightNumber": "2104", "CarrierId": 1710 }
+      ]
+    }
+  ],
+  "Segments": [
+    {
+      "Id": 0,
+      "OriginStation": 17109,
+      "DestinationStation": 11493,
+      "DepartureDateTime": "2018-09-12T20:50:00",
+      "ArrivalDateTime": "2018-09-12T22:00:00",
+      "Carrier": 858,
+      "OperatingCarrier": 858,
+      "Duration": 70,
+      "FlightNumber": "1416",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 1,
+      "OriginStation": 11493,
+      "DestinationStation": 13554,
+      "DepartureDateTime": "2018-09-13T08:00:00",
+      "ArrivalDateTime": "2018-09-13T09:50:00",
+      "Carrier": 881,
+      "OperatingCarrier": 881,
+      "Duration": 170,
+      "FlightNumber": "551",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 2,
+      "OriginStation": 13554,
+      "DestinationStation": 11493,
+      "DepartureDateTime": "2018-09-19T15:45:00",
+      "ArrivalDateTime": "2018-09-19T19:20:00",
+      "Carrier": 881,
+      "OperatingCarrier": 881,
+      "Duration": 155,
+      "FlightNumber": "554",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 3,
+      "OriginStation": 11493,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T20:40:00",
+      "ArrivalDateTime": "2018-09-19T21:50:00",
+      "Carrier": 858,
+      "OperatingCarrier": 858,
+      "Duration": 70,
+      "FlightNumber": "1427",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 4,
+      "OriginStation": 11493,
+      "DestinationStation": 13554,
+      "DepartureDateTime": "2018-09-13T10:25:00",
+      "ArrivalDateTime": "2018-09-13T12:15:00",
+      "Carrier": 858,
+      "OperatingCarrier": 858,
+      "Duration": 170,
+      "FlightNumber": "212",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 5,
+      "OriginStation": 13465,
+      "DestinationStation": 11616,
+      "DepartureDateTime": "2018-09-19T09:15:00",
+      "ArrivalDateTime": "2018-09-19T11:40:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 940,
+      "Duration": 85,
+      "FlightNumber": "929",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 6,
+      "OriginStation": 11616,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T12:35:00",
+      "ArrivalDateTime": "2018-09-19T13:45:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1038,
+      "Duration": 70,
+      "FlightNumber": "298",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 7,
+      "OriginStation": 13465,
+      "DestinationStation": 9451,
+      "DepartureDateTime": "2018-09-19T17:10:00",
+      "ArrivalDateTime": "2018-09-19T19:20:00",
+      "Carrier": 1324,
+      "OperatingCarrier": 1889,
+      "Duration": 70,
+      "FlightNumber": "990",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 8,
+      "OriginStation": 9451,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T20:30:00",
+      "ArrivalDateTime": "2018-09-19T22:10:00",
+      "Carrier": 1324,
+      "OperatingCarrier": 1889,
+      "Duration": 100,
+      "FlightNumber": "1559",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 9,
+      "OriginStation": 13465,
+      "DestinationStation": 9451,
+      "DepartureDateTime": "2018-09-19T20:05:00",
+      "ArrivalDateTime": "2018-09-19T22:15:00",
+      "Carrier": 1324,
+      "OperatingCarrier": 1889,
+      "Duration": 70,
+      "FlightNumber": "998",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 10,
+      "OriginStation": 9451,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-20T09:30:00",
+      "ArrivalDateTime": "2018-09-20T11:15:00",
+      "Carrier": 1324,
+      "OperatingCarrier": 1889,
+      "Duration": 105,
+      "FlightNumber": "1555",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 11,
+      "OriginStation": 13542,
+      "DestinationStation": 9772,
+      "DepartureDateTime": "2018-09-19T09:10:00",
+      "ArrivalDateTime": "2018-09-19T12:15:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 7,
+      "Duration": 125,
+      "FlightNumber": "5049",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 12,
+      "OriginStation": 9772,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T14:25:00",
+      "ArrivalDateTime": "2018-09-19T15:55:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 7,
+      "Duration": 90,
+      "FlightNumber": "5406",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 13,
+      "OriginStation": 13542,
+      "DestinationStation": 9772,
+      "DepartureDateTime": "2018-09-19T09:45:00",
+      "ArrivalDateTime": "2018-09-19T12:50:00",
+      "Carrier": 7,
+      "OperatingCarrier": 7,
+      "Duration": 125,
+      "FlightNumber": "7823",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 14,
+      "OriginStation": 9772,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T14:25:00",
+      "ArrivalDateTime": "2018-09-19T15:55:00",
+      "Carrier": 7,
+      "OperatingCarrier": 7,
+      "Duration": 90,
+      "FlightNumber": "6514",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 15,
+      "OriginStation": 13542,
+      "DestinationStation": 13870,
+      "DepartureDateTime": "2018-09-19T10:50:00",
+      "ArrivalDateTime": "2018-09-19T14:15:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 1202,
+      "Duration": 145,
+      "FlightNumber": "3715",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 16,
+      "OriginStation": 13870,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T16:20:00",
+      "ArrivalDateTime": "2018-09-19T18:25:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 2007,
+      "Duration": 125,
+      "FlightNumber": "8828",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 17,
+      "OriginStation": 13542,
+      "DestinationStation": 10622,
+      "DepartureDateTime": "2018-09-19T11:50:00",
+      "ArrivalDateTime": "2018-09-19T15:10:00",
+      "Carrier": 852,
+      "OperatingCarrier": 852,
+      "Duration": 200,
+      "FlightNumber": "803",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 18,
+      "OriginStation": 10622,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-20T07:55:00",
+      "ArrivalDateTime": "2018-09-20T11:50:00",
+      "Carrier": 852,
+      "OperatingCarrier": 852,
+      "Duration": 175,
+      "FlightNumber": "944",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 19,
+      "OriginStation": 13542,
+      "DestinationStation": 9772,
+      "DepartureDateTime": "2018-09-19T16:25:00",
+      "ArrivalDateTime": "2018-09-19T19:30:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 7,
+      "Duration": 125,
+      "FlightNumber": "5646",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 20,
+      "OriginStation": 9772,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-20T07:35:00",
+      "ArrivalDateTime": "2018-09-20T09:05:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 7,
+      "Duration": 90,
+      "FlightNumber": "5406",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 21,
+      "OriginStation": 13542,
+      "DestinationStation": 9772,
+      "DepartureDateTime": "2018-09-19T21:40:00",
+      "ArrivalDateTime": "2018-09-20T00:45:00",
+      "Carrier": 7,
+      "OperatingCarrier": 7,
+      "Duration": 125,
+      "FlightNumber": "7833",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 22,
+      "OriginStation": 9772,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-20T07:35:00",
+      "ArrivalDateTime": "2018-09-20T09:05:00",
+      "Carrier": 7,
+      "OperatingCarrier": 7,
+      "Duration": 90,
+      "FlightNumber": "6514",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 23,
+      "OriginStation": 13554,
+      "DestinationStation": 10413,
+      "DepartureDateTime": "2018-09-19T06:20:00",
+      "ArrivalDateTime": "2018-09-19T08:40:00",
+      "Carrier": 838,
+      "OperatingCarrier": 838,
+      "Duration": 80,
+      "FlightNumber": "1081",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 24,
+      "OriginStation": 10413,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T12:55:00",
+      "ArrivalDateTime": "2018-09-19T14:30:00",
+      "Carrier": 838,
+      "OperatingCarrier": 821,
+      "Duration": 95,
+      "FlightNumber": "1702",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 25,
+      "OriginStation": 13554,
+      "DestinationStation": 14385,
+      "DepartureDateTime": "2018-09-19T07:25:00",
+      "ArrivalDateTime": "2018-09-19T10:10:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1368,
+      "Duration": 105,
+      "FlightNumber": "2485",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 26,
+      "OriginStation": 14385,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T11:10:00",
+      "ArrivalDateTime": "2018-09-19T12:25:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 940,
+      "Duration": 75,
+      "FlightNumber": "1896",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 27,
+      "OriginStation": 13554,
+      "DestinationStation": 11493,
+      "DepartureDateTime": "2018-09-19T07:25:00",
+      "ArrivalDateTime": "2018-09-19T10:55:00",
+      "Carrier": 858,
+      "OperatingCarrier": 858,
+      "Duration": 150,
+      "FlightNumber": "201",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 28,
+      "OriginStation": 11493,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-20T08:35:00",
+      "ArrivalDateTime": "2018-09-20T09:50:00",
+      "Carrier": 858,
+      "OperatingCarrier": 858,
+      "Duration": 75,
+      "FlightNumber": "1421",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 29,
+      "OriginStation": 11493,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T13:05:00",
+      "ArrivalDateTime": "2018-09-19T14:20:00",
+      "Carrier": 858,
+      "OperatingCarrier": 858,
+      "Duration": 75,
+      "FlightNumber": "1417",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 30,
+      "OriginStation": 13554,
+      "DestinationStation": 11616,
+      "DepartureDateTime": "2018-09-19T08:30:00",
+      "ArrivalDateTime": "2018-09-19T11:05:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1368,
+      "Duration": 95,
+      "FlightNumber": "925",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 31,
+      "OriginStation": 13554,
+      "DestinationStation": 14385,
+      "DepartureDateTime": "2018-09-19T10:55:00",
+      "ArrivalDateTime": "2018-09-19T13:40:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1368,
+      "Duration": 105,
+      "FlightNumber": "2473",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 32,
+      "OriginStation": 14385,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T15:20:00",
+      "ArrivalDateTime": "2018-09-19T16:35:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 940,
+      "Duration": 75,
+      "FlightNumber": "1898",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 33,
+      "OriginStation": 13554,
+      "DestinationStation": 10141,
+      "DepartureDateTime": "2018-09-19T11:05:00",
+      "ArrivalDateTime": "2018-09-19T13:15:00",
+      "Carrier": 1710,
+      "OperatingCarrier": 1710,
+      "Duration": 70,
+      "FlightNumber": "2094",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 34,
+      "OriginStation": 10141,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T15:45:00",
+      "ArrivalDateTime": "2018-09-19T17:25:00",
+      "Carrier": 1710,
+      "OperatingCarrier": 1057,
+      "Duration": 100,
+      "FlightNumber": "3195",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 35,
+      "OriginStation": 13554,
+      "DestinationStation": 10413,
+      "DepartureDateTime": "2018-09-19T11:50:00",
+      "ArrivalDateTime": "2018-09-19T14:10:00",
+      "Carrier": 838,
+      "OperatingCarrier": 838,
+      "Duration": 80,
+      "FlightNumber": "1581",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 36,
+      "OriginStation": 10413,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-20T07:50:00",
+      "ArrivalDateTime": "2018-09-20T09:35:00",
+      "Carrier": 838,
+      "OperatingCarrier": 821,
+      "Duration": 105,
+      "FlightNumber": "1102",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 37,
+      "OriginStation": 10413,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T18:35:00",
+      "ArrivalDateTime": "2018-09-19T20:05:00",
+      "Carrier": 838,
+      "OperatingCarrier": 821,
+      "Duration": 90,
+      "FlightNumber": "1202",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 38,
+      "OriginStation": 13554,
+      "DestinationStation": 11616,
+      "DepartureDateTime": "2018-09-19T13:30:00",
+      "ArrivalDateTime": "2018-09-19T16:05:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1368,
+      "Duration": 95,
+      "FlightNumber": "907",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 39,
+      "OriginStation": 11616,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T16:50:00",
+      "ArrivalDateTime": "2018-09-19T18:00:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1038,
+      "Duration": 70,
+      "FlightNumber": "302",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 40,
+      "OriginStation": 13554,
+      "DestinationStation": 11493,
+      "DepartureDateTime": "2018-09-19T13:40:00",
+      "ArrivalDateTime": "2018-09-19T17:10:00",
+      "Carrier": 858,
+      "OperatingCarrier": 858,
+      "Duration": 150,
+      "FlightNumber": "211",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 41,
+      "OriginStation": 11493,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T18:55:00",
+      "ArrivalDateTime": "2018-09-19T20:05:00",
+      "Carrier": 858,
+      "OperatingCarrier": 858,
+      "Duration": 70,
+      "FlightNumber": "1423",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 42,
+      "OriginStation": 13554,
+      "DestinationStation": 9451,
+      "DepartureDateTime": "2018-09-19T14:45:00",
+      "ArrivalDateTime": "2018-09-19T17:00:00",
+      "Carrier": 1324,
+      "OperatingCarrier": 1324,
+      "Duration": 75,
+      "FlightNumber": "1018",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 43,
+      "OriginStation": 13554,
+      "DestinationStation": 10413,
+      "DepartureDateTime": "2018-09-19T15:50:00",
+      "ArrivalDateTime": "2018-09-19T18:05:00",
+      "Carrier": 838,
+      "OperatingCarrier": 838,
+      "Duration": 75,
+      "FlightNumber": "1781",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 44,
+      "OriginStation": 10413,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T21:20:00",
+      "ArrivalDateTime": "2018-09-19T22:55:00",
+      "Carrier": 838,
+      "OperatingCarrier": 821,
+      "Duration": 95,
+      "FlightNumber": "1502",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 45,
+      "OriginStation": 13554,
+      "DestinationStation": 9451,
+      "DepartureDateTime": "2018-09-19T16:05:00",
+      "ArrivalDateTime": "2018-09-19T18:20:00",
+      "Carrier": 1324,
+      "OperatingCarrier": 1889,
+      "Duration": 75,
+      "FlightNumber": "1020",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 46,
+      "OriginStation": 13554,
+      "DestinationStation": 14385,
+      "DepartureDateTime": "2018-09-19T16:25:00",
+      "ArrivalDateTime": "2018-09-19T19:10:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1368,
+      "Duration": 105,
+      "FlightNumber": "2477",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 47,
+      "OriginStation": 14385,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T21:40:00",
+      "ArrivalDateTime": "2018-09-19T22:55:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 940,
+      "Duration": 75,
+      "FlightNumber": "1902",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 48,
+      "OriginStation": 13554,
+      "DestinationStation": 11493,
+      "DepartureDateTime": "2018-09-19T16:55:00",
+      "ArrivalDateTime": "2018-09-19T20:30:00",
+      "Carrier": 858,
+      "OperatingCarrier": 858,
+      "Duration": 155,
+      "FlightNumber": "207",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 49,
+      "OriginStation": 11493,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-20T17:15:00",
+      "ArrivalDateTime": "2018-09-20T18:25:00",
+      "Carrier": 858,
+      "OperatingCarrier": 858,
+      "Duration": 70,
+      "FlightNumber": "1435",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 50,
+      "OriginStation": 11493,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T21:35:00",
+      "ArrivalDateTime": "2018-09-19T22:50:00",
+      "Carrier": 858,
+      "OperatingCarrier": 858,
+      "Duration": 75,
+      "FlightNumber": "1431",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 51,
+      "OriginStation": 13554,
+      "DestinationStation": 11616,
+      "DepartureDateTime": "2018-09-19T17:30:00",
+      "ArrivalDateTime": "2018-09-19T20:05:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1368,
+      "Duration": 95,
+      "FlightNumber": "915",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 52,
+      "OriginStation": 11616,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T21:10:00",
+      "ArrivalDateTime": "2018-09-19T22:20:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1038,
+      "Duration": 70,
+      "FlightNumber": "304",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 53,
+      "OriginStation": 13554,
+      "DestinationStation": 14385,
+      "DepartureDateTime": "2018-09-19T17:50:00",
+      "ArrivalDateTime": "2018-09-19T20:35:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1368,
+      "Duration": 105,
+      "FlightNumber": "2479",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 54,
+      "OriginStation": 13554,
+      "DestinationStation": 10622,
+      "DepartureDateTime": "2018-09-19T18:10:00",
+      "ArrivalDateTime": "2018-09-19T21:35:00",
+      "Carrier": 852,
+      "OperatingCarrier": 852,
+      "Duration": 205,
+      "FlightNumber": "801",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 55,
+      "OriginStation": 13554,
+      "DestinationStation": 9451,
+      "DepartureDateTime": "2018-09-19T18:35:00",
+      "ArrivalDateTime": "2018-09-19T20:50:00",
+      "Carrier": 1324,
+      "OperatingCarrier": 1324,
+      "Duration": 75,
+      "FlightNumber": "1024",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 56,
+      "OriginStation": 13554,
+      "DestinationStation": 11493,
+      "DepartureDateTime": "2018-09-19T20:00:00",
+      "ArrivalDateTime": "2018-09-19T23:30:00",
+      "Carrier": 858,
+      "OperatingCarrier": 858,
+      "Duration": 150,
+      "FlightNumber": "209",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 57,
+      "OriginStation": 11493,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-20T10:40:00",
+      "ArrivalDateTime": "2018-09-20T11:55:00",
+      "Carrier": 858,
+      "OperatingCarrier": 858,
+      "Duration": 75,
+      "FlightNumber": "1413",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 58,
+      "OriginStation": 13771,
+      "DestinationStation": 15116,
+      "DepartureDateTime": "2018-09-19T10:35:00",
+      "ArrivalDateTime": "2018-09-19T15:45:00",
+      "Carrier": 1969,
+      "OperatingCarrier": 1969,
+      "Duration": 190,
+      "FlightNumber": "132",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 59,
+      "OriginStation": 15116,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-20T15:00:00",
+      "ArrivalDateTime": "2018-09-20T16:30:00",
+      "Carrier": 1969,
+      "OperatingCarrier": 1969,
+      "Duration": 150,
+      "FlightNumber": "101",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 60,
+      "OriginStation": 13771,
+      "DestinationStation": 12395,
+      "DepartureDateTime": "2018-09-19T10:40:00",
+      "ArrivalDateTime": "2018-09-19T15:50:00",
+      "Carrier": 1969,
+      "OperatingCarrier": 1969,
+      "Duration": 190,
+      "FlightNumber": "6832",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 61,
+      "OriginStation": 12395,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T18:15:00",
+      "ArrivalDateTime": "2018-09-19T19:45:00",
+      "Carrier": 1969,
+      "OperatingCarrier": 1969,
+      "Duration": 150,
+      "FlightNumber": "6801",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 62,
+      "OriginStation": 16574,
+      "DestinationStation": 14385,
+      "DepartureDateTime": "2018-09-19T20:15:00",
+      "ArrivalDateTime": "2018-09-19T23:00:00",
+      "Carrier": 1047,
+      "OperatingCarrier": 1173,
+      "Duration": 105,
+      "FlightNumber": "1753",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 63,
+      "OriginStation": 14385,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-20T07:10:00",
+      "ArrivalDateTime": "2018-09-20T08:25:00",
+      "Carrier": 1038,
+      "OperatingCarrier": 1038,
+      "Duration": 75,
+      "FlightNumber": "8250",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 64,
+      "OriginStation": 13542,
+      "DestinationStation": 9772,
+      "DepartureDateTime": "2018-09-19T09:45:00",
+      "ArrivalDateTime": "2018-09-19T12:50:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 7,
+      "Duration": 125,
+      "FlightNumber": "5253",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 65,
+      "OriginStation": 13542,
+      "DestinationStation": 9772,
+      "DepartureDateTime": "2018-09-19T21:40:00",
+      "ArrivalDateTime": "2018-09-20T00:45:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 7,
+      "Duration": 125,
+      "FlightNumber": "5745",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 66,
+      "OriginStation": 13554,
+      "DestinationStation": 9772,
+      "DepartureDateTime": "2018-09-19T06:15:00",
+      "ArrivalDateTime": "2018-09-19T09:20:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 881,
+      "Duration": 125,
+      "FlightNumber": "7471",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 67,
+      "OriginStation": 13554,
+      "DestinationStation": 9772,
+      "DepartureDateTime": "2018-09-19T06:15:00",
+      "ArrivalDateTime": "2018-09-19T09:20:00",
+      "Carrier": 881,
+      "OperatingCarrier": 881,
+      "Duration": 125,
+      "FlightNumber": "472",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 68,
+      "OriginStation": 13554,
+      "DestinationStation": 9772,
+      "DepartureDateTime": "2018-09-19T09:35:00",
+      "ArrivalDateTime": "2018-09-19T12:45:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 881,
+      "Duration": 130,
+      "FlightNumber": "7457",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 69,
+      "OriginStation": 13554,
+      "DestinationStation": 9772,
+      "DepartureDateTime": "2018-09-19T09:35:00",
+      "ArrivalDateTime": "2018-09-19T12:45:00",
+      "Carrier": 881,
+      "OperatingCarrier": 881,
+      "Duration": 130,
+      "FlightNumber": "484",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 70,
+      "OriginStation": 13554,
+      "DestinationStation": 13870,
+      "DepartureDateTime": "2018-09-19T10:40:00",
+      "ArrivalDateTime": "2018-09-19T14:10:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 1218,
+      "Duration": 150,
+      "FlightNumber": "3175",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 71,
+      "OriginStation": 13554,
+      "DestinationStation": 13870,
+      "DepartureDateTime": "2018-09-19T10:40:00",
+      "ArrivalDateTime": "2018-09-19T14:10:00",
+      "Carrier": 881,
+      "OperatingCarrier": 1218,
+      "Duration": 150,
+      "FlightNumber": "514",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 72,
+      "OriginStation": 13554,
+      "DestinationStation": 13870,
+      "DepartureDateTime": "2018-09-19T11:35:00",
+      "ArrivalDateTime": "2018-09-19T15:00:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 1218,
+      "Duration": 145,
+      "FlightNumber": "3169",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 73,
+      "OriginStation": 13554,
+      "DestinationStation": 13870,
+      "DepartureDateTime": "2018-09-19T11:35:00",
+      "ArrivalDateTime": "2018-09-19T15:00:00",
+      "Carrier": 881,
+      "OperatingCarrier": 1218,
+      "Duration": 145,
+      "FlightNumber": "510",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 74,
+      "OriginStation": 13554,
+      "DestinationStation": 13870,
+      "DepartureDateTime": "2018-09-19T13:20:00",
+      "ArrivalDateTime": "2018-09-19T16:45:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 881,
+      "Duration": 145,
+      "FlightNumber": "7445",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 75,
+      "OriginStation": 13870,
+      "DestinationStation": 17109,
+      "DepartureDateTime": "2018-09-19T20:55:00",
+      "ArrivalDateTime": "2018-09-19T23:00:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 2007,
+      "Duration": 125,
+      "FlightNumber": "8834",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 76,
+      "OriginStation": 13554,
+      "DestinationStation": 13870,
+      "DepartureDateTime": "2018-09-19T13:20:00",
+      "ArrivalDateTime": "2018-09-19T16:45:00",
+      "Carrier": 881,
+      "OperatingCarrier": 881,
+      "Duration": 145,
+      "FlightNumber": "460",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 77,
+      "OriginStation": 13554,
+      "DestinationStation": 13870,
+      "DepartureDateTime": "2018-09-19T15:50:00",
+      "ArrivalDateTime": "2018-09-19T19:15:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 1218,
+      "Duration": 145,
+      "FlightNumber": "3177",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 78,
+      "OriginStation": 13554,
+      "DestinationStation": 13870,
+      "DepartureDateTime": "2018-09-19T15:50:00",
+      "ArrivalDateTime": "2018-09-19T19:15:00",
+      "Carrier": 881,
+      "OperatingCarrier": 1218,
+      "Duration": 145,
+      "FlightNumber": "518",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 79,
+      "OriginStation": 17109,
+      "DestinationStation": 14385,
+      "DepartureDateTime": "2018-09-12T20:10:00",
+      "ArrivalDateTime": "2018-09-12T21:20:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1038,
+      "Duration": 70,
+      "FlightNumber": "9449",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 80,
+      "OriginStation": 14385,
+      "DestinationStation": 13554,
+      "DepartureDateTime": "2018-09-13T07:10:00",
+      "ArrivalDateTime": "2018-09-13T08:15:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1368,
+      "Duration": 125,
+      "FlightNumber": "2470",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 81,
+      "OriginStation": 17109,
+      "DestinationStation": 10413,
+      "DepartureDateTime": "2018-09-12T20:45:00",
+      "ArrivalDateTime": "2018-09-12T22:15:00",
+      "Carrier": 838,
+      "OperatingCarrier": 821,
+      "Duration": 90,
+      "FlightNumber": "1203",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 82,
+      "OriginStation": 10413,
+      "DestinationStation": 13554,
+      "DepartureDateTime": "2018-09-13T18:15:00",
+      "ArrivalDateTime": "2018-09-13T18:30:00",
+      "Carrier": 838,
+      "OperatingCarrier": 838,
+      "Duration": 75,
+      "FlightNumber": "1080",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 83,
+      "OriginStation": 17109,
+      "DestinationStation": 11616,
+      "DepartureDateTime": "2018-09-12T18:55:00",
+      "ArrivalDateTime": "2018-09-12T20:10:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1038,
+      "Duration": 75,
+      "FlightNumber": "303",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 84,
+      "OriginStation": 11616,
+      "DestinationStation": 13554,
+      "DepartureDateTime": "2018-09-12T21:30:00",
+      "ArrivalDateTime": "2018-09-12T22:10:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1368,
+      "Duration": 100,
+      "FlightNumber": "922",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 85,
+      "OriginStation": 13465,
+      "DestinationStation": 11616,
+      "DepartureDateTime": "2018-09-19T07:45:00",
+      "ArrivalDateTime": "2018-09-19T10:10:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 940,
+      "Duration": 85,
+      "FlightNumber": "927",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 86,
+      "OriginStation": 13554,
+      "DestinationStation": 14385,
+      "DepartureDateTime": "2018-09-19T06:55:00",
+      "ArrivalDateTime": "2018-09-19T09:40:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1368,
+      "Duration": 105,
+      "FlightNumber": "2483",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 87,
+      "OriginStation": 17109,
+      "DestinationStation": 13870,
+      "DepartureDateTime": "2018-09-12T18:55:00",
+      "ArrivalDateTime": "2018-09-12T21:05:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 2007,
+      "Duration": 130,
+      "FlightNumber": "8825",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 88,
+      "OriginStation": 13870,
+      "DestinationStation": 13554,
+      "DepartureDateTime": "2018-09-13T07:00:00",
+      "ArrivalDateTime": "2018-09-13T08:25:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 1218,
+      "Duration": 145,
+      "FlightNumber": "3170",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 89,
+      "OriginStation": 13554,
+      "DestinationStation": 9772,
+      "DepartureDateTime": "2018-09-19T07:40:00",
+      "ArrivalDateTime": "2018-09-19T10:50:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 881,
+      "Duration": 130,
+      "FlightNumber": "7451",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 90,
+      "OriginStation": 13554,
+      "DestinationStation": 13870,
+      "DepartureDateTime": "2018-09-19T09:15:00",
+      "ArrivalDateTime": "2018-09-19T12:40:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 1218,
+      "Duration": 145,
+      "FlightNumber": "3163",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 91,
+      "OriginStation": 13554,
+      "DestinationStation": 13870,
+      "DepartureDateTime": "2018-09-19T15:10:00",
+      "ArrivalDateTime": "2018-09-19T18:40:00",
+      "Carrier": 1218,
+      "OperatingCarrier": 881,
+      "Duration": 150,
+      "FlightNumber": "7447",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 92,
+      "OriginStation": 17109,
+      "DestinationStation": 11493,
+      "DepartureDateTime": "2018-09-12T19:10:00",
+      "ArrivalDateTime": "2018-09-12T20:25:00",
+      "Carrier": 858,
+      "OperatingCarrier": 858,
+      "Duration": 75,
+      "FlightNumber": "1430",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 93,
+      "OriginStation": 17109,
+      "DestinationStation": 10141,
+      "DepartureDateTime": "2018-09-12T18:00:00",
+      "ArrivalDateTime": "2018-09-12T19:35:00",
+      "Carrier": 1710,
+      "OperatingCarrier": 1057,
+      "Duration": 95,
+      "FlightNumber": "3196",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 94,
+      "OriginStation": 10141,
+      "DestinationStation": 13554,
+      "DepartureDateTime": "2018-09-12T21:25:00",
+      "ArrivalDateTime": "2018-09-12T21:35:00",
+      "Carrier": 1710,
+      "OperatingCarrier": 1710,
+      "Duration": 70,
+      "FlightNumber": "2103",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 95,
+      "OriginStation": 13554,
+      "DestinationStation": 10141,
+      "DepartureDateTime": "2018-09-19T06:50:00",
+      "ArrivalDateTime": "2018-09-19T09:00:00",
+      "Carrier": 1710,
+      "OperatingCarrier": 1710,
+      "Duration": 70,
+      "FlightNumber": "2104",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    }
+  ],
+  "Carriers": [
+    {
+      "Id": 858,
+      "Code": "AZ",
+      "Name": "Alitalia",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/AZ.png",
+      "DisplayCode": "AZ"
+    },
+    {
+      "Id": 881,
+      "Code": "BA",
+      "Name": "British Airways",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/BA.png",
+      "DisplayCode": "BA"
+    },
+    {
+      "Id": 1368,
+      "Code": "LH",
+      "Name": "Lufthansa",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/LH.png",
+      "DisplayCode": "LH"
+    },
+    {
+      "Id": 940,
+      "Code": "CL",
+      "Name": "Lufthansa CityLine",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/CL.png",
+      "DisplayCode": "CL"
+    },
+    {
+      "Id": 1038,
+      "Code": "EN",
+      "Name": "Air Dolomiti",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/EN.png",
+      "DisplayCode": "EN"
+    },
+    {
+      "Id": 1324,
+      "Code": "KL",
+      "Name": "KLM",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/KL.png",
+      "DisplayCode": "KL"
+    },
+    {
+      "Id": 1889,
+      "Code": "WA",
+      "Name": "KLM Cityhopper",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/WA.png",
+      "DisplayCode": "WA"
+    },
+    {
+      "Id": 1218,
+      "Code": "IB",
+      "Name": "Iberia",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/IB.png",
+      "DisplayCode": "IB"
+    },
+    {
+      "Id": 7,
+      "Code": "VY",
+      "Name": "Vueling Airlines",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/07.png",
+      "DisplayCode": "VY"
+    },
+    {
+      "Id": 1202,
+      "Code": "I2",
+      "Name": "Iberia Express",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/I2.png",
+      "DisplayCode": "I2"
+    },
+    {
+      "Id": 2007,
+      "Code": "YW",
+      "Name": "Air Nostrum",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/YW.png",
+      "DisplayCode": "YW"
+    },
+    {
+      "Id": 852,
+      "Code": "AT",
+      "Name": "Royal Air Maroc",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/AT.png",
+      "DisplayCode": "AT"
+    },
+    {
+      "Id": 838,
+      "Code": "AF",
+      "Name": "Air France",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/AF.png",
+      "DisplayCode": "AF"
+    },
+    {
+      "Id": 821,
+      "Code": "A5",
+      "Name": "HOP!",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/A5.png",
+      "DisplayCode": "A5"
+    },
+    {
+      "Id": 1710,
+      "Code": "SN",
+      "Name": "Brussels Airlines",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/SN.png",
+      "DisplayCode": "SN"
+    },
+    {
+      "Id": 1057,
+      "Code": "BM",
+      "Name": "bmi regional",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/F1.png",
+      "DisplayCode": "BM"
+    },
+    {
+      "Id": 1969,
+      "Code": "0B",
+      "Name": "Blue Air",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/Y1.png",
+      "DisplayCode": "0B"
+    },
+    {
+      "Id": 1047,
+      "Code": "EW",
+      "Name": "eurowings",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/EW.png",
+      "DisplayCode": "EW"
+    },
+    {
+      "Id": 1173,
+      "Code": "HE",
+      "Name": "LGW",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/HE.png",
+      "DisplayCode": "HE"
+    }
+  ],
+  "Agents": [
+    {
+      "Id": 3940738,
+      "Name": "Brussels Airlines",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/snbr.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": false,
+      "BookingNumber": "899800903",
+      "Type": "Airline"
+    },
+    {
+      "Id": 3503316,
+      "Name": "Opodo",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/opit.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "BookingNumber": "892888",
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 2369748,
+      "Name": "eDreams",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/edit.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "BookingNumber": "892244",
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 3164628,
+      "Name": "lastminute.com",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/lmit.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "BookingNumber": "0287367865",
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 2042580,
+      "Name": "Volagratis",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/bfit.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "BookingNumber": "0900888108",
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 4035540,
+      "Name": "Travelgenio",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/tgit.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 3987156,
+      "Name": "Travel2be",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/t2it.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 3588564,
+      "Name": "Tripair",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/peit.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 2627446,
+      "Name": "GotoGate",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/gtbf.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 1943508,
+      "Name": "Mytrip",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/akit.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 2044884,
+      "Name": "Budgetair.it",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/bgit.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 3169380,
+      "Name": "lol.travel",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/lolt.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 3934928,
+      "Name": "Kiwi.com",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/skyp.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 4074708,
+      "Name": "Flighttix.it",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/txit.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 2185428,
+      "Name": "Trip.com",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/ctit.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 3037908,
+      "Name": "Kissandfly",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/kfit.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "BookingNumber": "+390694801975",
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 4068219,
+      "Name": "Turkish Airlines",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/turk.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": false,
+      "BookingNumber": "+390645213849",
+      "Type": "Airline"
+    },
+    {
+      "Id": 3182916,
+      "Name": "Lufthansa",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/luft.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "BookingNumber": "199400044",
+      "Type": "Airline"
+    },
+    {
+      "Id": 4288780,
+      "Name": "Vueling Airlines",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/vuel.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "BookingNumber": "899399888",
+      "Type": "Airline"
+    },
+    {
+      "Id": 2807314,
+      "Name": "Iberia",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/iber.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "BookingNumber": "199101191",
+      "Type": "Airline"
+    },
+    {
+      "Id": 2032127,
+      "Name": "British Airways",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/ba__.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "BookingNumber": "199712266",
+      "Type": "Airline"
+    },
+    {
+      "Id": 1939318,
+      "Name": "Air France",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/airf.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "BookingNumber": "848884466",
+      "Type": "Airline"
+    },
+    {
+      "Id": 1945812,
+      "Name": "Alitalia",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/alit.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "BookingNumber": "+39062222",
+      "Type": "Airline"
+    },
+    {
+      "Id": 3593711,
+      "Name": "Pegasus Airlines",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/pgt_.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "BookingNumber": "+390236042896",
+      "Type": "Airline"
+    },
+    {
+      "Id": 3390855,
+      "Name": "Norwegian",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/norw.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "BookingNumber": "81521815",
+      "Type": "Airline"
+    },
+    {
+      "Id": 2363321,
+      "Name": "easyJet",
+      "ImageUrl": "http://s1.apideeplink.com/images/websites/easy.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "BookingNumber": "199201840",
+      "Type": "Airline"
+    }
+  ],
+  "Places": [
+    {
+      "Id": 17109,
+      "ParentId": 7929,
+      "Code": "TRN",
+      "Type": "Airport",
+      "Name": "Torino"
+    },
+    {
+      "Id": 11493,
+      "ParentId": 6781,
+      "Code": "FCO",
+      "Type": "Airport",
+      "Name": "Roma Fiumicino"
+    },
+    {
+      "Id": 13554,
+      "ParentId": 4698,
+      "Code": "LHR",
+      "Type": "Airport",
+      "Name": "Londra Heathrow"
+    },
+    {
+      "Id": 13465,
+      "ParentId": 4698,
+      "Code": "LCY",
+      "Type": "Airport",
+      "Name": "Londra Città"
+    },
+    {
+      "Id": 11616,
+      "ParentId": 2687,
+      "Code": "FRA",
+      "Type": "Airport",
+      "Name": "Francoforte sul Meno"
+    },
+    {
+      "Id": 9451,
+      "ParentId": 509,
+      "Code": "AMS",
+      "Type": "Airport",
+      "Name": "Amsterdam Schiphol"
+    },
+    {
+      "Id": 13542,
+      "ParentId": 4698,
+      "Code": "LGW",
+      "Type": "Airport",
+      "Name": "Londra Gatwick"
+    },
+    {
+      "Id": 9772,
+      "ParentId": 782,
+      "Code": "BCN",
+      "Type": "Airport",
+      "Name": "Barcellona"
+    },
+    {
+      "Id": 13870,
+      "ParentId": 4854,
+      "Code": "MAD",
+      "Type": "Airport",
+      "Name": "Madrid"
+    },
+    {
+      "Id": 10622,
+      "ParentId": 1382,
+      "Code": "CMN",
+      "Type": "Airport",
+      "Name": "Casablanca Mohamed V."
+    },
+    {
+      "Id": 10413,
+      "ParentId": 6073,
+      "Code": "CDG",
+      "Type": "Airport",
+      "Name": "Parigi Charles de Gaulle"
+    },
+    {
+      "Id": 14385,
+      "ParentId": 5363,
+      "Code": "MUC",
+      "Type": "Airport",
+      "Name": "Monaco di Baviera"
+    },
+    {
+      "Id": 10141,
+      "ParentId": 1178,
+      "Code": "BRU",
+      "Type": "Airport",
+      "Name": "Bruxelles International"
+    },
+    {
+      "Id": 13771,
+      "ParentId": 4698,
+      "Code": "LTN",
+      "Type": "Airport",
+      "Name": "Londra Luton "
+    },
+    {
+      "Id": 15116,
+      "ParentId": 1234,
+      "Code": "OTP",
+      "Type": "Airport",
+      "Name": "Bucarest Otopeni"
+    },
+    {
+      "Id": 12395,
+      "ParentId": 3358,
+      "Code": "IAS",
+      "Type": "Airport",
+      "Name": "Iaşi"
+    },
+    {
+      "Id": 16574,
+      "ParentId": 4698,
+      "Code": "STN",
+      "Type": "Airport",
+      "Name": "Londra Stansted"
+    },
+    {
+      "Id": 7929,
+      "ParentId": 226,
+      "Code": "TRN",
+      "Type": "City",
+      "Name": "Torino"
+    },
+    {
+      "Id": 6781,
+      "ParentId": 226,
+      "Code": "ROM",
+      "Type": "City",
+      "Name": "Roma"
+    },
+    {
+      "Id": 4698,
+      "ParentId": 247,
+      "Code": "LON",
+      "Type": "City",
+      "Name": "Londra"
+    },
+    {
+      "Id": 2687,
+      "ParentId": 252,
+      "Code": "FRA",
+      "Type": "City",
+      "Name": "Francoforte"
+    },
+    {
+      "Id": 509,
+      "ParentId": 235,
+      "Code": "AMS",
+      "Type": "City",
+      "Name": "Amsterdam"
+    },
+    {
+      "Id": 782,
+      "ParentId": 200,
+      "Code": "BCN",
+      "Type": "City",
+      "Name": "Barcellona"
+    },
+    {
+      "Id": 4854,
+      "ParentId": 200,
+      "Code": "MAD",
+      "Type": "City",
+      "Name": "Madrid"
+    },
+    {
+      "Id": 1382,
+      "ParentId": 221,
+      "Code": "CAS",
+      "Type": "City",
+      "Name": "Casablanca"
+    },
+    {
+      "Id": 6073,
+      "ParentId": 244,
+      "Code": "PAR",
+      "Type": "City",
+      "Name": "Parigi"
+    },
+    {
+      "Id": 5363,
+      "ParentId": 252,
+      "Code": "MUC",
+      "Type": "City",
+      "Name": "Monaco di Baviera"
+    },
+    {
+      "Id": 1178,
+      "ParentId": 240,
+      "Code": "BRU",
+      "Type": "City",
+      "Name": "Bruxelles"
+    },
+    {
+      "Id": 1234,
+      "ParentId": 204,
+      "Code": "BUH",
+      "Type": "City",
+      "Name": "Bucarest"
+    },
+    {
+      "Id": 3358,
+      "ParentId": 204,
+      "Code": "IAS",
+      "Type": "City",
+      "Name": "Iaşi"
+    },
+    { "Id": 226, "Code": "IT", "Type": "Country", "Name": "Italia" },
+    { "Id": 247, "Code": "GB", "Type": "Country", "Name": "Regno Unito" },
+    { "Id": 252, "Code": "DE", "Type": "Country", "Name": "Germania" },
+    { "Id": 235, "Code": "NL", "Type": "Country", "Name": "Paesi Bassi" },
+    { "Id": 200, "Code": "ES", "Type": "Country", "Name": "Spagna" },
+    { "Id": 221, "Code": "MA", "Type": "Country", "Name": "Marocco" },
+    { "Id": 244, "Code": "FR", "Type": "Country", "Name": "Francia" },
+    { "Id": 240, "Code": "BE", "Type": "Country", "Name": "Belgio" },
+    { "Id": 204, "Code": "RO", "Type": "Country", "Name": "Romania" }
+  ],
+  "Currencies": [
+    {
+      "Code": "EUR",
+      "Symbol": "€",
+      "ThousandsSeparator": ".",
+      "DecimalSeparator": ",",
+      "SymbolOnLeft": false,
+      "SpaceBetweenAmountAndSymbol": true,
+      "RoundingCoefficient": 0,
+      "DecimalDigits": 2
+    },
+    {
+      "Code": "GBP",
+      "Symbol": "£",
+      "ThousandsSeparator": ",",
+      "DecimalSeparator": ".",
+      "SymbolOnLeft": true,
+      "SpaceBetweenAmountAndSymbol": false,
+      "RoundingCoefficient": 0,
+      "DecimalDigits": 2
+    },
+    {
+      "Code": "MAD",
+      "Symbol": "د.م.‏",
+      "ThousandsSeparator": ",",
+      "DecimalSeparator": ".",
+      "SymbolOnLeft": true,
+      "SpaceBetweenAmountAndSymbol": true,
+      "RoundingCoefficient": 0,
+      "DecimalDigits": 2
+    },
+    {
+      "Code": "RON",
+      "Symbol": "lei",
+      "ThousandsSeparator": ".",
+      "DecimalSeparator": ",",
+      "SymbolOnLeft": false,
+      "SpaceBetweenAmountAndSymbol": true,
+      "RoundingCoefficient": 0,
+      "DecimalDigits": 2
+    }
+  ]
+}

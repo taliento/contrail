@@ -6,6 +6,9 @@ import { Place, SkySession, PollSessionResult } from "../models";
 import { map } from "rxjs/operators";
 
 const SUFFIX = "/skyscanner";
+const mockPollReulst = require("../../../assets/mock/poll-result.json");
+
+const MOCK_SESSION = "3520228ae425407ca8ebcdf2e3aac081_rrsqbjcb_06a13f0a788e803fcc56e78802891a26";
 
 @Injectable()
 export class SkyScannerService extends AService {
@@ -22,7 +25,7 @@ export class SkyScannerService extends AService {
   }
 
   getCurrentSession(): SkySession { //FIXME MONGO
-    return this.currentSession;
+    return new SkySession(MOCK_SESSION);
   }
 
   createSession(session: SkySession): Observable<string> {
@@ -55,6 +58,6 @@ export class SkyScannerService extends AService {
   }
 
   getCachedPollSessionResult() : PollSessionResult { //FIXME MONGO
-    return this.pollSessionResult;
+    return mockPollReulst;
   }
 }

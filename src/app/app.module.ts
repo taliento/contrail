@@ -19,6 +19,9 @@ import { FooterComponent } from './footer/footer.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeIt from '@angular/common/locales/it';
+import { HoursMinutesPipe } from './shared/pipes';
+import { PlaceComponent } from './place/place.component';
+import { CarrierComponent } from './carrier/carrier.component';
 
 registerLocaleData(localeIt);
 
@@ -33,7 +36,10 @@ registerLocaleData(localeIt);
     LegComponent,
     SessionComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    HoursMinutesPipe,
+    PlaceComponent,
+    CarrierComponent
   ],
   imports: [
     routing,

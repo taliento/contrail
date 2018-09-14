@@ -1,6 +1,7 @@
 import { Itinerary, Leg, Segment, Carrier, Agent, PollResultPlace, Currency } from './';
 
 export class PollSessionResult {
+  SessionKey: string;
   Query: any;
   Status: string;
   Itineraries: Array<Itinerary>;
