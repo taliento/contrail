@@ -1,0 +1,7 @@
+{
+  "name": "contrail",
+  "description": "contrail skyScannerEndPoint",
+  "repository": "https://github.com/taliento/contrail",
+  "logo": "",
+  "keywords": ["node", "express", "angular-cli", "angular", "bootstrap"]
+}

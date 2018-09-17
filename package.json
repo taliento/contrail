@@ -10,7 +10,9 @@
     "e2e": "ng e2e",
     "postinstall": "ng build --prod"
   },
-  "private": true,
+  "engines": {
+    "node": "8.x"
+  },
   "dependencies": {
     "@angular/animations": "^6.1.0",
     "@angular/cli": "~6.1.5",
