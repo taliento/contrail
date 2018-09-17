@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 // const mongodb = require("mongodb");
 // const ObjectID = mongodb.ObjectID;
+const path = require('path');
 const unirest = require("unirest");
 const cors = require("cors");
 
@@ -167,12 +168,9 @@ app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
     });
 });
 
-const index = path.join(__dirname, 'build', 'index.html');
 // application -------------------------------------------------------------
 app.get('*', (req, res) => {
-
-
-  res.sendFile(index); // load the single view file (angular will handle the page changes on the front-end)
+  res.sendFile(distDir + '/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
 
 // Initialize the app.
