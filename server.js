@@ -168,6 +168,11 @@ app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
 });
 
 
+// application -------------------------------------------------------------
+app.get('*', (req, res) => {
+  res.sendFile(distDir + '/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
+
 // Initialize the app.
 var server = app.listen(process.env.PORT || 3000, function() {
   var port = server.address().port;
