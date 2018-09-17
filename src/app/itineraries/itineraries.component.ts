@@ -6,7 +6,7 @@ import {
   PollSession,
   Leg
 } from "../shared/models";
-import { SkyScannerService } from "../shared/services";
+import { SkyScannerService, AlertService } from "../shared/services";
 import { FormGroup, Validators, FormControl } from "@angular/forms";
 
 @Component({
@@ -21,7 +21,9 @@ export class ItinerariesComponent implements OnInit {
   pollSessionResult: PollSessionResult;
   loading: boolean;
 
-  constructor(private skyScanner: SkyScannerService) {
+  constructor(private skyScanner: SkyScannerService,
+    private alertService: AlertService
+  ) {
     this.session = skyScanner.getCurrentSession();
     this.pollSession = new PollSession(this.session.sessionkey, 0);
   }
@@ -51,7 +53,10 @@ export class ItinerariesComponent implements OnInit {
         this.skyScanner.cachePollSessionResults(result);
         this.loading = false;
       },
-      error => console.log(error)
+      error => {
+        console.log(error);
+        this.alertService.error(error);
+      }
     );
   }
 }

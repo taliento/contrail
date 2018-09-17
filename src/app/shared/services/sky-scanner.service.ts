@@ -6,8 +6,8 @@ import { Place, SkySession, PollSessionResult, PollSession, Itinerary } from "..
 import { map } from "rxjs/operators";
 
 const SUFFIX = "/skyscanner";
-const MOCK_SESSION =
-  "345b6086e8134f838fcb9319cc343d9d_rrsqbjcb_06a13f0a788e803fcc56e78802891a26";
+// const MOCK_SESSION =
+//   "345b6086e8134f838fcb9319cc343d9d_rrsqbjcb_06a13f0a788e803fcc56e78802891a26";
 
 @Injectable()
 export class SkyScannerService extends AService {
@@ -35,8 +35,8 @@ export class SkyScannerService extends AService {
 
   getCurrentSession(): SkySession {
     //FIXME MONGO
-    return new SkySession(MOCK_SESSION); //TESTING
-    // return this.currentSession;
+    // return new SkySession(MOCK_SESSION); //TESTING
+    return this.currentSession;
   }
 
   getCachedPollSessionResult(): PollSessionResult {
