@@ -21,7 +21,7 @@ app.use(
 app.use(bodyParser.json());
 
 // Create link to Angular build directory
-const distDir = __dirname + "/dist/";
+const distDir = __dirname + "/dist/contrail/";
 app.use(express.static(distDir));
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
