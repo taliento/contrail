@@ -47,11 +47,7 @@ app.use(express.static(distDir));
 //   }
 // );
 
-// Initialize the app.
-    var server = app.listen(process.env.PORT || 3000, function() {
-      var port = server.address().port;
-      console.log("App now running on port", port);
-    });
+
 
 // USERS API ROUTES BELOW
 
@@ -169,4 +165,11 @@ app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
         ? res.send(result.body)
         : res.status(400).send(result.body);
     });
+});
+
+
+// Initialize the app.
+var server = app.listen(process.env.PORT || 3000, function() {
+  var port = server.address().port;
+  console.log("App now running on port", port);
 });
