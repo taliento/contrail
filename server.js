@@ -167,10 +167,12 @@ app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
     });
 });
 
-
+const index = path.join(__dirname, 'build', 'index.html');
 // application -------------------------------------------------------------
 app.get('*', (req, res) => {
-  res.sendFile(distDir + '/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+
+
+  res.sendFile(index); // load the single view file (angular will handle the page changes on the front-end)
 });
 
 // Initialize the app.
