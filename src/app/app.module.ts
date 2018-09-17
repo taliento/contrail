@@ -9,7 +9,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { HomeComponent } from './home/home.component';
 import { routing } from './app.routing';
-import { SkyScannerService } from './shared/services';
+import { SkyScannerService, AlertService } from './shared/services';
 import { ItinerariesComponent } from './itineraries/itineraries.component';
 import { ItineraryComponent } from './itinerary/itinerary.component';
 import { LegComponent } from './leg/leg.component';
@@ -24,6 +24,7 @@ import { PlaceComponent } from './place/place.component';
 import { CarrierComponent } from './carrier/carrier.component';
 import { BookingDetailComponent } from './booking-detail/booking-detail.component';
 import { AgentComponent } from './agent/agent.component';
+import { AlertComponent } from './alert/alert.component';
 
 registerLocaleData(localeIt);
 
@@ -43,7 +44,8 @@ registerLocaleData(localeIt);
     PlaceComponent,
     CarrierComponent,
     BookingDetailComponent,
-    AgentComponent
+    AgentComponent,
+    AlertComponent
   ],
   imports: [
     routing,
@@ -56,6 +58,7 @@ registerLocaleData(localeIt);
   ],
   providers: [
     SkyScannerService,
+    AlertService,
     { provide: LOCALE_ID, useValue: 'it' }
   ],
   entryComponents: [

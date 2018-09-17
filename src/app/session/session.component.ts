@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NgbDateParserFormatter } from "@ng-bootstrap/ng-bootstrap";
 import { FormGroup, Validators, FormControl } from "@angular/forms";
-import { SkyScannerService } from "../shared/services";
+import { SkyScannerService, AlertService } from "../shared/services";
 import { SkySession } from "../shared/models";
 import { Observable, of } from "rxjs";
 import {
@@ -31,6 +31,7 @@ export class SessionComponent implements OnInit {
 
   constructor(
     private ngbDateParserFormatter: NgbDateParserFormatter,
+    private alertService: AlertService,
     private skyScanner: SkyScannerService,
     private router: Router,
     private route: ActivatedRoute
@@ -150,6 +151,7 @@ export class SessionComponent implements OnInit {
       error => {
         this.loading = false;
         console.log(error);
+        this.alertService.error(error);
       }
     );
   }

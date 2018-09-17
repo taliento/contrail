@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SkyScannerService } from "../shared/services";
-import { Itinerary, Agent} from "../shared/models";
+import { Itinerary, Agent, PollSessionResult, Leg} from "../shared/models";
 import { Location } from '@angular/common';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -12,11 +12,13 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class BookingDetailComponent implements OnInit {
 
   itinerary: Itinerary;
+  pollSessionResult: PollSessionResult;
 
   constructor(private skyScanner: SkyScannerService,
   public activeModal: NgbActiveModal,
   private location: Location) {
     this.itinerary = skyScanner.getSelectedItinerary();
+    this.pollSessionResult = skyScanner.getCachedPollSessionResult();
   }
 
   ngOnInit() {
@@ -27,7 +29,11 @@ export class BookingDetailComponent implements OnInit {
   }
 
   getAgent(agent: number): Agent {
-    return this.skyScanner.getCachedPollSessionResult().Agents.find(x => x.Id === agent);
+    return this.pollSessionResult.Agents.find(x => x.Id === agent);
+  }
+
+  findLegById(legId: string): Leg {
+    return this.pollSessionResult.Legs.find(x => x.Id == legId);
   }
 
 }
