@@ -47,7 +47,7 @@ export class SessionComponent implements OnInit {
         Validators.max(8),
         Validators.required
       ]),
-      children: new FormControl(null, [Validators.max(8)]),
+      children: new FormControl(null, [Validators.max(8),Validators.required]),
       originPlace: new FormControl(
         { disabled: this.searching, value: null },
         [Validators.required, forbiddenPlaceValidator()]
