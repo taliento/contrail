@@ -85,7 +85,6 @@ const SUFFIX = "/api/skyscanner/";
 
 app.post(SUFFIX + "createSession", function(req, res) {
   console.log("creating session...");
-  console.log(JSON.stringify(req.body));
 
   unirest
     .post(skyScannerEndPoint + "/pricing/v1.0")
@@ -109,7 +108,6 @@ app.post(SUFFIX + "createSession", function(req, res) {
     .send("includeCarriers=")
     .send("excludeCarriers=")
     .end(result => {
-      console.log(result.status, result.headers, result.body);
 
       return result.status >= 200 && result.status < 300
         ? res.send({ location: result.headers.location })
@@ -132,7 +130,6 @@ app.get(SUFFIX + "getPlaces/:query", function(req, res) {
       "skyscanner-skyscanner-flight-search-v1.p.mashape.com"
     )
     .end(function(result) {
-      console.log(result.status, result.headers, result.body);
 
       return result.status >= 200 && result.status < 300
         ? res.send(result.body)
@@ -160,8 +157,6 @@ app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
       "skyscanner-skyscanner-flight-search-v1.p.mashape.com"
     )
     .end(function(result) {
-      console.log(result.status, result.headers, result.body);
-
       return result.status >= 200 && result.status < 300
         ? res.send(result.body)
         : res.status(400).send(result.body);
