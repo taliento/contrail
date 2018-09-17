@@ -6,8 +6,8 @@ const path = require('path');
 const unirest = require("unirest");
 const cors = require("cors");
 
-const skyScannerEndPoint =
-  "https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices";
+const skyscannerDomain = "skyscanner-skyscanner-flight-search-v1.p.mashape.com";
+const skyScannerEndPoint = "https://"+skyscannerDomain+"/apiservices";
 
 const USERS_COLLECTION = "users";
 
@@ -92,7 +92,7 @@ app.post(SUFFIX + "createSession", function(req, res) {
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
     .header(
       "X-Mashape-Host",
-      "skyscanner-skyscanner-flight-search-v1.p.mashape.com"
+      skyscannerDomain
     )
     .send("country=IT") //FIXME CLIENT INFO
     .send("currency=EUR") //FIXME CLIENT INFO
@@ -127,7 +127,7 @@ app.get(SUFFIX + "getPlaces/:query", function(req, res) {
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
     .header(
       "X-Mashape-Host",
-      "skyscanner-skyscanner-flight-search-v1.p.mashape.com"
+      skyscannerDomain
     )
     .end(function(result) {
 
@@ -154,7 +154,7 @@ app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
     .header(
       "X-Mashape-Host",
-      "skyscanner-skyscanner-flight-search-v1.p.mashape.com"
+      skyscannerDomain
     )
     .end(function(result) {
       return result.status >= 200 && result.status < 300
