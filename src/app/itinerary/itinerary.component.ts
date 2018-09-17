@@ -2,6 +2,9 @@ import { Component, OnInit, Input } from "@angular/core";
 import { Itinerary, Leg, PollSessionResult } from "../shared/models";
 import { SkyScannerService } from "../shared/services";
 import { Router, ActivatedRoute } from "@angular/router";
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { BookingDetailComponent } from '../booking-detail/booking-detail.component';
+
 
 @Component({
   selector: "app-itinerary",
@@ -16,9 +19,13 @@ export class ItineraryComponent implements OnInit {
 
   constructor(private skyScanner: SkyScannerService,
     private router: Router,
+    private modalService: NgbModal,
     private route: ActivatedRoute) {
     this.pollSessionResult = skyScanner.getCachedPollSessionResult();
+
   }
+
+
 
   ngOnInit() {}
 
@@ -29,6 +36,7 @@ export class ItineraryComponent implements OnInit {
   goToDetail() {
     this.skyScanner.selectItinerary(this.itinerary);
 
-    this.router.navigate(["../detail"], { relativeTo: this.route });
+    const modalRef = this.modalService.open(BookingDetailComponent, { size: 'lg' });
+
   }
 }

@@ -23,6 +23,7 @@ import { HoursMinutesPipe } from './shared/pipes';
 import { PlaceComponent } from './place/place.component';
 import { CarrierComponent } from './carrier/carrier.component';
 import { BookingDetailComponent } from './booking-detail/booking-detail.component';
+import { AgentComponent } from './agent/agent.component';
 
 registerLocaleData(localeIt);
 
@@ -41,7 +42,8 @@ registerLocaleData(localeIt);
     HoursMinutesPipe,
     PlaceComponent,
     CarrierComponent,
-    BookingDetailComponent
+    BookingDetailComponent,
+    AgentComponent
   ],
   imports: [
     routing,
@@ -55,6 +57,9 @@ registerLocaleData(localeIt);
   providers: [
     SkyScannerService,
     { provide: LOCALE_ID, useValue: 'it' }
+  ],
+  entryComponents: [
+    BookingDetailComponent
   ],
   bootstrap: [AppComponent]
 })

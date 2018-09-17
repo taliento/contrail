@@ -16,10 +16,6 @@ const appRoutes: Routes = [
       {
         path: 'itineraries',
         component: ItinerariesComponent
-      },
-      {
-        path: 'detail',
-        component: BookingDetailComponent
       }
     ]
   },

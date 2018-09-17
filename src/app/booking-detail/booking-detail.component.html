@@ -1,6 +1,26 @@
+<div class="modal-header">
+  Choose
+</div>
+<div class="modal-body">
 
-<div class="container">
-  {{itinerary | json}}
+  <!-- {{itinerary.PricingOptions[0] | json}} -->
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let priceOption of itinerary.PricingOptions">
+      <div class="row">
+        <div class="col-md-2">
+          <app-agent [agent]="getAgent(priceOption.Agents[0])"></app-agent>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-success">{{priceOption.Price}}</h5>
+        </div>
+        <div class="col-auto">
+          <a class="btn btn-success" [href]="priceOption.DeeplinkUrl">Book this</a>
+        </div>
+      </div>
+    </li>
+  </ul>
 
-  <button class="btn btn-outline-secondary" (click)="back()">Back</button>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-secondary" (click)="back()">Close</button>
 </div>

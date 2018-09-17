@@ -156,7 +156,8 @@ export class SessionComponent implements OnInit {
 
   gotItineraries(): void {
     console.log("redirecting...");
-    this.router.navigate(["../itineraries"], { relativeTo: this.route });
+
+    this.router.navigate(['../itineraries'], { relativeTo: this.route });
   }
 
   searchOriginPlace = (text$: Observable<string>) => this.search(text$, true);

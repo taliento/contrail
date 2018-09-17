@@ -1,6 +1,6 @@
 <div class="list-group-item list-group-item-action">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-10">
       <div class="row">
         <div class="col-md-12">
           <app-leg [leg]="findLegById(itinerary.OutboundLegId)"></app-leg>
@@ -13,11 +13,9 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div *ngFor="let price of itinerary.PricingOptions">
-        Price: {{price.Price}}
-        <button class="btn btn-outline-success" (click)="goToDetail()">Select</button>
-      </div>
+    <div class="col-md-2 align-self-center">
+      <h5 class="text-success">{{itinerary.PricingOptions[0].Price}}</h5>
+      <button class="btn btn-outline-primary" (click)="goToDetail()">Select</button>
     </div>
   </div>
 </div>
