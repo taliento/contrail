@@ -7,7 +7,7 @@ import { map } from "rxjs/operators";
 
 const SUFFIX = "/skyscanner";
 const MOCK_SESSION =
-  "8ea526ce242449f885dc7f047d2512c2_rrsqbjcb_cd8283034710069eed7028483edbcb3e";
+  "9ecd296170264c13b32075587725d73a_rrsqbjcb_cd8283034710069eed7028483edbcb3e";
 
 @Injectable()
 export class SkyScannerService extends AService {
