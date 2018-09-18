@@ -48,14 +48,14 @@ export class SessionComponent implements OnInit {
         Validators.required
       ]),
       children: new FormControl(null, [Validators.max(8), Validators.required]),
-      originPlace: new FormControl({ disabled: this.searching, value: null }, [
+      originPlace: new FormControl(null, [
         Validators.required,
         forbiddenPlaceValidator()
       ]),
-      destinationPlace: new FormControl(
-        { disabled: this.searchingDestination, value: null },
-        [Validators.required, forbiddenPlaceValidator()]
-      ),
+      destinationPlace: new FormControl(null, [
+        Validators.required,
+        forbiddenPlaceValidator()
+      ]),
       inboundDate: new FormControl(null, Validators.required),
       outboundDate: new FormControl(null, Validators.required),
       cabinClass: new FormControl(null, Validators.required)
@@ -163,7 +163,8 @@ export class SessionComponent implements OnInit {
     this.router.navigate(["../itineraries"], { relativeTo: this.route });
   }
 
-  searchOriginPlace = (text$: Observable<string>) => this.search(text$, true);
+  searchOriginPlace = (text$: Observable<string>) =>
+    this.search(text$, true);
 
   searchDestinationPlace = (text$: Observable<string>) =>
     this.search(text$, false);
