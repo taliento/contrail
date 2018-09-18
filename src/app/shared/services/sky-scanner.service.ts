@@ -6,13 +6,8 @@ import { SkySession, PollSessionResult, PollSession, Itinerary } from "../models
 import { map } from "rxjs/operators";
 
 const SUFFIX = "/skyscanner";
-<<<<<<< HEAD
 // const MOCK_SESSION =
 //   "8ea526ce242449f885dc7f047d2512c2_rrsqbjcb_cd8283034710069eed7028483edbcb3e";
-=======
-const MOCK_SESSION =
-  "9ecd296170264c13b32075587725d73a_rrsqbjcb_cd8283034710069eed7028483edbcb3e";
->>>>>>> dc09a4cbf2e7d5f9312866db3af7ec013436399d
 
 @Injectable()
 export class SkyScannerService extends AService {
