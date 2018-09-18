@@ -8,7 +8,7 @@
             <form [formGroup]="profileForm" (ngSubmit)="createSession()">
               <fieldset [disabled]="loading">
                 <div class="form-row">
-                  <div class="col-md-5 form-group">
+                  <div class="col-10 col-sm-5 col-md-5 form-group">
                     <label for="originPlace" class="col-form-label" i18n>From</label>
                       <input id="originPlace" type="text" class="form-control"
                     [inputFormatter]="formatter" [class.is-invalid]="searchFailed"
@@ -34,7 +34,7 @@
                     <span><i class="fa fa-arrows-alt-h"></i></span>
                   </button>
                   </div>
-                  <div class="col-md-5 form-group">
+                  <div class="col-10 col-sm-5 col-md-5 form-group">
                     <label for="destinationPlace" class="col-form-label" i18n>To</label>
                       <input id="destinationPlace" type="text" class="form-control" [inputFormatter]="formatter" [class.is-invalid]="searchDestinationFailed" formControlName="destinationPlace" [ngbTypeahead]="searchDestinationPlace" placeholder="Destination place search" [resultTemplate]="rt" required/>
                       <div class="invalid-feedback" *ngIf="searchDestinationFailed"><span i18n>Sorry, suggestions could not be loaded.</span></div>
@@ -52,7 +52,7 @@
                   </div>
                 </div>
                 <div class="form-row">
-                  <div class="col-md-5 form-group">
+                  <div class="col-10 col-sm-5 col-md-5 form-group">
                     <label for="outboundDate" class="col-form-label" i18n>Depart</label>
                     <div class="input-group">
                       <input id="outboundDate" class="form-control" placeholder="yyyy-mm-dd"
@@ -75,7 +75,7 @@
                   <div class="col-auto align-self-center">
                     <button type="button" class="btn btn-outline-primary" (click)="switchDate()"><span><i class="fa fa-arrows-alt-h"></i></span></button>
                   </div>
-                  <div class="col-md-5 form-group">
+                  <div class="col-10 col-sm-5 col-md-5 form-group">
                     <label for="inboundDate" class="col-form-label" i18n>Return</label>
                     <div class="input-group">
                       <input id="inboundDate" class="form-control" placeholder="yyyy-mm-dd"
@@ -97,7 +97,7 @@
                   </div>
                 </div>
                 <div class="form-row">
-                  <div class="col-6 col-md-4 form-group">
+                  <div class="col-6 col-sm-4 col-md-4 form-group">
                     <label for="adults" class="col-form-label" i18n>Adults</label>
                     <input id="adults" type="number" class="form-control" formControlName="adults" required >
                     <div *ngIf="adults.invalid" class="invalid-feedback">
@@ -107,7 +107,7 @@
                       <span i18n>Looks great!</span>
                     </div>
                   </div>
-                  <div class="col-6 col-md-4 form-group">
+                  <div class="col-6 col-sm-4 col-md-4 form-group">
                     <label for="children" class="col-form-label" i18n>Children</label>
                     <input id="children" type="number" class="form-control" formControlName="children">
                     <div *ngIf="children.invalid" class="invalid-feedback">
@@ -117,7 +117,7 @@
                       <span i18n>Looks great!</span>
                     </div>
                   </div>
-                  <div class="col-12 col-md-4 form-group">
+                  <div class="col-12 col-sm-4 col-md-4 form-group">
                     <label for="cabinClass" class="col-form-label" i18n>Cabin class</label>
                     <select id="cabinClass" class="form-control" formControlName="cabinClass" required>
                       <option [value]="'economy'">Economy</option>
