@@ -6,8 +6,8 @@ const path = require('path');
 const unirest = require("unirest");
 const cors = require("cors");
 
-const skyScannerEndPoint =
-  "https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices";
+const skyscannerDomain = "skyscanner-skyscanner-flight-search-v1.p.mashape.com";
+const skyScannerEndPoint = "https://"+skyscannerDomain+"/apiservices";
 
 const USERS_COLLECTION = "users";
 
@@ -85,7 +85,6 @@ const SUFFIX = "/api/skyscanner/";
 
 app.post(SUFFIX + "createSession", function(req, res) {
   console.log("creating session...");
-  console.log(JSON.stringify(req.body));
 
   unirest
     .post(skyScannerEndPoint + "/pricing/v1.0")
@@ -93,7 +92,7 @@ app.post(SUFFIX + "createSession", function(req, res) {
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
     .header(
       "X-Mashape-Host",
-      "skyscanner-skyscanner-flight-search-v1.p.mashape.com"
+      skyscannerDomain
     )
     .send("country=IT") //FIXME CLIENT INFO
     .send("currency=EUR") //FIXME CLIENT INFO
@@ -109,7 +108,6 @@ app.post(SUFFIX + "createSession", function(req, res) {
     .send("includeCarriers=")
     .send("excludeCarriers=")
     .end(result => {
-      console.log(result.status, result.headers, result.body);
 
       return result.status >= 200 && result.status < 300
         ? res.send({ location: result.headers.location })
@@ -129,10 +127,9 @@ app.get(SUFFIX + "getPlaces/:query", function(req, res) {
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
     .header(
       "X-Mashape-Host",
-      "skyscanner-skyscanner-flight-search-v1.p.mashape.com"
+      skyscannerDomain
     )
     .end(function(result) {
-      console.log(result.status, result.headers, result.body);
 
       return result.status >= 200 && result.status < 300
         ? res.send(result.body)
@@ -157,11 +154,9 @@ app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
     .header(
       "X-Mashape-Host",
-      "skyscanner-skyscanner-flight-search-v1.p.mashape.com"
+      skyscannerDomain
     )
     .end(function(result) {
-      console.log(result.status, result.headers, result.body);
-
       return result.status >= 200 && result.status < 300
         ? res.send(result.body)
         : res.status(400).send(result.body);

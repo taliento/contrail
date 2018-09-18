@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NgbDateParserFormatter } from "@ng-bootstrap/ng-bootstrap";
 import { FormGroup, Validators, FormControl } from "@angular/forms";
 import { SkyScannerService, AlertService } from "../shared/services";
-import { SkySession } from "../shared/models";
+import { SkySession, Place } from "../shared/models";
 import { Observable, of } from "rxjs";
 import {
   catchError,
@@ -13,6 +13,7 @@ import {
   switchMap
 } from "rxjs/operators";
 import { Router, ActivatedRoute } from "@angular/router";
+import { forbiddenPlaceValidator } from '../shared/directives/forbidden-place.directive';
 
 @Component({
   selector: "app-session",
@@ -46,14 +47,14 @@ export class SessionComponent implements OnInit {
         Validators.max(8),
         Validators.required
       ]),
-      children: new FormControl(null, [Validators.max(8)]),
+      children: new FormControl(null, [Validators.max(8),Validators.required]),
       originPlace: new FormControl(
         { disabled: this.searching, value: null },
-        Validators.required
+        [Validators.required, forbiddenPlaceValidator()]
       ),
       destinationPlace: new FormControl(
         { disabled: this.searchingDestination, value: null },
-        Validators.required
+        [Validators.required, forbiddenPlaceValidator()]
       ),
       inboundDate: new FormControl(null, Validators.required),
       outboundDate: new FormControl(null, Validators.required),
