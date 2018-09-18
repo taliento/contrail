@@ -3,50 +3,55 @@
 </div>
 <div class="modal-body">
 
-  <!-- {{itinerary.PricingOptions[0] | json}} -->
-  <div class="row">
-    <div class="col-md-10">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Best solution</h5>
       <div class="row">
-        <div class="col-md-12">
-          <app-leg [leg]="findLegById(itinerary.OutboundLegId)"></app-leg>
-        </div>
-      </div>
-      <hr class="my-4">
-      <div class="row">
-        <div class="col-md-12">
-          <app-leg [leg]="findLegById(itinerary.InboundLegId)"></app-leg>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-2 align-self-center">
-      <h5 class="text-success">{{itinerary.PricingOptions[0].Price}}</h5>
-      <a class="btn btn-sm btn-success" [href]="itinerary.PricingOptions[0].DeeplinkUrl">Book this</a>
-    </div>
-  </div>
-
-  <h5>altri prezzi:</h5>
-  <div class="row">
-    <div class="col-md-12">
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let priceOption of itinerary.PricingOptions | slice:1; let i = index">
+        <div class="col-md-10">
           <div class="row">
-            <div class="col-md-2">
-              <app-agent [agent]="getAgent(priceOption.Agents[0])"></app-agent>
-            </div>
-            <div class="col-md-4">
-              <h5 class="text-success">{{priceOption.Price}}</h5>
-            </div>
-            <div class="col-auto">
-              <a class="btn btn-sm btn-success" [href]="priceOption.DeeplinkUrl">Book this</a>
+            <div class="col-md-12">
+              <app-leg [leg]="findLegById(itinerary.OutboundLegId)"></app-leg>
             </div>
           </div>
-        </li>
-      </ul>
+          <hr class="my-4">
+          <div class="row">
+            <div class="col-md-12">
+              <app-leg [leg]="findLegById(itinerary.InboundLegId)"></app-leg>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 align-self-center">
+          <h5 class="text-success">{{itinerary.PricingOptions[0].Price}}</h5>
+          <a class="btn btn-sm btn-success" [href]="itinerary.PricingOptions[0].DeeplinkUrl">Book this</a>
+        </div>
+      </div>
     </div>
   </div>
-
-
-
+  <br/>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Other solutions</h5>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let priceOption of itinerary.PricingOptions | slice:1; let i = index">
+              <div class="row">
+                <div class="col-md-2">
+                  <app-agent [agent]="getAgent(priceOption.Agents[0])"></app-agent>
+                </div>
+                <div class="col-md-8">
+                  <h5 class="text-success">{{priceOption.Price}}</h5>
+                </div>
+                <div class="col-md-2">
+                  <a class="btn btn-sm btn-success" [href]="priceOption.DeeplinkUrl">Book this</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="modal-footer">
   <button class="btn btn-secondary" (click)="back()">Close</button>
