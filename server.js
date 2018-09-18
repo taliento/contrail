@@ -2,12 +2,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 // const mongodb = require("mongodb");
 // const ObjectID = mongodb.ObjectID;
-const path = require('path');
+const path = require("path");
 const unirest = require("unirest");
 const cors = require("cors");
 
 const skyscannerDomain = "skyscanner-skyscanner-flight-search-v1.p.mashape.com";
-const skyScannerEndPoint = "https://"+skyscannerDomain+"/apiservices";
+const skyScannerEndPoint = "https://" + skyscannerDomain + "/apiservices";
 
 const USERS_COLLECTION = "users";
 
@@ -47,8 +47,6 @@ app.use(express.static(distDir));
 //     });
 //   }
 // );
-
-
 
 // USERS API ROUTES BELOW
 
@@ -90,10 +88,7 @@ app.post(SUFFIX + "createSession", function(req, res) {
     .post(skyScannerEndPoint + "/pricing/v1.0")
     .header("Content-Type", "application/x-www-form-urlencoded")
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
-    .header(
-      "X-Mashape-Host",
-      skyscannerDomain
-    )
+    .header("X-Mashape-Host", skyscannerDomain)
     .send("country=IT") //FIXME CLIENT INFO
     .send("currency=EUR") //FIXME CLIENT INFO
     .send("locale=it") //FIXME CLIENT INFO
@@ -108,7 +103,6 @@ app.post(SUFFIX + "createSession", function(req, res) {
     .send("includeCarriers=")
     .send("excludeCarriers=")
     .end(result => {
-
       return result.status >= 200 && result.status < 300
         ? res.send({ location: result.headers.location })
         : res.status(400).send(result.body);
@@ -125,12 +119,8 @@ app.get(SUFFIX + "getPlaces/:query", function(req, res) {
   unirest
     .get(uri)
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
-    .header(
-      "X-Mashape-Host",
-      skyscannerDomain
-    )
+    .header("X-Mashape-Host", skyscannerDomain)
     .end(function(result) {
-
       return result.status >= 200 && result.status < 300
         ? res.send(result.body)
         : res.status(400).send(result.body);
@@ -152,10 +142,7 @@ app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
   unirest
     .get(uri)
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
-    .header(
-      "X-Mashape-Host",
-      skyscannerDomain
-    )
+    .header("X-Mashape-Host", skyscannerDomain)
     .end(function(result) {
       return result.status >= 200 && result.status < 300
         ? res.send(result.body)
@@ -164,8 +151,8 @@ app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
 });
 
 // application -------------------------------------------------------------
-app.get('*', (req, res) => {
-  res.sendFile(distDir + '/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+app.get("*", (req, res) => {
+  res.sendFile(distDir + "/index.html"); // load the single view file (angular will handle the page changes on the front-end)
 });
 
 // Initialize the app.

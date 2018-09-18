@@ -2,12 +2,12 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { AService } from "./aservice.service";
 import { Observable } from "rxjs";
-import { Place, SkySession, PollSessionResult, PollSession, Itinerary } from "../models";
+import { SkySession, PollSessionResult, PollSession, Itinerary } from "../models";
 import { map } from "rxjs/operators";
 
 const SUFFIX = "/skyscanner";
-const MOCK_SESSION =
-  "9050b443ae39448daa6872b258ffa9c8_rrsqbjcb_06a13f0a788e803fcc56e78802891a26";
+// const MOCK_SESSION =
+//   "9050b443ae39448daa6872b258ffa9c8_rrsqbjcb_06a13f0a788e803fcc56e78802891a26";
 
 @Injectable()
 export class SkyScannerService extends AService {
@@ -35,8 +35,8 @@ export class SkyScannerService extends AService {
 
   getCurrentSession(): SkySession {
     //FIXME MONGO
-    return new SkySession(MOCK_SESSION); //TESTING
-    // return this.currentSession;
+    // return new SkySession(MOCK_SESSION); //TESTING
+    return this.currentSession;
   }
 
   getCachedPollSessionResult(): PollSessionResult {

@@ -1,5 +1,4 @@
-import { ValidatorFn, AbstractControl, ValidationErrors, FormGroup } from "@angular/forms";
-import { Place } from '../models';
+import { ValidatorFn, AbstractControl } from "@angular/forms";
 
 /** A hero's name can't match the given regular expression */
 export function forbiddenPlaceValidator(): ValidatorFn {

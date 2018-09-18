@@ -21,7 +21,8 @@ export class ItinerariesComponent implements OnInit {
   pollSessionResult: PollSessionResult;
   loading: boolean;
 
-  constructor(private skyScanner: SkyScannerService,
+  constructor(
+    private skyScanner: SkyScannerService,
     private alertService: AlertService
   ) {
     this.session = skyScanner.getCurrentSession();

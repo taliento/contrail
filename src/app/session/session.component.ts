@@ -13,7 +13,7 @@ import {
   switchMap
 } from "rxjs/operators";
 import { Router, ActivatedRoute } from "@angular/router";
-import { forbiddenPlaceValidator } from '../shared/directives/forbidden-place.directive';
+import { forbiddenPlaceValidator } from "../shared/directives/forbidden-place.directive";
 
 @Component({
   selector: "app-session",
@@ -47,11 +47,11 @@ export class SessionComponent implements OnInit {
         Validators.max(8),
         Validators.required
       ]),
-      children: new FormControl(null, [Validators.max(8),Validators.required]),
-      originPlace: new FormControl(
-        { disabled: this.searching, value: null },
-        [Validators.required, forbiddenPlaceValidator()]
-      ),
+      children: new FormControl(null, [Validators.max(8), Validators.required]),
+      originPlace: new FormControl({ disabled: this.searching, value: null }, [
+        Validators.required,
+        forbiddenPlaceValidator()
+      ]),
       destinationPlace: new FormControl(
         { disabled: this.searchingDestination, value: null },
         [Validators.required, forbiddenPlaceValidator()]
@@ -160,7 +160,7 @@ export class SessionComponent implements OnInit {
   gotItineraries(): void {
     console.log("redirecting...");
 
-    this.router.navigate(['../itineraries'], { relativeTo: this.route });
+    this.router.navigate(["../itineraries"], { relativeTo: this.route });
   }
 
   searchOriginPlace = (text$: Observable<string>) => this.search(text$, true);
