@@ -98,6 +98,15 @@ export class SessionComponent implements OnInit {
     this.profileForm.get("outboundDate").setValue(inboundDate);
   }
 
+  getCabinTravellersLabel() {
+    var travellers = this.adults.value + this.children.value;
+    return travellers + (
+      (travellers > 1 ? " travellers" : " adult") +
+      ", " +
+      this.cabinClass.value
+    );
+  }
+
   get adults() {
     return this.profileForm.get("adults");
   }
@@ -163,8 +172,7 @@ export class SessionComponent implements OnInit {
     this.router.navigate(["../itineraries"], { relativeTo: this.route });
   }
 
-  searchOriginPlace = (text$: Observable<string>) =>
-    this.search(text$, true);
+  searchOriginPlace = (text$: Observable<string>) => this.search(text$, true);
 
   searchDestinationPlace = (text$: Observable<string>) =>
     this.search(text$, false);
@@ -205,5 +213,5 @@ export class SessionComponent implements OnInit {
     );
 
   formatter = (x: { PlaceName: string; CountryName: string }) =>
-    x.PlaceName + " - " + x.CountryName;
+    x.PlaceName;
 }
