@@ -25,6 +25,7 @@ export class BookingDetailComponent implements OnInit {
   ngOnInit() {}
 
   back() {
+    this.skyScanner.removeSelectedItinerary();
     this.activeModal.close();
   }
 

@@ -5,4 +5,6 @@ export class Itinerary {
   InboundLegId: string;
   PricingOptions: Array<PricingOption>;
   BookingDetailsLink: BookingDetailsLink;
+  //ui param
+  selected: boolean = false;
 }

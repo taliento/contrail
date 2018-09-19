@@ -133,7 +133,7 @@ app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
     skyScannerEndPoint +
     "/pricing/uk2/v1.0/" +
     req.params.sessionkey +
-    "/?pageIndex=0&pageSize=10";
+    "/?pageIndex=0&pageSize=5";
 
   if (req.params.stops >= 0) {
     uri += "&stops=" + req.params.stops;

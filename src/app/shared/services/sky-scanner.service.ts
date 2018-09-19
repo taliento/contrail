@@ -7,7 +7,7 @@ import { map } from "rxjs/operators";
 
 const SUFFIX = "/skyscanner";
 const MOCK_SESSION =
-  "d0a602428485477eb4ee0c3086a8ea51_rrsqbjcb_cd8283034710069eed7028483edbcb3e";
+  "5fe5ccc14c01447a8415d10418f2e4b6_rrsqbjcb_cd8283034710069eed7028483edbcb3e";
 
 @Injectable()
 export class SkyScannerService extends AService {
@@ -22,6 +22,12 @@ export class SkyScannerService extends AService {
 
   selectItinerary(itinerary: Itinerary) {
     this.selectedItinerary = itinerary;
+    this.selectedItinerary.selected = true;
+  }
+
+  removeSelectedItinerary() {
+    this.selectedItinerary.selected = false;
+    this.selectedItinerary = null;
   }
 
   getSelectedItinerary(): Itinerary {
