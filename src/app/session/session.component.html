@@ -58,9 +58,8 @@
               <label for="outboundDate" class="col-form-label" i18n>Depart</label>
               <div class="input-group">
                 <input id="outboundDate" class="form-control" placeholder="yyyy-mm-dd"
-                    formControlName="outboundDate" ngbDatepicker #outboundDatePicker="ngbDatepicker" aria-describedby="outboundDateAddon" required>
+                    formControlName="outboundDate" ngbDatepicker #outboundDatePicker="ngbDatepicker" (click)="outboundDatePicker.toggle()" aria-describedby="outboundDateAddon" required>
                 <div class="input-group-append" id="outboundDateAddon">
-                  <button class="btn btn-sm btn-outline-secondary" (click)="outboundDatePicker.toggle()" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
                   <button type="button" class="btn btn-sm btn-outline-primary" (click)="switchDate()">
                     <span><i class="fa fa-arrows-alt-h"></i></span>
                   </button>
@@ -75,13 +74,8 @@
             </div>
             <div class="col-10 col-sm-5 col-md-2 form-group">
               <label for="inboundDate" class="col-form-label" i18n>Return</label>
-              <div class="input-group">
-                <input id="inboundDate" class="form-control" placeholder="yyyy-mm-dd"
-                     formControlName="inboundDate" ngbDatepicker #inboundDatePicker="ngbDatepicker" aria-describedby="inboundDateAddon" required>
-                <div class="input-group-append" id="inboundDateAddon">
-                  <button class="btn btn-sm btn-outline-secondary" (click)="inboundDatePicker.toggle()" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
-                </div>
-              </div>
+              <input id="inboundDate" class="form-control" placeholder="yyyy-mm-dd"
+                   formControlName="inboundDate" ngbDatepicker #inboundDatePicker="ngbDatepicker" (click)="inboundDatePicker.toggle()" required>
               <div *ngIf="inboundDate.invalid" class="invalid-feedback">
                 <span i18n>Please choose a Date.</span>
               </div>
