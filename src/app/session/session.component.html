@@ -5,7 +5,7 @@
       <form [formGroup]="profileForm" (ngSubmit)="createSession()">
         <fieldset [disabled]="loading">
           <div class="form-row no-gutters">
-            <div class="col-10 col-sm-5 col-md-2 form-group">
+            <div class="col-12 col-sm-6 col-md-2 form-group">
               <label for="originPlace" class="col-form-label" i18n>From</label>
               <div class="input-group">
                 <input id="originPlace" type="text" class="form-control"
@@ -31,7 +31,7 @@
                   <span i18n>Looks great!</span>
                 </div>
             </div>
-            <div class="col-10 col-sm-5 col-md-2 form-group">
+            <div class="col-12 col-sm-6 col-md-2 form-group">
                 <label for="destinationPlace" class="col-form-label" i18n>To</label>
                 <div class="input-group">
                   <input id="destinationPlace" type="text" class="form-control"
@@ -54,7 +54,7 @@
                   <span i18n>Looks great!</span>
                 </div>
             </div>
-            <div class="col-10 col-sm-5 col-md-2 form-group">
+            <div class="col-12 col-sm-6 col-md-2 form-group">
               <label for="outboundDate" class="col-form-label" i18n>Depart</label>
               <div class="input-group">
                 <input id="outboundDate" class="form-control" placeholder="yyyy-mm-dd"
@@ -72,7 +72,7 @@
                 <span i18n>Looks great!</span>
               </div>
             </div>
-            <div class="col-10 col-sm-5 col-md-2 form-group">
+            <div class="col-12 col-sm-6 col-md-2 form-group">
               <label for="inboundDate" class="col-form-label" i18n>Return</label>
               <input id="inboundDate" class="form-control" placeholder="yyyy-mm-dd"
                    formControlName="inboundDate" ngbDatepicker #inboundDatePicker="ngbDatepicker" (click)="inboundDatePicker.toggle()" required>
@@ -83,7 +83,7 @@
                 <span i18n>Looks great!</span>
               </div>
             </div>
-            <div ngbDropdown class="col-10 col-sm-5 col-md-3 form-group">
+            <div ngbDropdown class="col-12 col-sm-12 col-md-3 form-group">
               <label for="dropdownBasic1" class="col-form-label" i18n>Cabin Class & Travellers</label>
               <button type="button" class="btn btn-outline-secondary align-self-center" id="dropdownBasic1" ngbDropdownToggle>
                 {{getCabinTravellersLabel()}}
