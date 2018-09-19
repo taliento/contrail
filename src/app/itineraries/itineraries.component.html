@@ -1,28 +1,26 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 col-sm-12 col-md-4">
-      <form [formGroup]="filterForm" (ngSubmit)="load()" class="mt-3 shadow p-3 mb-5 bg-white rounded">
-        <fieldset [disabled]="loading">
-          <div class="form-group">
-            <label for="stops">
-              <input type="checkbox" id="stops" formControlName="stops">
-              <span i18n> Direct</span>
-            </label>
-          </div>
-        </fieldset>
-        <button type="submit" [disabled]="!filterForm.valid || loading" name="filter" class="btn btn-primary">
-          <span *ngIf="loading" i18n>Search <i class='fa fa-spinner fa-spin'></i></span>
-          <span *ngIf="!loading" i18n>Search</span>
-        </button>
-      </form>
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-4">
+    <form [formGroup]="filterForm" (ngSubmit)="load()" class="mt-3 shadow p-3 mb-5 bg-white rounded">
+      <fieldset [disabled]="loading">
+        <div class="form-group">
+          <label for="stops">
+            <input type="checkbox" id="stops" formControlName="stops">
+            <span i18n> Direct</span>
+          </label>
+        </div>
+      </fieldset>
+      <button type="submit" [disabled]="!filterForm.valid || loading" name="filter" class="btn btn-primary">
+        <span *ngIf="loading" i18n>Search <i class='fa fa-spinner fa-spin'></i></span>
+        <span *ngIf="!loading" i18n>Search</span>
+      </button>
+    </form>
+  </div>
+  <div class="col-12 col-sm-12 col-md-8 align-self-center">
+    <div class="text-center">
+      <h5 *ngIf="loading" i18n>Loading <i class='fa fa-spinner fa-spin'></i></h5>
     </div>
-    <div class="col-12 col-sm-12 col-md-8 align-self-center">
-      <div class="text-center">
-        <h5 *ngIf="loading" i18n>Loading <i class='fa fa-spinner fa-spin'></i></h5>
-      </div>
-      <div class="list-group" *ngIf="pollSessionResult && !loading">
-        <app-itinerary class="mt-3" *ngFor="let it of pollSessionResult.Itineraries" [itinerary]="it"></app-itinerary>
-      </div>
+    <div class="list-group" *ngIf="pollSessionResult && !loading">
+      <app-itinerary class="mt-3" *ngFor="let it of pollSessionResult.Itineraries" [itinerary]="it"></app-itinerary>
     </div>
   </div>
 </div>
