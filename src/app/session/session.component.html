@@ -7,10 +7,20 @@
           <div class="form-row no-gutters">
             <div class="col-10 col-sm-5 col-md-2 form-group">
               <label for="originPlace" class="col-form-label" i18n>From</label>
+              <div class="input-group">
                 <input id="originPlace" type="text" class="form-control"
               [inputFormatter]="formatter" [class.is-invalid]="searchFailed"
               formControlName="originPlace" [ngbTypeahead]="searchOriginPlace"
-              placeholder="Search" [resultTemplate]="rt" required/>
+              placeholder="Search" [resultTemplate]="rt" aria-describedby="originPlaceAddon" required/>
+                <div class="input-group-append" id="originPlaceAddon">
+                  <button *ngIf="searching" class="btn btn-outline-secondary" type="button">
+                    <span><i class='fa fa-spinner fa-spin'></i></span>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-primary" (click)="switchPlace()">
+                    <span><i class="fa fa-arrows-alt-h"></i></span>
+                  </button>
+                </div>
+              </div>
                 <div class="invalid-feedback" *ngIf="searchFailed">
                   <span i18n>Sorry, suggestions could not be loaded.</span>
                 </div>
@@ -21,22 +31,21 @@
                   <span i18n>Looks great!</span>
                 </div>
             </div>
-            <div class="col-auto align-self-center">
-              <span *ngIf="searching">
-                <i class='fa fa-spinner fa-spin'></i>
-              </span>
-            </div>
-            <div class="col-auto align-self-center">
-              <button type="button" class="btn btn-sm btn-outline-primary" (click)="switchPlace()">
-              <span><i class="fa fa-arrows-alt-h"></i></span>
-            </button>
-            </div>
             <div class="col-10 col-sm-5 col-md-2 form-group">
               <label for="destinationPlace" class="col-form-label" i18n>To</label>
-                <input id="destinationPlace" type="text" class="form-control"
-                [inputFormatter]="formatter" [class.is-invalid]="searchDestinationFailed"
-                formControlName="destinationPlace" [ngbTypeahead]="searchDestinationPlace"
-                placeholder="Search" [resultTemplate]="rt" required/>
+                <div class="input-group">
+                  <input id="destinationPlace" type="text" class="form-control"
+                  [inputFormatter]="formatter" [class.is-invalid]="searchDestinationFailed"
+                  formControlName="destinationPlace" [ngbTypeahead]="searchDestinationPlace"
+                  placeholder="Search" [resultTemplate]="rt" aria-describedby="destinationPlaceAddon" required/>
+                  <div class="input-group-append">
+                    <button *ngIf="searchingDestination" class="btn btn-outline-secondary" type="button" id="destinationPlaceAddon">
+                      <span>
+                        <i class='fa fa-spinner fa-spin'></i>
+                      </span>
+                    </button>
+                  </div>
+                </div>
                 <div class="invalid-feedback" *ngIf="searchDestinationFailed"><span i18n>Sorry, suggestions could not be loaded.</span></div>
                 <div *ngIf="destinationPlace.invalid && !searchDestinationFailed" class="invalid-feedback">
                   <span i18n>Please choose a location.</span>
@@ -45,11 +54,6 @@
                   <span i18n>Looks great!</span>
                 </div>
             </div>
-            <div class="col-auto align-self-center">
-              <span *ngIf="searchingDestination">
-                <i class='fa fa-spinner fa-spin'></i>
-              </span>
-            </div>
             <div class="col-10 col-sm-5 col-md-2 form-group">
               <label for="outboundDate" class="col-form-label" i18n>Depart</label>
               <div class="input-group">
@@ -57,6 +61,9 @@
                     formControlName="outboundDate" ngbDatepicker #outboundDatePicker="ngbDatepicker" required>
                 <div class="input-group-append">
                   <button class="btn btn-outline-secondary" (click)="outboundDatePicker.toggle()" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-primary" (click)="switchDate()">
+                    <span><i class="fa fa-arrows-alt-h"></i></span>
+                  </button>
                 </div>
               </div>
               <div *ngIf="outboundDate.invalid" class="invalid-feedback">
@@ -65,9 +72,6 @@
               <div *ngIf="outboundDate.valid" class="valid-feedback">
                 <span i18n>Looks great!</span>
               </div>
-            </div>
-            <div class="col-auto align-self-center">
-              <button type="button" class="btn btn-sm btn-outline-primary" (click)="switchDate()"><span><i class="fa fa-arrows-alt-h"></i></span></button>
             </div>
             <div class="col-10 col-sm-5 col-md-2 form-group">
               <label for="inboundDate" class="col-form-label" i18n>Return</label>
