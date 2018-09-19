@@ -13,7 +13,7 @@
               formControlName="originPlace" [ngbTypeahead]="searchOriginPlace"
               placeholder="Search" [resultTemplate]="rt" aria-describedby="originPlaceAddon" required/>
                 <div class="input-group-append" id="originPlaceAddon">
-                  <button *ngIf="searching" class="btn btn-outline-secondary" type="button">
+                  <button *ngIf="searching" class="btn btn-sm btn-outline-secondary" type="button">
                     <span><i class='fa fa-spinner fa-spin'></i></span>
                   </button>
                   <button type="button" class="btn btn-sm btn-outline-primary" (click)="switchPlace()">
@@ -32,14 +32,14 @@
                 </div>
             </div>
             <div class="col-10 col-sm-5 col-md-2 form-group">
-              <label for="destinationPlace" class="col-form-label" i18n>To</label>
+                <label for="destinationPlace" class="col-form-label" i18n>To</label>
                 <div class="input-group">
                   <input id="destinationPlace" type="text" class="form-control"
                   [inputFormatter]="formatter" [class.is-invalid]="searchDestinationFailed"
                   formControlName="destinationPlace" [ngbTypeahead]="searchDestinationPlace"
                   placeholder="Search" [resultTemplate]="rt" aria-describedby="destinationPlaceAddon" required/>
-                  <div class="input-group-append">
-                    <button *ngIf="searchingDestination" class="btn btn-outline-secondary" type="button" id="destinationPlaceAddon">
+                  <div class="input-group-append" id="destinationPlaceAddon">
+                    <button *ngIf="searchingDestination" class="btn btn-sm btn-outline-secondary" type="button" >
                       <span>
                         <i class='fa fa-spinner fa-spin'></i>
                       </span>
@@ -58,9 +58,9 @@
               <label for="outboundDate" class="col-form-label" i18n>Depart</label>
               <div class="input-group">
                 <input id="outboundDate" class="form-control" placeholder="yyyy-mm-dd"
-                    formControlName="outboundDate" ngbDatepicker #outboundDatePicker="ngbDatepicker" required>
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" (click)="outboundDatePicker.toggle()" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+                    formControlName="outboundDate" ngbDatepicker #outboundDatePicker="ngbDatepicker" aria-describedby="outboundDateAddon" required>
+                <div class="input-group-append" id="outboundDateAddon">
+                  <button class="btn btn-sm btn-outline-secondary" (click)="outboundDatePicker.toggle()" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
                   <button type="button" class="btn btn-sm btn-outline-primary" (click)="switchDate()">
                     <span><i class="fa fa-arrows-alt-h"></i></span>
                   </button>
@@ -77,9 +77,9 @@
               <label for="inboundDate" class="col-form-label" i18n>Return</label>
               <div class="input-group">
                 <input id="inboundDate" class="form-control" placeholder="yyyy-mm-dd"
-                     formControlName="inboundDate" ngbDatepicker #inboundDatePicker="ngbDatepicker" required>
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" (click)="inboundDatePicker.toggle()" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+                     formControlName="inboundDate" ngbDatepicker #inboundDatePicker="ngbDatepicker" aria-describedby="inboundDateAddon" required>
+                <div class="input-group-append" id="inboundDateAddon">
+                  <button class="btn btn-sm btn-outline-secondary" (click)="inboundDatePicker.toggle()" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
                 </div>
               </div>
               <div *ngIf="inboundDate.invalid" class="invalid-feedback">
