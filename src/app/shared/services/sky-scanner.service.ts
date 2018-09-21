@@ -7,7 +7,7 @@ import { map } from "rxjs/operators";
 
 const SUFFIX = "/skyscanner";
 const MOCK_SESSION =
-  "5fe5ccc14c01447a8415d10418f2e4b6_rrsqbjcb_cd8283034710069eed7028483edbcb3e";
+  "871dd5be7aeb4040a348ff1d33af60e4_rrsqbjcb_cd8283034710069eed7028483edbcb3e";
 
 @Injectable()
 export class SkyScannerService extends AService {
@@ -49,6 +49,10 @@ export class SkyScannerService extends AService {
     return this.pollSessionResult;
   }
 
+  getCachedItinerary(n: number) {
+    return Object.assign({}, this.pollSessionResult.Itineraries[n]) ;
+  }
+
   cachePollSessionResults(result: PollSessionResult) {
     this.pollSessionResult = result;
   }
@@ -68,7 +72,7 @@ export class SkyScannerService extends AService {
 
   pollSessionResults(pollSession: PollSession): Observable<PollSessionResult> {
     const uri = this.apiUrl + SUFFIX +
-      `/pollSessionResults/${pollSession.sessionkey}/${pollSession.stops}`;
+      `/pollSessionResults/${pollSession.sessionkey}/${pollSession.stops}`;///${pollSession.pageIndex-1}/${pollSession.pageSize}
     return this.http.get<PollSessionResult>(uri);
   }
 
