@@ -34,8 +34,8 @@ export class ItinerariesComponent implements OnInit {
       stops: new FormControl(null, Validators.required)
     });
     this.setDefaults();
-    // this.load();
-    this.loadMock();
+    this.load();
+    // this.loadMock();
   }
 
   setDefaults() {

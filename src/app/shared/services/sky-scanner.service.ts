@@ -43,8 +43,8 @@ export class SkyScannerService extends AService {
 
   getCurrentSession(): SkySession {
     //FIXME MONGO
-    return new SkySession(MOCK_SESSION); //TESTING
-    // return this.currentSession;
+    // return new SkySession(MOCK_SESSION); //TESTING
+    return this.currentSession;
   }
 
   getMockPollSessionResults(): PollSessionResult {
