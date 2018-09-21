@@ -81,9 +81,7 @@ app.delete("/api/users/:id", function(req, res) {});
 
 const SUFFIX = "/api/skyscanner/";
 
-app.post(SUFFIX + "createSession", function(req, res) {
-  console.log("creating session...");
-
+app.post(SUFFIX + "createSession", function(req, res) { //FIXME CLIENT INFO
   unirest
     .post(skyScannerEndPoint + "/pricing/v1.0")
     .header("Content-Type", "application/x-www-form-urlencoded")
@@ -110,7 +108,6 @@ app.post(SUFFIX + "createSession", function(req, res) {
 });
 
 app.get(SUFFIX + "getPlaces/:query", function(req, res) {
-  //FIXME CLIENT INFO
   var uri =
     skyScannerEndPoint +
     "/autosuggest/v1.0/IT/EUR/it/?query=" +
@@ -128,17 +125,37 @@ app.get(SUFFIX + "getPlaces/:query", function(req, res) {
 });
 
 app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
-  //FIXME PAGING
   var uri =
     skyScannerEndPoint +
     "/pricing/uk2/v1.0/" +
-    req.params.sessionkey +
-    "/?pageIndex=0&pageSize=10";
+    req.params.sessionkey;
 
+  uri += "?stops=" + req.params.stops;
+  uri += "&sortType=price&sortOrder=asc";
+
+  unirest
+    .get(uri)
+    .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
+    .header("X-Mashape-Host", skyscannerDomain)
+    .end(function(result) {
+      return result.status >= 200 && result.status < 300
+        ? res.send(result.body)
+        : res.status(400).send(result.body);
+    });
+});
+
+app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops/:pageIndex/:pageSize", function(req, res) {// paginated
+  var uri =
+    skyScannerEndPoint +
+    "/pricing/uk2/v1.0/" +
+    req.params.sessionkey;
+  if(req.params.pageIndex) {
+    uri += "?pageIndex="+req.params.pageIndex +
+    "&pageSize=̈́"+req.params.pageSize;
+  }
   if (req.params.stops >= 0) {
     uri += "&stops=" + req.params.stops;
   }
-
   unirest
     .get(uri)
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)

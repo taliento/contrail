@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import {
   SkySession,
   Itinerary,
-  PollSessionResult,
   PollSession,
   Leg
 } from "../shared/models";
@@ -18,8 +17,9 @@ export class ItinerariesComponent implements OnInit {
   filterForm: FormGroup;
   session: SkySession;
   pollSession: PollSession;
-  pollSessionResult: PollSessionResult;
   loading: boolean;
+
+  itinerariesPage: Array<Itinerary>;
 
   constructor(
     private skyScanner: SkyScannerService,
@@ -33,9 +33,7 @@ export class ItinerariesComponent implements OnInit {
     this.filterForm = new FormGroup({
       stops: new FormControl(null, Validators.required)
     });
-
     this.setDefaults();
-
     this.load();
   }
 
@@ -43,16 +41,31 @@ export class ItinerariesComponent implements OnInit {
     this.filterForm.get("stops").setValue(true);
   }
 
+  loadPage() {
+    this.itinerariesPage = [];
+
+    const start = (this.pollSession.pageIndex - 1) * (this.pollSession.pageSize);
+    const end = start + this.pollSession.pageSize;
+    console.log("pagination start:"+start+"end:"+end);
+
+    for (let i = start; i < end; i++) {
+      if(i > this.skyScanner.getCachedPollSessionResult().Itineraries.length) {
+        break;
+      }
+      this.itinerariesPage.push(this.skyScanner.getCachedItinerary(i));
+    }
+
+    this.loading = false;
+  }
+
   load() {
     this.loading = true;
-
     this.pollSession.stops = this.filterForm.get("stops").value ? 0 : -1;
-
     this.skyScanner.pollSessionResults(this.pollSession).subscribe(
       result => {
-        this.pollSessionResult = result;
+        this.pollSession.collectionSize = result.Itineraries.length - 1;
         this.skyScanner.cachePollSessionResults(result);
-        this.loading = false;
+        this.loadPage();
       },
       error => {
         console.log(error);

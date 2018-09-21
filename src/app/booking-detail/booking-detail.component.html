@@ -1,10 +1,10 @@
-<div class="modal-header">
-  Choose
+<div class="modal-header" i18n>
+  Choose a solution
 </div>
 <div class="modal-body">
-  <div class="card">
+  <div class="card border-light">
     <div class="card-body">
-      <h5 class="card-title">Best solution</h5>
+      <h5 class="card-title" i18n>Best solution</h5>
       <div class="row">
         <div class="col-12 col-md-10">
           <div class="row">
@@ -21,18 +21,18 @@
         </div>
         <div class="col-12 col-md-2 align-self-center">
           <h5 class="text-success">{{itinerary.PricingOptions[0].Price}}</h5>
-          <a class="btn btn-sm btn-success" [href]="itinerary.PricingOptions[0].DeeplinkUrl">Book this</a>
+          <a class="btn btn-sm btn-success" [href]="itinerary.PricingOptions[0].DeeplinkUrl" i18n>Book this</a>
         </div>
       </div>
     </div>
   </div>
   <br/>
-  <div class="card">
+  <div class="card border-light">
     <div class="card-body">
-      <h5 class="card-title">Other solutions</h5>
+      <h5 class="card-title" i18n>Other solutions</h5>
       <div class="row">
         <div class="col-12 col-md-12">
-          <ul class="list-group list-group-flush">
+          <ul class="list-group list-group-flush scrollList">
             <li class="list-group-item" *ngFor="let priceOption of itinerary.PricingOptions | slice:1; let i = index">
               <div class="row">
                 <div class="col-3 col-md-2">
@@ -42,7 +42,7 @@
                   <h5 class="text-success">{{priceOption.Price}}</h5>
                 </div>
                 <div class="col-1 col-md-2">
-                  <a class="btn btn-sm btn-success" [href]="priceOption.DeeplinkUrl">Book this</a>
+                  <a class="btn btn-sm btn-success" [href]="priceOption.DeeplinkUrl" i18n>Book this</a>
                 </div>
               </div>
             </li>
@@ -53,5 +53,5 @@
   </div>
 </div>
 <div class="modal-footer">
-  <button class="btn btn-secondary" (click)="back()">Close</button>
+  <button class="btn btn-secondary" (click)="back()" i18n>Close</button>
 </div>

@@ -19,9 +19,12 @@ export class ItineraryComponent implements OnInit {
     private skyScanner: SkyScannerService,
     private router: Router,
     private modalService: NgbModal,
+    config: NgbModalConfig,
     private route: ActivatedRoute
   ) {
     this.pollSessionResult = skyScanner.getCachedPollSessionResult();
+    config.backdrop = 'static';
+    config.keyboard = false;
   }
 
   ngOnInit() {}
@@ -32,9 +35,9 @@ export class ItineraryComponent implements OnInit {
 
   goToDetail() {
     this.skyScanner.selectItinerary(this.itinerary);
-
     const modalRef = this.modalService.open(BookingDetailComponent, {
       size: "lg"
     });
+
   }
 }
