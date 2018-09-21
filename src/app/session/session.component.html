@@ -81,12 +81,12 @@
               <span i18n>Looks great!</span>
             </div>
           </div>
-          <div ngbDropdown class="col-12 col-sm-12 col-md-3 form-group">
-            <label for="dropdownBasic1" class="col-form-label" i18n>Cabin Class & Travellers</label>
-            <button type="button" class="btn btn-outline-secondary align-self-center" id="dropdownBasic1" ngbDropdownToggle>
+          <div ngbDropdown [autoClose]="false" class="col-12 col-sm-12 col-md-3 form-group">
+            <label for="dropdownCabinTravellers" class="col-form-label" i18n>Cabin Class & Travellers</label>
+            <button type="button" class="btn btn-outline-secondary align-self-center" id="dropdownCabinTravellers" ngbDropdownToggle>
               {{getCabinTravellersLabel()}}
             </button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <div ngbDropdownMenu aria-labelledby="dropdownCabinTravellers">
               <div class="form-row">
                 <div class="col-12 col-sm-12 col-md-12 form-group">
                   <label for="adults" class="col-form-label" i18n>Adults</label>

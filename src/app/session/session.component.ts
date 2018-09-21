@@ -36,11 +36,11 @@ export class SessionComponent implements OnInit {
     private skyScanner: SkyScannerService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    this.session = this.skyScanner.getCurrentSession();
+  }
 
   ngOnInit() {
-    this.session = new SkySession(null);
-
     this.profileForm = new FormGroup({
       adults: new FormControl(null, [
         Validators.min(1),
@@ -145,6 +145,10 @@ export class SessionComponent implements OnInit {
     formValue.outboundDate = this.ngbDateParserFormatter.format(
       formValue.outboundDate
     );
+
+    formValue.country = this.session.country;
+    formValue.currency = this.session.currency;
+    formValue.locale = this.session.locale;
 
     this.skyScanner.createSession(formValue).subscribe(
       result => {

@@ -81,15 +81,15 @@ app.delete("/api/users/:id", function(req, res) {});
 
 const SUFFIX = "/api/skyscanner/";
 
-app.post(SUFFIX + "createSession", function(req, res) { //FIXME CLIENT INFO
+app.post(SUFFIX + "createSession", function(req, res) {
   unirest
     .post(skyScannerEndPoint + "/pricing/v1.0")
     .header("Content-Type", "application/x-www-form-urlencoded")
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
     .header("X-Mashape-Host", skyscannerDomain)
-    .send("country=IT") //FIXME CLIENT INFO
-    .send("currency=EUR") //FIXME CLIENT INFO
-    .send("locale=it") //FIXME CLIENT INFO
+    .send("country="+ req.body.country)
+    .send("currency="+ req.body.currency)
+    .send("locale="+ req.body.locale)
     .send("originPlace=" + req.body.originPlace.PlaceId)
     .send("destinationPlace=" + req.body.destinationPlace.PlaceId)
     .send("outboundDate=" + req.body.outboundDate)
