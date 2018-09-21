@@ -83,7 +83,6 @@ export class ItinerariesComponent implements OnInit {
 
     this.skyScanner.pollSessionResults(this.pollSession).subscribe(
       result => {
-        console.log(result);
         this.pollSession.collectionSize = result.Itineraries.length;
         this.skyScanner.cachePollSessionResults(result);
         this.loadPage(this.pollSession.pageIndex);
