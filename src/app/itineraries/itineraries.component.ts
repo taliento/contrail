@@ -34,28 +34,37 @@ export class ItinerariesComponent implements OnInit {
       stops: new FormControl(null, Validators.required)
     });
     this.setDefaults();
-    this.load();
+    // this.load();
+    this.loadMock();
   }
 
   setDefaults() {
     this.filterForm.get("stops").setValue(true);
   }
 
-  loadPage() {
-    this.itinerariesPage = [];
+  loadPage($event: number) {
 
+    console.log("load page:"+$event);
+    this.itinerariesPage = [];
     const start = (this.pollSession.pageIndex - 1) * (this.pollSession.pageSize);
     const end = start + this.pollSession.pageSize;
-    console.log("pagination start:"+start+"end:"+end);
-
     for (let i = start; i < end; i++) {
-      if(i > this.skyScanner.getCachedPollSessionResult().Itineraries.length) {
+      if(i >= this.skyScanner.getCachedPollSessionResult().Itineraries.length) {
         break;
       }
       this.itinerariesPage.push(this.skyScanner.getCachedItinerary(i));
     }
-
     this.loading = false;
+  }
+  
+  removeItemsPerPage() {
+    this.pollSession.pageSize--;
+    this.loadPage(this.pollSession.pageIndex);
+  }
+
+  addItemsPerPages() {
+    this.pollSession.pageSize++;
+    this.loadPage(this.pollSession.pageIndex);
   }
 
   load() {
@@ -63,14 +72,22 @@ export class ItinerariesComponent implements OnInit {
     this.pollSession.stops = this.filterForm.get("stops").value ? 0 : -1;
     this.skyScanner.pollSessionResults(this.pollSession).subscribe(
       result => {
-        this.pollSession.collectionSize = result.Itineraries.length - 1;
+        this.pollSession.collectionSize = result.Itineraries.length;
         this.skyScanner.cachePollSessionResults(result);
-        this.loadPage();
+        this.loadPage(this.pollSession.pageIndex);
       },
       error => {
         console.log(error);
         this.alertService.error(error);
       }
     );
+  }
+
+  loadMock() {
+    this.loading = true;
+    let result = this.skyScanner.getMockPollSessionResults();
+    this.pollSession.collectionSize = result.Itineraries.length;
+    this.skyScanner.cachePollSessionResults(result);
+    this.loadPage(this.pollSession.pageIndex);
   }
 }

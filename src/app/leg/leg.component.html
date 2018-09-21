@@ -12,7 +12,7 @@
         <span>{{ leg.Departure | date:'short' }}</span>&nbsp;<span><i class="fa fa-plane-departure"></i></span>
       </div>
       <div class="col-12 col-sm-12 col-md-12">
-        <app-place [place]="getPlace(leg.OriginStation)" [badgeClass]="'badge-success'"></app-place>
+        <app-place [place]="getPlace(leg.OriginStation)" [badgeClass]="'badge-secondary'"></app-place>
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@
         <span>{{ leg.Duration | hoursMinutes}}</span>
       </div>
       <div class="col-12 col-sm-12 col-md-12">
-        <span [ngClass]="{'text-danger':leg.Stops.length > 0,'text-success':leg.Stops.length === 0}" [innerText]="getFlightType()"></span>
+        <span class="badge" [ngClass]="{'badge-danger':leg.Stops.length > 0,'badge-success':leg.Stops.length === 0}" [innerText]="getFlightType()"></span>
       </div>
     </div>
   </div>
@@ -35,7 +35,7 @@
         <span><i class="fa fa-plane-arrival"></i></span>&nbsp;<span>{{ leg.Arrival | date:'short' }}</span>
       </div>
       <div class="col-12 col-sm-12 col-md-12">
-        <app-place [place]="getPlace(leg.DestinationStation)" [badgeClass]="'badge-danger'"></app-place>
+        <app-place [place]="getPlace(leg.DestinationStation)" [badgeClass]="'badge-secondary'"></app-place>
       </div>
     </div>
   </div>

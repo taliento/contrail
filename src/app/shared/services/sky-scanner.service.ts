@@ -7,7 +7,9 @@ import { map } from "rxjs/operators";
 
 const SUFFIX = "/skyscanner";
 const MOCK_SESSION =
-  "871dd5be7aeb4040a348ff1d33af60e4_rrsqbjcb_cd8283034710069eed7028483edbcb3e";
+  "5cc3da28b3f04a45bd6d29e345f7c467_rrsqbjcb_cd8283034710069eed7028483edbcb3e";
+
+const mockPollSessionResults = require("../mock/pollSessionResult.json");
 
 @Injectable()
 export class SkyScannerService extends AService {
@@ -43,6 +45,10 @@ export class SkyScannerService extends AService {
     //FIXME MONGO
     return new SkySession(MOCK_SESSION); //TESTING
     // return this.currentSession;
+  }
+
+  getMockPollSessionResults(): PollSessionResult {
+    return mockPollSessionResults;
   }
 
   getCachedPollSessionResult(): PollSessionResult {
