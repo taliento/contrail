@@ -2,18 +2,18 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { AService } from "./aservice.service";
 import { Observable } from "rxjs";
-import { SkySession, PollSessionResult, PollSession, Itinerary } from "../models";
+import {
+  SkySession,
+  PollSessionResult,
+  PollSession,
+  Itinerary
+} from "../models";
 import { map } from "rxjs/operators";
 
 const SUFFIX = "/skyscanner";
-const MOCK_SESSION =
-  "5cc3da28b3f04a45bd6d29e345f7c467_rrsqbjcb_cd8283034710069eed7028483edbcb3e";
-
-const mockPollSessionResults = require("../mock/pollSessionResult.json");
 
 @Injectable()
 export class SkyScannerService extends AService {
-
   private currentSession: SkySession;
   private pollSessionResult: PollSessionResult;
   private selectedItinerary: Itinerary;
@@ -43,12 +43,7 @@ export class SkyScannerService extends AService {
 
   getCurrentSession(): SkySession {
     //FIXME MONGO
-    // return new SkySession(MOCK_SESSION); //TESTING
     return this.currentSession;
-  }
-
-  getMockPollSessionResults(): PollSessionResult {
-    return mockPollSessionResults;
   }
 
   getCachedPollSessionResult(): PollSessionResult {
@@ -56,7 +51,7 @@ export class SkyScannerService extends AService {
   }
 
   getCachedItinerary(n: number) {
-    return Object.assign({}, this.pollSessionResult.Itineraries[n]) ;
+    return Object.assign({}, this.pollSessionResult.Itineraries[n]);
   }
 
   cachePollSessionResults(result: PollSessionResult) {
@@ -77,8 +72,11 @@ export class SkyScannerService extends AService {
   }
 
   pollSessionResults(pollSession: PollSession): Observable<PollSessionResult> {
-    const uri = this.apiUrl + SUFFIX +
-      `/pollSessionResults/${pollSession.sessionkey}/${pollSession.stops}`;///${pollSession.pageIndex-1}/${pollSession.pageSize}
+    //${pollSession.pageIndex-1}/${pollSession.pageSize}
+    const uri =
+      this.apiUrl +
+      SUFFIX +
+      `/pollSessionResults/${pollSession.sessionkey}/${pollSession.stops}`;
     return this.http.get<PollSessionResult>(uri);
   }
 

@@ -136,12 +136,9 @@ export class SessionComponent implements OnInit {
   }
 
   createSession() {
-    console.log("searching...");
     this.loading = true;
 
     var formValue = this.profileForm.value;
-    console.log("form values: " + JSON.stringify(formValue));
-
     formValue.inboundDate = this.ngbDateParserFormatter.format(
       formValue.inboundDate
     );
@@ -151,7 +148,6 @@ export class SessionComponent implements OnInit {
 
     this.skyScanner.createSession(formValue).subscribe(
       result => {
-        console.log(result);
         this.loading = false;
         this.session = this.profileForm.value;
         this.session.sessionkey = result;
@@ -160,15 +156,12 @@ export class SessionComponent implements OnInit {
       },
       error => {
         this.loading = false;
-        console.log(error);
         this.alertService.error(error);
       }
     );
   }
 
   gotItineraries(): void {
-    console.log("redirecting...");
-
     this.router.navigate(["../itineraries"], { relativeTo: this.route });
   }
 
