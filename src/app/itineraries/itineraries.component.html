@@ -24,20 +24,20 @@
     <div *ngIf="pollSession.collectionSize > 0 && !loading">
       <app-itinerary class="mt-3" *ngFor="let it of itinerariesPage" [itinerary]="it"></app-itinerary>
       <div class="row">
-        <div class="col-4 col-sm-4 col-md-4">
+        <div class="col-3 col-sm-3 col-md-3">
           <form>
-            <div class="form-row">
-              <div class="col-4 col-sm-4 col-md-4 form-group">
+            <div class="form-row no-gutters">
+              <div class="col-6 col-sm-6 col-md-6 form-group">
                 <label for="pageSize" class="col-form-label" i18n>Items per page</label>
                 <div class="input-group">
-                  <div class="input-group-append">
-                    <button type="button" class="btn btn-sm btn-outline-primary" (click)="removeItemsPerPage()">
+                  <div class="input-group-prepend">
+                    <button type="button" class="btn btn-outline-primary" (click)="removeItemsPerPage()">
                       <span><i class="fa fa-minus-circle"></i></span>
                     </button>
                   </div>
-                  <span>&nbsp; {{pollSession.pageSize}} &nbsp;</span>
+                  <input id="pageSize" name="pageSize" readonly class="form-control" [value]="pollSession.pageSize"/>
                   <div class="input-group-append">
-                    <button type="button" class="btn btn-sm btn-outline-primary" (click)="addItemsPerPages()">
+                    <button type="button" class="btn btn-outline-primary" (click)="addItemsPerPages()">
                       <span><i class="fa fa-plus-circle"></i></span>
                     </button>
                   </div>
@@ -46,12 +46,15 @@
             </div>
           </form>
         </div>
-        <div class="col-8 col-sm-8 col-md-8 align-self-center">
-          <ngb-pagination [pageSize]="pollSession.pageSize"
-            [collectionSize]="pollSession.collectionSize" [(page)]="pollSession.pageIndex"
-            [maxSize]="5" [boundaryLinks]="true" [directionLinks]="true"
-            [rotate]="true" [ellipses]="true"
-            (pageChange)="loadPage($event)"></ngb-pagination>
+        <div class="col-8 col-sm-8 col-md-8  mt-2">
+          <div class="col">
+            <label>Showing {{itinerariesPage.length}} of {{pollSession.collectionSize}} Solution</label>
+            <ngb-pagination [pageSize]="pollSession.pageSize"
+              [collectionSize]="pollSession.collectionSize" [(page)]="pollSession.pageIndex"
+              [maxSize]="5" [boundaryLinks]="true" [directionLinks]="true"
+              [rotate]="true" [ellipses]="true"
+              (pageChange)="loadPage($event)"></ngb-pagination>
+          </div>
         </div>
       </div>
     </div>

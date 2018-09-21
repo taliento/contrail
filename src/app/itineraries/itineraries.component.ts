@@ -43,7 +43,7 @@ export class ItinerariesComponent implements OnInit {
   }
 
   loadPage($event: number) {
-
+    this.loading = true;
     console.log("load page:"+$event);
     this.itinerariesPage = [];
     const start = (this.pollSession.pageIndex - 1) * (this.pollSession.pageSize);
@@ -56,7 +56,7 @@ export class ItinerariesComponent implements OnInit {
     }
     this.loading = false;
   }
-  
+
   removeItemsPerPage() {
     this.pollSession.pageSize--;
     this.loadPage(this.pollSession.pageIndex);
