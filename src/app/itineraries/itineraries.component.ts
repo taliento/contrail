@@ -31,9 +31,9 @@ export class ItinerariesComponent implements OnInit {
 
   ngOnInit() {
     this.filterForm = new FormGroup({
-      direct: new FormControl(null, Validators.required),
-      oneStop: new FormControl(null, Validators.required),
-      stops: new FormControl(null, Validators.required)
+      direct: new FormControl(null),
+      oneStop: new FormControl(null),
+      stops: new FormControl(null)
     });
     this.setDefaults();
     this.load();
@@ -42,6 +42,8 @@ export class ItinerariesComponent implements OnInit {
 
   setDefaults() {
     this.filterForm.get("direct").setValue(true);
+    this.filterForm.get("oneStop").setValue(false);
+    this.filterForm.get("stops").setValue(false);
   }
 
   loadPage($event: number) {
