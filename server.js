@@ -130,8 +130,10 @@ app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
     "/pricing/uk2/v1.0/" +
     req.params.sessionkey;
 
-  uri += "?stops=" + req.params.stops;
-  uri += "&sortType=price&sortOrder=asc";
+  uri += "?sortType=price&sortOrder=asc";
+  if (req.params.stops >= 0) {
+    uri += "&stops=" + req.params.stops;
+  }
 
   unirest
     .get(uri)
