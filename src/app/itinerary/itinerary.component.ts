@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Itinerary, Leg, PollSessionResult } from "../shared/models";
+import { Itinerary, Leg, PollSessionResult, SkySession } from "../shared/models";
 import { SkyScannerService } from "../shared/services";
 import { Router, ActivatedRoute } from "@angular/router";
 import { NgbModal, NgbModalConfig } from "@ng-bootstrap/ng-bootstrap";
@@ -12,7 +12,7 @@ import { BookingDetailComponent } from "../booking-detail/booking-detail.compone
 })
 export class ItineraryComponent implements OnInit {
   @Input() itinerary: Itinerary;
-
+  session: SkySession;
   pollSessionResult: PollSessionResult;
 
   constructor(
@@ -23,6 +23,7 @@ export class ItineraryComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.pollSessionResult = skyScanner.getCachedPollSessionResult();
+    this.session = skyScanner.getCurrentSession();
     config.backdrop = 'static';
     config.keyboard = false;
   }

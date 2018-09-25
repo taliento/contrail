@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { SkyScannerService } from "../shared/services";
-import { Itinerary, Agent, PollSessionResult, Leg } from "../shared/models";
+import { Itinerary, Agent, PollSessionResult, Leg, SkySession } from "../shared/models";
 import { Location } from "@angular/common";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 
@@ -12,6 +12,7 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 export class BookingDetailComponent implements OnInit {
   itinerary: Itinerary;
   pollSessionResult: PollSessionResult;
+  session: SkySession;
 
   constructor(
     private skyScanner: SkyScannerService,
@@ -19,6 +20,7 @@ export class BookingDetailComponent implements OnInit {
     private location: Location
   ) {
     this.itinerary = skyScanner.getSelectedItinerary();
+    this.session = skyScanner.getCurrentSession();
     this.pollSessionResult = skyScanner.getCachedPollSessionResult();
   }
 
