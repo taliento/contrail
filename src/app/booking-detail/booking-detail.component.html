@@ -20,14 +20,14 @@
           </div>
         </div>
         <div class="col-12 col-md-2 align-self-center">
-          <h5 class="text-success">{{itinerary.PricingOptions[0].Price}}</h5>
+          <h5 class="text-success">{{itinerary.PricingOptions[0].Price | currency:session.currency}}</h5>
           <a class="btn btn-sm btn-success" [href]="itinerary.PricingOptions[0].DeeplinkUrl" i18n>Book this</a>
         </div>
       </div>
     </div>
   </div>
   <br/>
-  <div class="card border-light">
+  <div class="card border-light" *ngIf="itinerary.PricingOptions.length > 1">
     <div class="card-body">
       <h5 class="card-title" i18n>Other solutions</h5>
       <div class="row">
@@ -39,7 +39,7 @@
                   <app-agent [agent]="getAgent(priceOption.Agents[0])"></app-agent>
                 </div>
                 <div class="col-5 col-md-8">
-                  <h5 class="text-success">{{priceOption.Price}}</h5>
+                  <h5 class="text-success">{{priceOption.Price | currency:session.currency}}</h5>
                 </div>
                 <div class="col-1 col-md-2">
                   <a class="btn btn-sm btn-success" [href]="priceOption.DeeplinkUrl" i18n>Book this</a>

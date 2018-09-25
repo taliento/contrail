@@ -9,6 +9,9 @@ export class SkySession {
   outboundDate: string;
   cabinClass: string;
   sessionkey: string;
+  country: string = "IT";
+  currency: string = "EUR";
+  locale: string = "it";
 
   constructor(sessionkey: string) {
     this.sessionkey = sessionkey;

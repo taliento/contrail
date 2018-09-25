@@ -8,19 +8,41 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
-    <!--  <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li> -->
+      <div class="nav-item" ngbDropdown [autoClose]="false">
+        <label for="dropdownLocale" class="col-form-label" i18n></label>
+        <button type="button" class="btn btn-outline-primary align-self-center" id="dropdownLocale" ngbDropdownToggle>
+          {{getLocale()}}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownLocale">
+          <div class="card">
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <label for="locale">locale</label>
+                  <select class="form-control" id="locale" name="locale" [(ngModel)]="session.locale" required>
+                    <option [value]="'it'">Italian</option>
+                    <option [value]="'en'">English</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="country">country</label>
+                  <select class="form-control" id="country" name="country" [(ngModel)]="session.country" required>
+                    <option [value]="'IT'">Italy</option>
+                    <option [value]="'GB'">United Kingdom</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="currency">currency</label>
+                  <select class="form-control" id="currency" name="currency" [(ngModel)]="session.currency" required>
+                    <option [value]="'EUR'">EUR</option>
+                    <option [value]="'GBP'">GBP</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </ul>
-    <!-- <form class="form-inline mt-2 mt-md-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
   </div>
 </nav>

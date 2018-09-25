@@ -4,25 +4,25 @@
       <div class="card-body">
         <form>
           <div class="row">
-            <div class="col-3 form-group row">
+            <div class="col-12 col-sm-6 col-md-3 form-group row">
               <label for="originPlace" class="col-sm-4 col-form-label" i18n>From</label>
               <div class="col-sm-8">
                 <input type="text" readonly class="form-control-plaintext text-info" id="originPlace" [value]="session.originPlace.PlaceName">
               </div>
             </div>
-            <div class="col-3 form-group row">
+            <div class="col-12 col-sm-6 col-md-3 form-group row">
               <label for="destinationPlace" class="col-sm-4 col-form-label" i18n>To</label>
               <div class="col-sm-8">
                 <input type="text" readonly class="form-control-plaintext text-info" id="destinationPlace" [value]="session.destinationPlace.PlaceName">
               </div>
             </div>
-            <div class="col-3 form-group row">
+            <div class="col-12 col-sm-6 col-md-3 form-group row">
               <label for="outboundDate" class="col-sm-4 col-form-label" i18n>Depart</label>
               <div class="col-sm-8">
                 <input type="text" readonly class="form-control-plaintext text-info" id="outboundDate" [value]="session.outboundDate | date:'shortDate'">
               </div>
             </div>
-            <div class="col-3 form-group row">
+            <div class="ccol-12 col-sm-6 col-md-3 form-group row">
               <label for="inboundDate" class="col-sm-4 col-form-label" i18n>Return</label>
               <div class="col-sm-8">
                 <input type="text" readonly class="form-control-plaintext text-info" id="inboundDate" [value]="session.inboundDate | date:'shortDate'">
