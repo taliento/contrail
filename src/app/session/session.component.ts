@@ -13,7 +13,10 @@ import {
   switchMap
 } from "rxjs/operators";
 import { Router, ActivatedRoute } from "@angular/router";
-import { forbiddenPlaceValidator } from "../shared/directives/forbidden-place.directive";
+import {
+  forbiddenPlaceValidator,
+  inboundDateValidator
+} from "../shared/directives/session-validator.directive";
 
 @Component({
   selector: "app-session",
@@ -24,7 +27,7 @@ export class SessionComponent implements OnInit {
   profileForm: FormGroup;
   session: SkySession;
   loading: boolean = false;
-
+  ticketType: string = "return";
   searching: boolean = false;
   searchingDestination: boolean = false;
   searchFailed: boolean;
@@ -56,12 +59,37 @@ export class SessionComponent implements OnInit {
         Validators.required,
         forbiddenPlaceValidator()
       ]),
-      inboundDate: new FormControl(null, Validators.required),
       outboundDate: new FormControl(null, Validators.required),
+      inboundDate: new FormControl(null, inboundDateValidator(this.ticketType)),
       cabinClass: new FormControl(null, Validators.required)
     });
 
     this.setDefaults();
+
+    this.onFormChanges();
+  }
+
+  onFormChanges(): void {
+    this.profileForm.get("outboundDate").valueChanges.subscribe(val => {
+      if (this.ticketType != "return") {
+        return;
+      }
+      var outbound = new Date(this.ngbDateParserFormatter.format(val));
+      var inbound = new Date(
+        this.ngbDateParserFormatter.format(
+          this.profileForm.get("inboundDate").value
+        )
+      );
+      if (inbound > outbound) {
+        return;
+      }
+      outbound.setDate(outbound.getDate() + 7); //1 week
+      this.profileForm.get("inboundDate").setValue({
+        year: outbound.getFullYear(),
+        month: outbound.getMonth() + 1,
+        day: outbound.getDate()
+      });
+    });
   }
 
   setDefaults() {
@@ -71,7 +99,6 @@ export class SessionComponent implements OnInit {
       month: today.getMonth() + 1,
       day: today.getDate()
     });
-
     //1 week
     today.setDate(today.getDate() + 7);
     this.profileForm.get("inboundDate").setValue({
@@ -100,10 +127,11 @@ export class SessionComponent implements OnInit {
 
   getCabinTravellersLabel() {
     var travellers = this.adults.value + this.children.value;
-    return travellers + (
-      (travellers > 1 ? " travellers" : " adult") +
-      ", " +
-      this.cabinClass.value
+    return (
+      travellers +
+      ((travellers > 1 ? " travellers" : " adult") +
+        ", " +
+        this.cabinClass.value)
     );
   }
 
@@ -137,19 +165,20 @@ export class SessionComponent implements OnInit {
 
   createSession() {
     this.loading = true;
-
     var formValue = this.profileForm.value;
-    formValue.inboundDate = this.ngbDateParserFormatter.format(
-      formValue.inboundDate
-    );
     formValue.outboundDate = this.ngbDateParserFormatter.format(
       formValue.outboundDate
     );
-
+    if (this.ticketType == "return") {
+      formValue.inboundDate = this.ngbDateParserFormatter.format(
+        formValue.inboundDate
+      );
+    } else {
+      formValue.inboundDate = null;
+    }
     formValue.country = this.session.country;
     formValue.currency = this.session.currency;
     formValue.locale = this.session.locale;
-
     this.skyScanner.createSession(formValue).subscribe(
       result => {
         this.loading = false;
@@ -209,6 +238,5 @@ export class SessionComponent implements OnInit {
       )
     );
 
-  formatter = (x: { PlaceName: string; CountryName: string }) =>
-    x.PlaceName;
+  formatter = (x: { PlaceName: string; CountryName: string }) => x.PlaceName;
 }
