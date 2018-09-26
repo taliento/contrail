@@ -10,3 +10,14 @@
 .ng-invalid:not(form)  {
   border-color: #dc3545; /* red */
 }
+// bootstrap form with no gutters
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

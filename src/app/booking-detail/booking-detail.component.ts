@@ -1,6 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { SkyScannerService } from "../shared/services";
-import { Itinerary, Agent, PollSessionResult, Leg, SkySession } from "../shared/models";
+import {
+  Itinerary,
+  Agent,
+  PollSessionResult,
+  Leg,
+  SkySession
+} from "../shared/models";
 import { Location } from "@angular/common";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 

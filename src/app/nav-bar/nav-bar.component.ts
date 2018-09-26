@@ -8,7 +8,6 @@ import { SkySession } from "../shared/models";
   styleUrls: ["./nav-bar.component.scss"]
 })
 export class NavBarComponent implements OnInit {
-
   session: SkySession;
 
   constructor(private skyScanner: SkyScannerService) {
@@ -18,6 +17,12 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {}
 
   getLocale() {
-    return this.session.locale+"-"+ this.session.country + " " + this.session.currency;
+    return (
+      this.session.locale +
+      "-" +
+      this.session.country +
+      " " +
+      this.session.currency
+    );
   }
 }
