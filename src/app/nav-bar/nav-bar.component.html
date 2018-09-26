@@ -3,10 +3,10 @@
     <img src="assets/img/contrail.png" width="30" height="30" class="d-inline-block align-top" alt="">
     Contrail
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
+  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
     <ul class="navbar-nav mr-auto">
       <div class="nav-item" ngbDropdown [autoClose]="false">
         <label for="dropdownLocale" class="col-form-label" i18n></label>

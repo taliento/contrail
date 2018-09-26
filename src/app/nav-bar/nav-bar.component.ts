@@ -9,6 +9,7 @@ import { SkySession } from "../shared/models";
 })
 export class NavBarComponent implements OnInit {
   session: SkySession;
+  navbarOpen = false;
 
   constructor(private skyScanner: SkyScannerService) {
     this.session = skyScanner.getCurrentSession();
@@ -24,5 +25,9 @@ export class NavBarComponent implements OnInit {
       " " +
       this.session.currency
     );
+  }
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
   }
 }
