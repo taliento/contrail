@@ -1,10 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-// const mongodb = require("mongodb");
-// const ObjectID = mongodb.ObjectID;
+const mongodb = require("mongodb");
+const ObjectID = mongodb.ObjectID;
 const path = require("path");
 const unirest = require("unirest");
 const cors = require("cors");
+const jwt = require("jsonwebtoken");
+const expressJwt = require('express-jwt');
+const bcrypt = require("bcryptjs");
+const _ = require("lodash");
 
 const skyscannerDomain = "skyscanner-skyscanner-flight-search-v1.p.mashape.com";
 const skyScannerEndPoint = "https://" + skyscannerDomain + "/apiservices";
@@ -25,28 +29,28 @@ const distDir = __dirname + "/dist/contrail/";
 app.use(express.static(distDir));
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
-// var db;
+var db;
 
 // Connect to the database before starting the application server.
-// mongodb.MongoClient.connect(
-//   process.env.MONGODB_URI || "mongodb://localhost:27017/test",
-//   function(err, client) {
-//     if (err) {
-//       console.log(err);
-//       process.exit(1);
-//     }
-//
-//     // Save database object from the callback for reuse.
-//     db = client.db();
-//     console.log("Database connection ready");
-//
-//     // Initialize the app.
-//     var server = app.listen(process.env.PORT || 3000, function() {
-//       var port = server.address().port;
-//       console.log("App now running on port", port);
-//     });
-//   }
-// );
+mongodb.MongoClient.connect(
+  process.env.MONGODB_URI || "mongodb://localhost:27017/contrail",
+  function(err, client) {
+    if (err) {
+      console.log(err);
+      process.exit(1);
+    }
+
+    // Save database object from the callback for reuse.
+    db = client.db();
+    console.log("Database connection ready");
+
+    // Initialize the app.
+    var server = app.listen(process.env.PORT || 3000, function() {
+      var port = server.address().port;
+      console.log("App now running on port", port);
+    });
+  }
+);
 
 // USERS API ROUTES BELOW
 
@@ -56,26 +60,80 @@ function handleError(res, reason, message, code) {
   res.status(code || 500).json({ error: message });
 }
 
-/*  "/api/users"
- *    GET: finds all users
- *    POST: creates a new user
- */
+//AUTH USER
+app.post("/api/signin", function(req, res) {
 
-app.get("/api/users", function(req, res) {});
+  let userParam = req.body;
+  db.collection("users").findOne(
+    {
+      email: userParam.email
+    },
+    (err, user) => {
+      if (err) res.status(500).send(err.name + ": " + err.message);
 
-app.post("/api/users", function(req, res) {});
+      if (user && bcrypt.compareSync(userParam.password, user.hash)) {
+        // authentication successful
+        res.send({
+          _id: user._id,
+          email: user.email,
+          name: user.name,
+          token: jwt.sign(
+            {
+              sub: user._id
+            },
+            process.env.SECRET
+          )
+        });
+      } else {
+        // authentication failed
+        res.status(404).send("No user was found!");
+      }
+    }
+  );
+});
 
-/*  "/api/users/:id"
- *    GET: find user by id
- *    PUT: update user by id
- *    DELETE: deletes user by id
- */
+//CREATE USER
+app.post("/api/signup", function(req, res) {
+  let userParam = req.body;
 
-app.get("/api/users/:id", function(req, res) {});
+  // validation
+  db.collection("users").findOne(
+    {
+      email: userParam.email
+    },
+    (err, user) => {
+      if (err) res.status(500).send(err.name + ": " + err.message);
+      if (user) {
+        res.status(401).send('Email "' + userParam.email + '" already exists');
+      } else {
+        createUser();
+      }
+    }
+  );
 
-app.put("/api/users/:id", function(req, res) {});
+  function createUser() {
+    // set user object to userParam without the cleartext password
+    let user = _.omit(userParam, "password");
+    user.insertDate = new Date();
+    // add hashed password to user object
+    user.hash = bcrypt.hashSync(userParam.password, 10);
 
-app.delete("/api/users/:id", function(req, res) {});
+    db.collection("users").insertOne(user, (err, doc) => {
+      if (err) res.status(401).send(err.name + ": " + err.message);
+      res.send({
+        _id: user._id,
+        email: user.email,
+        name: user.name,
+        token: jwt.sign(
+          {
+            sub: user._id
+          },
+          process.env.SECRET
+        )
+      });
+    });
+  }
+});
 
 // FLIGHT api
 
@@ -87,9 +145,9 @@ app.post(SUFFIX + "createSession", function(req, res) {
     .header("Content-Type", "application/x-www-form-urlencoded")
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
     .header("X-Mashape-Host", skyscannerDomain)
-    .send("country="+ req.body.country)
-    .send("currency="+ req.body.currency)
-    .send("locale="+ req.body.locale)
+    .send("country=" + req.body.country)
+    .send("currency=" + req.body.currency)
+    .send("locale=" + req.body.locale)
     .send("originPlace=" + req.body.originPlace.PlaceId)
     .send("destinationPlace=" + req.body.destinationPlace.PlaceId)
     .send("outboundDate=" + req.body.outboundDate)
@@ -125,10 +183,7 @@ app.get(SUFFIX + "getPlaces/:query", function(req, res) {
 });
 
 app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
-  var uri =
-    skyScannerEndPoint +
-    "/pricing/uk2/v1.0/" +
-    req.params.sessionkey;
+  var uri = skyScannerEndPoint + "/pricing/uk2/v1.0/" + req.params.sessionkey;
 
   uri += "?sortType=price&sortOrder=asc";
   if (req.params.stops >= 0) {
@@ -146,36 +201,34 @@ app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
     });
 });
 
-app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops/:pageIndex/:pageSize", function(req, res) {// paginated
-  var uri =
-    skyScannerEndPoint +
-    "/pricing/uk2/v1.0/" +
-    req.params.sessionkey;
-  if(req.params.pageIndex) {
-    uri += "?pageIndex="+req.params.pageIndex +
-    "&pageSize=̈́"+req.params.pageSize;
+app.get(
+  SUFFIX + "pollSessionResults/:sessionkey/:stops/:pageIndex/:pageSize",
+  function(req, res) {
+    // paginated
+    var uri = skyScannerEndPoint + "/pricing/uk2/v1.0/" + req.params.sessionkey;
+    if (req.params.pageIndex) {
+      uri +=
+        "?pageIndex=" +
+        req.params.pageIndex +
+        "&pageSize=̈́" +
+        req.params.pageSize;
+    }
+    if (req.params.stops >= 0) {
+      uri += "&stops=" + req.params.stops;
+    }
+    unirest
+      .get(uri)
+      .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
+      .header("X-Mashape-Host", skyscannerDomain)
+      .end(function(result) {
+        return result.status >= 200 && result.status < 300
+          ? res.send(result.body)
+          : res.status(400).send(result.body);
+      });
   }
-  if (req.params.stops >= 0) {
-    uri += "&stops=" + req.params.stops;
-  }
-  unirest
-    .get(uri)
-    .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
-    .header("X-Mashape-Host", skyscannerDomain)
-    .end(function(result) {
-      return result.status >= 200 && result.status < 300
-        ? res.send(result.body)
-        : res.status(400).send(result.body);
-    });
-});
+);
 
 // application -------------------------------------------------------------
 app.get("*", (req, res) => {
   res.sendFile(distDir + "/index.html"); // load the single view file (angular will handle the page changes on the front-end)
-});
-
-// Initialize the app.
-var server = app.listen(process.env.PORT || 3000, function() {
-  var port = server.address().port;
-  console.log("App now running on port", port);
 });
