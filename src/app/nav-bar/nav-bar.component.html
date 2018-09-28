@@ -1,18 +1,16 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top shadow p-3">
-  <a class="navbar-brand" href="#">
-    <img src="assets/img/contrail.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    Contrail
+  <a class="navbar-brand" routerLink="/home/session" routerLinkActive="true">
+    <img src="assets/img/contrail.png" width="30" height="30" class="d-inline-block align-top" alt=""> Contrail
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-      <div class="nav-item" ngbDropdown [autoClose]="false">
-        <label for="dropdownLocale" class="col-form-label" i18n></label>
-        <button type="button" class="btn btn-outline-primary align-self-center" id="dropdownLocale" ngbDropdownToggle>
+  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+    <ul class="nav nav-pills mr-auto">
+      <li class="nav-item dropdown" ngbDropdown [autoClose]="false">
+        <a class="nav-link dropdown-toggle" id="dropdownLocale" ngbDropdownToggle>
           {{getLocale()}}
-        </button>
+        </a>
         <div ngbDropdownMenu aria-labelledby="dropdownLocale">
           <div class="card">
             <div class="card-body">
@@ -42,7 +40,26 @@
             </div>
           </div>
         </div>
-      </div>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown *ngIf="user">
+        <a class="nav-link dropdown-toggle" role="button" id="dropDownUser" ngbDropdownToggle>
+          <span [innerText]="user.name"></span>
+          <img *ngIf="user.imgPath" [src]="user.imgPath" width="30" height="30" class="rounded-circle" alt="">
+        </a>
+        <div ngbDropdownMenu aria-labelledby="dropDownUser">
+          <!-- <button class="dropdown-item"><span><i class="fa fa-cogs" aria-hidden="true"></i></span> Area Admin</button>
+          <div role="separator" class="dropdown-divider"></div> -->
+          <button class="dropdown-item" type="submit" (click)="logout()"><span><i class="fa fa-power-off" aria-hidden="true"></i></span> Logout</button>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/signin">Sign in</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/signup">Sign up</a>
+      </li>
     </ul>
   </div>
 </nav>

@@ -3,7 +3,7 @@ import { SkySession, Itinerary, PollSession, Leg } from "../shared/models";
 import { SkyScannerService, AlertService } from "../shared/services";
 import { FormGroup, Validators, FormControl } from "@angular/forms";
 
-const mockPollSessionResults = require("../shared/mock/pollSessionResult.json");
+// const mockPollSessionResults = require("../shared/mock/pollSessionResult.json");
 const MOCK_SESSION = require("../shared/mock/mockSession.json");
 
 @Component({

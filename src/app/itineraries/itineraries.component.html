@@ -70,7 +70,7 @@
                         <span><i class="fa fa-minus-circle"></i></span>
                       </button>
                     </div>
-                    <input id="pageSize" name="pageSize" readonly class="form-control" [value]="pollSession.pageSize"/>
+                    <input id="pageSize" name="pageSize" readonly class="form-control" [value]="pollSession.pageSize" />
                     <div class="input-group-append">
                       <button type="button" class="btn btn-outline-primary" (click)="addItemsPerPages()">
                         <span><i class="fa fa-plus-circle"></i></span>
@@ -84,17 +84,14 @@
           <div class="col-8 col-sm-8 col-md-8  mt-2">
             <div class="col">
               <label>Showing {{itinerariesPage.length}} of {{pollSession.collectionSize}} Solution</label>
-              <ngb-pagination [pageSize]="pollSession.pageSize"
-                [collectionSize]="pollSession.collectionSize" [(page)]="pollSession.pageIndex"
-                [maxSize]="5" [boundaryLinks]="true" [directionLinks]="true"
-                [rotate]="true" [ellipses]="true"
-                (pageChange)="loadPage($event)"></ngb-pagination>
+              <ngb-pagination [pageSize]="pollSession.pageSize" [collectionSize]="pollSession.collectionSize" [(page)]="pollSession.pageIndex" [maxSize]="5" [boundaryLinks]="true" [directionLinks]="true" [rotate]="true" [ellipses]="true" (pageChange)="loadPage($event)"></ngb-pagination>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>
 <div class="row">
   <div class="col-12 col-sm-12 col-md-12 align-self-center">

@@ -3,8 +3,18 @@ import { HomeComponent } from "./home/home.component";
 import { ItinerariesComponent } from "./itineraries/itineraries.component";
 import { SessionComponent } from "./session/session.component";
 import { BookingDetailComponent } from "./booking-detail/booking-detail.component";
+import { LoginComponent } from "./login/login.component";
+import { RegisterComponent } from "./register/register.component";
 
 const appRoutes: Routes = [
+  {
+    path: "signin",
+    component: LoginComponent
+  },
+  {
+    path: "signup",
+    component: RegisterComponent
+  },
   {
     path: "home",
     component: HomeComponent,

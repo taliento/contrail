@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { SkyScannerService } from "../shared/services";
-import { SkySession } from "../shared/models";
+import { SkyScannerService, UserService } from "../shared/services";
+import { SkySession, User } from "../shared/models";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-nav-bar",
@@ -9,12 +10,24 @@ import { SkySession } from "../shared/models";
 })
 export class NavBarComponent implements OnInit {
   session: SkySession;
+  user: User;
+  navbarOpen = false;
 
-  constructor(private skyScanner: SkyScannerService) {
+  constructor(
+    private skyScanner: SkyScannerService,
+    private userService: UserService,
+    private router: Router
+  ) {
     this.session = skyScanner.getCurrentSession();
+    this.userService.userValue.subscribe(nextValue => {
+      this.user = nextValue;
+    });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+    this.user = this.userService.getUser();
+  }
 
   getLocale() {
     return (
@@ -24,5 +37,14 @@ export class NavBarComponent implements OnInit {
       " " +
       this.session.currency
     );
+  }
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
+
+  logout() {
+    this.userService.logout();
+    this.router.navigate(["#"]);
   }
 }

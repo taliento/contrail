@@ -5,11 +5,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppComponent } from "./app.component";
-import { UserDetailsComponent } from "./user-details/user-details.component";
-import { UserListComponent } from "./user-list/user-list.component";
 import { HomeComponent } from "./home/home.component";
 import { routing } from "./app.routing";
-import { SkyScannerService, AlertService } from "./shared/services";
+import { SkyScannerService, UserService , AlertService } from "./shared/services";
 import { ItinerariesComponent } from "./itineraries/itineraries.component";
 import { ItineraryComponent } from "./itinerary/itinerary.component";
 import { LegComponent } from "./leg/leg.component";
@@ -24,14 +22,14 @@ import { CarrierComponent } from "./carrier/carrier.component";
 import { BookingDetailComponent } from "./booking-detail/booking-detail.component";
 import { AgentComponent } from "./agent/agent.component";
 import { AlertComponent } from "./alert/alert.component";
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 registerLocaleData(localeIt);
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserDetailsComponent,
-    UserListComponent,
     HomeComponent,
     ItinerariesComponent,
     ItineraryComponent,
@@ -44,7 +42,9 @@ registerLocaleData(localeIt);
     CarrierComponent,
     BookingDetailComponent,
     AgentComponent,
-    AlertComponent
+    AlertComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     routing,
@@ -57,6 +57,7 @@ registerLocaleData(localeIt);
   ],
   providers: [
     SkyScannerService,
+    UserService,
     AlertService,
     { provide: LOCALE_ID, useValue: "it" }
   ],
