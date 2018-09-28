@@ -13,8 +13,11 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/signup">Sign up</a>
       </li>
+    </ul>
+
+    <form class="form-inline">
       <div class="nav-item" ngbDropdown [autoClose]="false">
-        <button type="button" class="btn btn-outline-primary align-self-center" role="button" id="dropdownLocale" ngbDropdownToggle>
+        <button type="button" class="btn btn-sm btn-outline-primary" role="button" id="dropdownLocale" ngbDropdownToggle>
           {{getLocale()}}
         </button>
         <div ngbDropdownMenu aria-labelledby="dropdownLocale">
@@ -47,9 +50,8 @@
           </div>
         </div>
       </div>
-
       <div class="nav-item" ngbDropdown *ngIf="user">
-        <button class="btn btn-outline-primary align-self-center" role="button" id="dropDownUser" ngbDropdownToggle>
+        <button class="btn btn-sm btn-outline-primary" role="button" id="dropDownUser" ngbDropdownToggle>
           <span [innerText]="user.name"></span>
           <img *ngIf="user.imgPath" [src]="user.imgPath" width="30" height="30" class="rounded-circle" alt="">
         </button>
@@ -59,6 +61,6 @@
           <button class="dropdown-item" type="submit" (click)="logout()"><span><i class="fa fa-power-off" aria-hidden="true"></i></span> Logout</button>
         </div>
       </div>
-    </ul>
+    </form>
   </div>
 </nav>
