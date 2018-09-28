@@ -6,7 +6,7 @@ const path = require("path");
 const unirest = require("unirest");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
-const expressJwt = require('express-jwt');
+const expressJwt = require("express-jwt");
 const bcrypt = require("bcryptjs");
 const _ = require("lodash");
 
@@ -62,7 +62,6 @@ function handleError(res, reason, message, code) {
 
 //AUTH USER
 app.post("/api/signin", function(req, res) {
-
   let userParam = req.body;
   db.collection("users").findOne(
     {
