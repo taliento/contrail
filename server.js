@@ -52,6 +52,14 @@ mongodb.MongoClient.connect(
   }
 );
 
+//API location
+// use JWT auth to secure the api
+app.use(expressJwt({
+  secret: process.env.SECRET
+}).unless({
+  path: require('./routes/public-routes')
+}));
+
 // USERS API ROUTES BELOW
 
 // Generic error handler used by all endpoints.
@@ -63,7 +71,7 @@ function handleError(res, reason, message, code) {
 //AUTH USER
 app.post("/api/signin", function(req, res) {
   let userParam = req.body;
-  db.collection("users").findOne(
+  db.collection(USERS_COLLECTION).findOne(
     {
       email: userParam.email
     },
@@ -96,7 +104,7 @@ app.post("/api/signup", function(req, res) {
   let userParam = req.body;
 
   // validation
-  db.collection("users").findOne(
+  db.collection(USERS_COLLECTION).findOne(
     {
       email: userParam.email
     },
@@ -117,7 +125,7 @@ app.post("/api/signup", function(req, res) {
     // add hashed password to user object
     user.hash = bcrypt.hashSync(userParam.password, 10);
 
-    db.collection("users").insertOne(user, (err, doc) => {
+    db.collection(USERS_COLLECTION).insertOne(user, (err, doc) => {
       if (err) res.status(401).send(err.name + ": " + err.message);
       res.send({
         _id: user._id,
