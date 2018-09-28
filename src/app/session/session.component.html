@@ -90,34 +90,38 @@
                 {{getCabinTravellersLabel()}}
               </button>
               <div ngbDropdownMenu aria-labelledby="dropdownCabinTravellers">
-                <div class="form-row">
-                  <div class="col-12 col-sm-12 col-md-12 form-group">
-                    <label for="adults" class="col-form-label" i18n>Adults</label>
-                    <input id="adults" type="number" class="form-control" formControlName="adults" required >
-                    <div *ngIf="adults.invalid" class="invalid-feedback">
-                      <span i18n>Number of adults (16+ years). Must be between 1 and 8.</span>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="form-row">
+                      <div class="col-12 col-sm-12 col-md-12 form-group">
+                        <label for="adults" class="col-form-label" i18n>Adults</label>
+                        <input id="adults" type="number" class="form-control" formControlName="adults" required >
+                        <div *ngIf="adults.invalid" class="invalid-feedback">
+                          <span i18n>Number of adults (16+ years). Must be between 1 and 8.</span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-12 form-group">
+                        <label for="children" class="col-form-label" i18n>Children</label>
+                        <input id="children" type="number" class="form-control" formControlName="children">
+                        <div *ngIf="children.invalid" class="invalid-feedback">
+                          <span i18n>Check conditions.</span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-12 form-group">
+                        <label for="cabinClass" class="col-form-label" i18n>Cabin class</label>
+                        <select id="cabinClass" class="form-control" formControlName="cabinClass" required>
+                          <option [value]="'economy'">Economy</option>
+                          <option [value]="'premiumeconomy'">Premium economy</option>
+                          <option [value]="'business'">Business</option>
+                          <option [value]="'first'">First</option>
+                        </select>
+                        <div *ngIf="cabinClass.invalid" class="invalid-feedback">
+                          <span i18n>Choose one</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-12 col-sm-12 col-md-12 form-group">
-                    <label for="children" class="col-form-label" i18n>Children</label>
-                    <input id="children" type="number" class="form-control" formControlName="children">
-                    <div *ngIf="children.invalid" class="invalid-feedback">
-                      <span i18n>Check conditions.</span>
-                    </div>
-                  </div>
-                  <div class="col-12 col-sm-12 col-md-12 form-group">
-                    <label for="cabinClass" class="col-form-label" i18n>Cabin class</label>
-                    <select id="cabinClass" class="form-control" formControlName="cabinClass" required>
-                      <option [value]="'economy'">Economy</option>
-                      <option [value]="'premiumeconomy'">Premium economy</option>
-                      <option [value]="'business'">Business</option>
-                      <option [value]="'first'">First</option>
-                    </select>
-                    <div *ngIf="cabinClass.invalid" class="invalid-feedback">
-                      <span i18n>Choose one</span>
-                    </div>
-                  </div>
-                </div>
+                </div>    
               </div>
             </div>
           </div>
