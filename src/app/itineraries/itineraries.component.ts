@@ -3,7 +3,7 @@ import { SkySession, Itinerary, PollSession, Leg } from "../shared/models";
 import { SkyScannerService, AlertService } from "../shared/services";
 import { FormGroup, Validators, FormControl } from "@angular/forms";
 
-// const mockPollSessionResults = require("../shared/mock/pollSessionResult.json");
+const mockPollSessionResults = require("../shared/mock/pollSessionResult.json");
 const MOCK_SESSION = require("../shared/mock/mockSession.json");
 
 @Component({
@@ -23,9 +23,9 @@ export class ItinerariesComponent implements OnInit {
     private skyScanner: SkyScannerService,
     private alertService: AlertService
   ) {
-    // this.session = MOCK_SESSION; //TESTING
+    this.session = MOCK_SESSION; //TESTING
 
-    this.session = skyScanner.getCurrentSession();
+    // this.session = skyScanner.getCurrentSession();
     this.pollSession = new PollSession(this.session.sessionkey, 0);
   }
 
@@ -36,8 +36,8 @@ export class ItinerariesComponent implements OnInit {
       stops: new FormControl(null)
     });
     this.setDefaults();
-    this.load();
-    // this.loadMock(); //TESTING
+    // this.load();
+    this.loadMock(); //TESTING
   }
 
   setDefaults() {
@@ -95,11 +95,11 @@ export class ItinerariesComponent implements OnInit {
     );
   }
 
-  // loadMock() {
-  //   this.loading = true;
-  //   let result = mockPollSessionResults;
-  //   this.pollSession.collectionSize = result.Itineraries.length;
-  //   this.skyScanner.cachePollSessionResults(result);
-  //   this.loadPage(this.pollSession.pageIndex);
-  // }
+  loadMock() {
+    this.loading = true;
+    let result = mockPollSessionResults;
+    this.pollSession.collectionSize = result.Itineraries.length;
+    this.skyScanner.cachePollSessionResults(result);
+    this.loadPage(this.pollSession.pageIndex);
+  }
 }
