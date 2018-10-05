@@ -19,14 +19,12 @@ export class NavBarComponent implements OnInit {
     private router: Router
   ) {
     this.session = skyScanner.getCurrentSession();
-    this.userService.userValue.subscribe(nextValue => {
-      this.user = nextValue;
-    });
   }
 
   ngOnInit() {
-    
-    this.user = this.userService.getUser();
+    this.userService.userValue.subscribe(nextValue => {
+      this.user = nextValue;
+    });
   }
 
   getLocale() {

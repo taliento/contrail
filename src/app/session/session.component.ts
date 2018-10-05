@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NgbDateParserFormatter } from "@ng-bootstrap/ng-bootstrap";
 import { FormGroup, Validators, FormControl } from "@angular/forms";
-import { SkyScannerService, AlertService } from "../shared/services";
+import { SkyScannerService, AlertService, UserService } from "../shared/services";
 import { SkySession, Place } from "../shared/models";
 import { Observable, of } from "rxjs";
 import {
@@ -38,6 +38,7 @@ export class SessionComponent implements OnInit {
     private alertService: AlertService,
     private skyScanner: SkyScannerService,
     private router: Router,
+    private userService: UserService,
     private route: ActivatedRoute
   ) {
     this.session = this.skyScanner.getCurrentSession();
@@ -179,6 +180,7 @@ export class SessionComponent implements OnInit {
     formValue.country = this.session.country;
     formValue.currency = this.session.currency;
     formValue.locale = this.session.locale;
+    formValue.user = this.userService.getUser();
     this.skyScanner.createSession(formValue).subscribe(
       result => {
         this.loading = false;

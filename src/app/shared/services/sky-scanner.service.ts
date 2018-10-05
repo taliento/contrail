@@ -60,15 +60,7 @@ export class SkyScannerService extends AService {
 
   createSession(session: SkySession): Observable<string> {
     return this.http
-      .post<any>(this.apiUrl + SUFFIX + "/createSession", session)
-      .pipe(
-        map(response =>
-          response.location.substring(
-            response.location.lastIndexOf("/") + 1,
-            response.location.length
-          )
-        )
-      );
+    .post<any>(this.apiUrl + SUFFIX + "/createSession", session);
   }
 
   pollSessionResults(pollSession: PollSession): Observable<PollSessionResult> {
