@@ -6,7 +6,8 @@
     "start": "nf start",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "ng lint contrail",
+    "lint-fix": "ng lint contrail --fix",
     "e2e": "ng e2e",
     "postinstall": "ng build --prod"
   },

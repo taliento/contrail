@@ -1,4 +1,4 @@
-import { ValidatorFn, AbstractControl } from "@angular/forms";
+import { ValidatorFn, AbstractControl } from '@angular/forms';
 
 export function forbiddenPlaceValidator(): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {
@@ -13,7 +13,7 @@ export function forbiddenPlaceValidator(): ValidatorFn {
 }
 export function inboundDateValidator(ticketType: string): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {
-    if (ticketType == "oneWay") {
+    if (ticketType === 'oneWay') {
       return null;
     }
     return !control.value ? { required: true } : null;

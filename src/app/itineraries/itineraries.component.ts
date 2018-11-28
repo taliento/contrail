@@ -1,15 +1,15 @@
-import { Component, OnInit } from "@angular/core";
-import { SkySession, Itinerary, PollSession, Leg } from "../shared/models";
-import { SkyScannerService, AlertService } from "../shared/services";
-import { FormGroup, Validators, FormControl } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { SkySession, Itinerary, PollSession, Leg } from '../shared/models';
+import { SkyScannerService, AlertService } from '../shared/services';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 // const mockPollSessionResults = require("../shared/mock/pollSessionResult.json");
 // const MOCK_SESSION = require("../shared/mock/mockSession.json");
 
 @Component({
-  selector: "app-itineraries",
-  templateUrl: "./itineraries.component.html",
-  styleUrls: ["./itineraries.component.scss"]
+  selector: 'app-itineraries',
+  templateUrl: './itineraries.component.html',
+  styleUrls: ['./itineraries.component.scss']
 })
 export class ItinerariesComponent implements OnInit {
   filterForm: FormGroup;
@@ -41,9 +41,9 @@ export class ItinerariesComponent implements OnInit {
   }
 
   setDefaults() {
-    this.filterForm.get("direct").setValue(true);
-    this.filterForm.get("oneStop").setValue(false);
-    this.filterForm.get("stops").setValue(false);
+    this.filterForm.get('direct').setValue(true);
+    this.filterForm.get('oneStop').setValue(false);
+    this.filterForm.get('stops').setValue(false);
   }
 
   loadPage($event: number) {
@@ -75,9 +75,9 @@ export class ItinerariesComponent implements OnInit {
   load() {
     this.loading = true;
 
-    if (this.filterForm.get("stops").value) {
+    if (this.filterForm.get('stops').value) {
       this.pollSession.stops = -1;
-    } else if (this.filterForm.get("oneStop").value) {
+    } else if (this.filterForm.get('oneStop').value) {
       this.pollSession.stops = 1;
     } else {
       this.pollSession.stops = 0;

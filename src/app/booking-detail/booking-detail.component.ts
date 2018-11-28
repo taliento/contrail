@@ -1,19 +1,19 @@
-import { Component, OnInit } from "@angular/core";
-import { SkyScannerService } from "../shared/services";
+import { Component, OnInit } from '@angular/core';
+import { SkyScannerService } from '../shared/services';
 import {
   Itinerary,
   Agent,
   PollSessionResult,
   Leg,
   SkySession
-} from "../shared/models";
-import { Location } from "@angular/common";
-import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
+} from '../shared/models';
+import { Location } from '@angular/common';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: "app-booking-detail",
-  templateUrl: "./booking-detail.component.html",
-  styleUrls: ["./booking-detail.component.scss"]
+  selector: 'app-booking-detail',
+  templateUrl: './booking-detail.component.html',
+  styleUrls: ['./booking-detail.component.scss']
 })
 export class BookingDetailComponent implements OnInit {
   itinerary: Itinerary;
@@ -42,6 +42,6 @@ export class BookingDetailComponent implements OnInit {
   }
 
   findLegById(legId: string): Leg {
-    return this.pollSessionResult.Legs.find(x => x.Id == legId);
+    return this.pollSessionResult.Legs.find(x => x.Id === legId);
   }
 }

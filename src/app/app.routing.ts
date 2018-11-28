@@ -1,37 +1,37 @@
-import { Routes, RouterModule } from "@angular/router";
-import { HomeComponent } from "./home/home.component";
-import { ItinerariesComponent } from "./itineraries/itineraries.component";
-import { SessionComponent } from "./session/session.component";
-import { BookingDetailComponent } from "./booking-detail/booking-detail.component";
-import { LoginComponent } from "./login/login.component";
-import { RegisterComponent } from "./register/register.component";
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { ItinerariesComponent } from './itineraries/itineraries.component';
+import { SessionComponent } from './session/session.component';
+import { BookingDetailComponent } from './booking-detail/booking-detail.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const appRoutes: Routes = [
   {
-    path: "signin",
+    path: 'signin',
     component: LoginComponent
   },
   {
-    path: "signup",
+    path: 'signup',
     component: RegisterComponent
   },
   {
-    path: "home",
+    path: 'home',
     component: HomeComponent,
     children: [
       {
-        path: "session",
+        path: 'session',
         component: SessionComponent
       },
       {
-        path: "itineraries",
+        path: 'itineraries',
         component: ItinerariesComponent
       }
     ]
   },
   {
-    path: "**",
-    redirectTo: "home/session"
+    path: '**',
+    redirectTo: 'home/session'
   }
 ];
 

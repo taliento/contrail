@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { debounceTime } from "rxjs/operators";
-import { AlertService } from "../shared/services";
+import { Component, OnInit } from '@angular/core';
+import { debounceTime } from 'rxjs/operators';
+import { AlertService } from '../shared/services';
 
 @Component({
   moduleId: module.id,
-  selector: "app-alert",
-  templateUrl: "alert.component.html"
+  selector: 'app-alert',
+  templateUrl: 'alert.component.html'
 })
 export class AlertComponent implements OnInit {
   message: any;
