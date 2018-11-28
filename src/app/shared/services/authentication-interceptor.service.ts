@@ -1,6 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import 'rxjs/add/observable/throw';
 import { Router } from '@angular/router';
@@ -15,12 +15,12 @@ export class AuthenticationInterceptorService implements HttpInterceptor {
     let request: HttpRequest<any>;
     const router = this.injector.get(Router);
 
-    if(localStorage && localStorage.getItem('currentUser')) {
+    if (localStorage && localStorage.getItem('currentUser')) {
       const auth = JSON.parse(localStorage.getItem('currentUser'));
 
-      if(!auth || !auth.token) return next.handle(req);// only logged users
+      if (!auth || !auth.token) { return next.handle(req); }// only logged users
 
-      request = req.clone({setHeaders:{Authorization: `Bearer ${auth.token}`}});
+      request = req.clone({setHeaders: {Authorization: `Bearer ${auth.token}`}});
 
     } else {
       request = req.clone();
@@ -29,7 +29,7 @@ export class AuthenticationInterceptorService implements HttpInterceptor {
     return next.handle(request)
     .pipe(
       catchError((error: HttpErrorResponse) => {
-       if(error.status == 401) {
+       if (error.status === 401) {
          localStorage.clear();
 
          router.navigate(['/login']); // FIXME
@@ -37,7 +37,7 @@ export class AuthenticationInterceptorService implements HttpInterceptor {
 
        console.log(error);
 
-       return Observable.throw(error);
+       return throwError(error);
      })
     );
   }

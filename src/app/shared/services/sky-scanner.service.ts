@@ -1,16 +1,16 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { AService } from "./aservice.service";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { AService } from './aservice.service';
+import { Observable } from 'rxjs';
 import {
   SkySession,
   PollSessionResult,
   PollSession,
   Itinerary
-} from "../models";
-import { map } from "rxjs/operators";
+} from '../models';
+import { map } from 'rxjs/operators';
 
-const SUFFIX = "/skyscanner";
+const SUFFIX = '/skyscanner';
 
 @Injectable()
 export class SkyScannerService extends AService {
@@ -37,12 +37,12 @@ export class SkyScannerService extends AService {
   }
 
   setCurrentSession(session: SkySession): void {
-    //FIXME MONGO
+    // FIXME MONGO
     this.currentSession = session;
   }
 
   getCurrentSession(): SkySession {
-    //FIXME MONGO
+    // FIXME MONGO
     return this.currentSession;
   }
 
@@ -60,19 +60,10 @@ export class SkyScannerService extends AService {
 
   createSession(session: SkySession): Observable<string> {
     return this.http
-      .post<any>(this.apiUrl + SUFFIX + "/createSession", session)
-      .pipe(
-        map(response =>
-          response.location.substring(
-            response.location.lastIndexOf("/") + 1,
-            response.location.length
-          )
-        )
-      );
+    .post<any>(this.apiUrl + SUFFIX + '/createSession', session);
   }
 
   pollSessionResults(pollSession: PollSession): Observable<PollSessionResult> {
-    //${pollSession.pageIndex-1}/${pollSession.pageSize}
     const uri =
       this.apiUrl +
       SUFFIX +
@@ -81,7 +72,7 @@ export class SkyScannerService extends AService {
   }
 
   getPlaces(query: string): Observable<any> {
-    //FIXME MONGO cache
+    // FIXME MONGO cache
     return this.http
       .get<any>(this.apiUrl + SUFFIX + `/getPlaces/${query}`)
       .pipe(map(response => response.Places));

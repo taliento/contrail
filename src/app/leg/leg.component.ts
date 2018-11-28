@@ -1,16 +1,16 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input } from '@angular/core';
 import {
   Leg,
   PollSessionResult,
   PollResultPlace,
   Carrier
-} from "../shared/models";
-import { SkyScannerService } from "../shared/services";
+} from '../shared/models';
+import { SkyScannerService } from '../shared/services';
 
 @Component({
-  selector: "app-leg",
-  templateUrl: "./leg.component.html",
-  styleUrls: ["./leg.component.scss"]
+  selector: 'app-leg',
+  templateUrl: './leg.component.html',
+  styleUrls: ['./leg.component.scss']
 })
 export class LegComponent implements OnInit {
   @Input() leg: Leg;
@@ -32,6 +32,6 @@ export class LegComponent implements OnInit {
   }
 
   getFlightType() {
-    return this.leg.Stops.length > 0 ? "1+ Stops" : "Direct";
+    return this.leg.Stops.length > 0 ? '1+ Stops' : 'Direct';
   }
 }

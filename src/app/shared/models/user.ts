@@ -8,5 +8,5 @@ export class User {
   phone: {
     mobile: string;
     work: string;
-  }
+  };
 }

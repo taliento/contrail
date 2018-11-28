@@ -1,15 +1,15 @@
-import { Component, OnInit } from "@angular/core";
-import { SkySession, Itinerary, PollSession, Leg } from "../shared/models";
-import { SkyScannerService, AlertService } from "../shared/services";
-import { FormGroup, Validators, FormControl } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { SkySession, Itinerary, PollSession, Leg } from '../shared/models';
+import { SkyScannerService, AlertService } from '../shared/services';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 
-const mockPollSessionResults = require("../shared/mock/pollSessionResult.json");
-const MOCK_SESSION = require("../shared/mock/mockSession.json");
+// const mockPollSessionResults = require("../shared/mock/pollSessionResult.json");
+// const MOCK_SESSION = require("../shared/mock/mockSession.json");
 
 @Component({
-  selector: "app-itineraries",
-  templateUrl: "./itineraries.component.html",
-  styleUrls: ["./itineraries.component.scss"]
+  selector: 'app-itineraries',
+  templateUrl: './itineraries.component.html',
+  styleUrls: ['./itineraries.component.scss']
 })
 export class ItinerariesComponent implements OnInit {
   filterForm: FormGroup;
@@ -23,9 +23,9 @@ export class ItinerariesComponent implements OnInit {
     private skyScanner: SkyScannerService,
     private alertService: AlertService
   ) {
-    this.session = MOCK_SESSION; //TESTING
+    // this.session = MOCK_SESSION; //TESTING
 
-    // this.session = skyScanner.getCurrentSession();
+    this.session = skyScanner.getCurrentSession();
     this.pollSession = new PollSession(this.session.sessionkey, 0);
   }
 
@@ -36,14 +36,14 @@ export class ItinerariesComponent implements OnInit {
       stops: new FormControl(null)
     });
     this.setDefaults();
-    // this.load();
-    this.loadMock(); //TESTING
+    this.load();
+    // this.loadMock(); //TESTING
   }
 
   setDefaults() {
-    this.filterForm.get("direct").setValue(true);
-    this.filterForm.get("oneStop").setValue(false);
-    this.filterForm.get("stops").setValue(false);
+    this.filterForm.get('direct').setValue(true);
+    this.filterForm.get('oneStop').setValue(false);
+    this.filterForm.get('stops').setValue(false);
   }
 
   loadPage($event: number) {
@@ -75,9 +75,9 @@ export class ItinerariesComponent implements OnInit {
   load() {
     this.loading = true;
 
-    if (this.filterForm.get("stops").value) {
+    if (this.filterForm.get('stops').value) {
       this.pollSession.stops = -1;
-    } else if (this.filterForm.get("oneStop").value) {
+    } else if (this.filterForm.get('oneStop').value) {
       this.pollSession.stops = 1;
     } else {
       this.pollSession.stops = 0;
@@ -95,11 +95,11 @@ export class ItinerariesComponent implements OnInit {
     );
   }
 
-  loadMock() {
-    this.loading = true;
-    let result = mockPollSessionResults;
-    this.pollSession.collectionSize = result.Itineraries.length;
-    this.skyScanner.cachePollSessionResults(result);
-    this.loadPage(this.pollSession.pageIndex);
-  }
+  // loadMock() {
+  //   this.loading = true;
+  //   let result = mockPollSessionResults;
+  //   this.pollSession.collectionSize = result.Itineraries.length;
+  //   this.skyScanner.cachePollSessionResults(result);
+  //   this.loadPage(this.pollSession.pageIndex);
+  // }
 }

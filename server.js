@@ -166,9 +166,29 @@ app.post(SUFFIX + "createSession", function(req, res) {
     .send("includeCarriers=")
     .send("excludeCarriers=")
     .end(result => {
-      return result.status >= 200 && result.status < 300
-        ? res.send({ location: result.headers.location })
-        : res.status(400).send(result.body);
+
+      if(result.status >= 200 && result.status < 300) {
+
+        const locationUrl = result.headers.location;
+        const sessionkey = locationUrl.substring(
+          locationUrl.lastIndexOf("/") + 1,
+          locationUrl.length
+        );
+
+        var session = {};
+        session.startDate = new Date();
+        session.sessionkey = sessionkey;
+        session.user = req.body.user;
+
+        db.collection("sessions").insertOne(session, (err, doc) => {
+          if (err) res.status(401).send(err.name + ": " + err.message);
+          res.send({ sessionkey: sessionkey });
+        });
+
+      } else {
+        res.status(400).send(result.body);
+      }
+
     });
 });
 

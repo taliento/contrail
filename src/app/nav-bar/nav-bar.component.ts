@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { SkyScannerService, UserService } from "../shared/services";
-import { SkySession, User } from "../shared/models";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { SkyScannerService, UserService } from '../shared/services';
+import { SkySession, User } from '../shared/models';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-nav-bar",
-  templateUrl: "./nav-bar.component.html",
-  styleUrls: ["./nav-bar.component.scss"]
+  selector: 'app-nav-bar',
+  templateUrl: './nav-bar.component.html',
+  styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
   session: SkySession;
@@ -19,22 +19,20 @@ export class NavBarComponent implements OnInit {
     private router: Router
   ) {
     this.session = skyScanner.getCurrentSession();
+  }
+
+  ngOnInit() {
     this.userService.userValue.subscribe(nextValue => {
       this.user = nextValue;
     });
   }
 
-  ngOnInit() {
-    
-    this.user = this.userService.getUser();
-  }
-
   getLocale() {
     return (
       this.session.locale +
-      "-" +
+      '-' +
       this.session.country +
-      " " +
+      ' ' +
       this.session.currency
     );
   }
@@ -45,6 +43,6 @@ export class NavBarComponent implements OnInit {
 
   logout() {
     this.userService.logout();
-    this.router.navigate(["#"]);
+    this.router.navigate(['#']);
   }
 }

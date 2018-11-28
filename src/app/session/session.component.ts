@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
-import { NgbDateParserFormatter } from "@ng-bootstrap/ng-bootstrap";
-import { FormGroup, Validators, FormControl } from "@angular/forms";
-import { SkyScannerService, AlertService } from "../shared/services";
-import { SkySession, Place } from "../shared/models";
-import { Observable, of } from "rxjs";
+import { Component, OnInit } from '@angular/core';
+import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { SkyScannerService, AlertService, UserService } from '../shared/services';
+import { SkySession, Place } from '../shared/models';
+import { Observable, of } from 'rxjs';
 import {
   catchError,
   debounceTime,
@@ -11,25 +11,25 @@ import {
   map,
   tap,
   switchMap
-} from "rxjs/operators";
-import { Router, ActivatedRoute } from "@angular/router";
+} from 'rxjs/operators';
+import { Router, ActivatedRoute } from '@angular/router';
 import {
   forbiddenPlaceValidator,
   inboundDateValidator
-} from "../shared/directives/session-validator.directive";
+} from '../shared/directives/session-validator.directive';
 
 @Component({
-  selector: "app-session",
-  templateUrl: "./session.component.html",
-  styleUrls: ["./session.component.scss"]
+  selector: 'app-session',
+  templateUrl: './session.component.html',
+  styleUrls: ['./session.component.scss']
 })
 export class SessionComponent implements OnInit {
   profileForm: FormGroup;
   session: SkySession;
-  loading: boolean = false;
-  ticketType: string = "return";
-  searching: boolean = false;
-  searchingDestination: boolean = false;
+  loading = false;
+  ticketType = 'return';
+  searching = false;
+  searchingDestination = false;
   searchFailed: boolean;
   searchDestinationFailed: boolean;
 
@@ -38,6 +38,7 @@ export class SessionComponent implements OnInit {
     private alertService: AlertService,
     private skyScanner: SkyScannerService,
     private router: Router,
+    private userService: UserService,
     private route: ActivatedRoute
   ) {
     this.session = this.skyScanner.getCurrentSession();
@@ -70,21 +71,21 @@ export class SessionComponent implements OnInit {
   }
 
   onFormChanges(): void {
-    this.profileForm.get("outboundDate").valueChanges.subscribe(val => {
-      if (this.ticketType != "return") {
+    this.profileForm.get('outboundDate').valueChanges.subscribe(val => {
+      if (this.ticketType !== 'return') {
         return;
       }
-      var outbound = new Date(this.ngbDateParserFormatter.format(val));
-      var inbound = new Date(
+      const outbound = new Date(this.ngbDateParserFormatter.format(val));
+      const inbound = new Date(
         this.ngbDateParserFormatter.format(
-          this.profileForm.get("inboundDate").value
+          this.profileForm.get('inboundDate').value
         )
       );
       if (inbound > outbound) {
         return;
       }
-      outbound.setDate(outbound.getDate() + 7); //1 week
-      this.profileForm.get("inboundDate").setValue({
+      outbound.setDate(outbound.getDate() + 7); // 1 week
+      this.profileForm.get('inboundDate').setValue({
         year: outbound.getFullYear(),
         month: outbound.getMonth() + 1,
         day: outbound.getDate()
@@ -93,83 +94,83 @@ export class SessionComponent implements OnInit {
   }
 
   setDefaults() {
-    var today = new Date();
-    this.profileForm.get("outboundDate").setValue({
+    const today = new Date();
+    this.profileForm.get('outboundDate').setValue({
       year: today.getFullYear(),
       month: today.getMonth() + 1,
       day: today.getDate()
     });
-    //1 week
+    // 1 week
     today.setDate(today.getDate() + 7);
-    this.profileForm.get("inboundDate").setValue({
+    this.profileForm.get('inboundDate').setValue({
       year: today.getFullYear(),
       month: today.getMonth() + 1,
       day: today.getDate()
     });
-    this.profileForm.get("adults").setValue(1);
-    this.profileForm.get("children").setValue(0);
-    this.profileForm.get("cabinClass").setValue("economy");
+    this.profileForm.get('adults').setValue(1);
+    this.profileForm.get('children').setValue(0);
+    this.profileForm.get('cabinClass').setValue('economy');
   }
 
   switchPlace() {
-    var origin = this.profileForm.get("originPlace").value;
-    var destination = this.profileForm.get("destinationPlace").value;
-    this.profileForm.get("originPlace").setValue(destination);
-    this.profileForm.get("destinationPlace").setValue(origin);
+    const origin = this.profileForm.get('originPlace').value;
+    const destination = this.profileForm.get('destinationPlace').value;
+    this.profileForm.get('originPlace').setValue(destination);
+    this.profileForm.get('destinationPlace').setValue(origin);
   }
 
   switchDate() {
-    var inboundDate = this.profileForm.get("inboundDate").value;
-    var outboundDate = this.profileForm.get("outboundDate").value;
-    this.profileForm.get("inboundDate").setValue(outboundDate);
-    this.profileForm.get("outboundDate").setValue(inboundDate);
+    const inboundDate = this.profileForm.get('inboundDate').value;
+    const outboundDate = this.profileForm.get('outboundDate').value;
+    this.profileForm.get('inboundDate').setValue(outboundDate);
+    this.profileForm.get('outboundDate').setValue(inboundDate);
   }
 
   getCabinTravellersLabel() {
-    var travellers = this.adults.value + this.children.value;
+    const travellers = this.adults.value + this.children.value;
     return (
       travellers +
-      ((travellers > 1 ? " travellers" : " adult") +
-        ", " +
+      ((travellers > 1 ? ' travellers' : ' adult') +
+        ', ' +
         this.cabinClass.value)
     );
   }
 
   get adults() {
-    return this.profileForm.get("adults");
+    return this.profileForm.get('adults');
   }
 
   get children() {
-    return this.profileForm.get("children");
+    return this.profileForm.get('children');
   }
 
   get originPlace() {
-    return this.profileForm.get("originPlace");
+    return this.profileForm.get('originPlace');
   }
 
   get destinationPlace() {
-    return this.profileForm.get("destinationPlace");
+    return this.profileForm.get('destinationPlace');
   }
 
   get inboundDate() {
-    return this.profileForm.get("inboundDate");
+    return this.profileForm.get('inboundDate');
   }
 
   get outboundDate() {
-    return this.profileForm.get("outboundDate");
+    return this.profileForm.get('outboundDate');
   }
 
   get cabinClass() {
-    return this.profileForm.get("cabinClass");
+    return this.profileForm.get('cabinClass');
   }
 
   createSession() {
     this.loading = true;
-    var formValue = this.profileForm.value;
+    const formValue = this.profileForm.value;
     formValue.outboundDate = this.ngbDateParserFormatter.format(
       formValue.outboundDate
     );
-    if (this.ticketType == "return") {
+    if (this.ticketType === 'return') {
       formValue.inboundDate = this.ngbDateParserFormatter.format(
         formValue.inboundDate
       );
@@ -179,6 +180,7 @@ export class SessionComponent implements OnInit {
     formValue.country = this.session.country;
     formValue.currency = this.session.currency;
     formValue.locale = this.session.locale;
+    formValue.user = this.userService.getUser();
     this.skyScanner.createSession(formValue).subscribe(
       result => {
         this.loading = false;
@@ -195,13 +197,13 @@ export class SessionComponent implements OnInit {
   }
 
   gotItineraries(): void {
-    this.router.navigate(["../itineraries"], { relativeTo: this.route });
+    this.router.navigate(['../itineraries'], { relativeTo: this.route });
   }
 
   searchOriginPlace = (text$: Observable<string>) => this.search(text$, true);
 
   searchDestinationPlace = (text$: Observable<string>) =>
-    this.search(text$, false);
+    this.search(text$, false)
 
   search = (text$: Observable<string>, originPlace: boolean) =>
     text$.pipe(
@@ -236,7 +238,7 @@ export class SessionComponent implements OnInit {
             ? (this.searching = false)
             : (this.searchingDestination = false)
       )
-    );
+    )
 
   formatter = (x: { PlaceName: string; CountryName: string }) => x.PlaceName;
 }
