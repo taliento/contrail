@@ -8,7 +8,7 @@ describe('AgentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AgentComponent ]
+      declarations: [ AgentComponent ],
     })
     .compileComponents();
   }));

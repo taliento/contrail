@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { SkyScannerService, UserService } from '../shared/services';
-import { SkySession, User } from '../shared/models';
 import { Router } from '@angular/router';
+import { SkySession, User } from '../shared/models';
+import { SkyScannerService, UserService } from '../shared/services';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
   session: SkySession;
@@ -16,13 +16,13 @@ export class NavBarComponent implements OnInit {
   constructor(
     private skyScanner: SkyScannerService,
     private userService: UserService,
-    private router: Router
+    private router: Router,
   ) {
     this.session = skyScanner.getCurrentSession();
   }
 
   ngOnInit() {
-    this.userService.userValue.subscribe(nextValue => {
+    this.userService.userValue.subscribe((nextValue) => {
       this.user = nextValue;
     });
   }

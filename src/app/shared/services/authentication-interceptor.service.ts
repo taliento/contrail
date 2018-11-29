@@ -1,9 +1,9 @@
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable, Injector } from '@angular/core';
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import 'rxjs/add/observable/throw';
 import { Router } from '@angular/router';
+import { Observable, throwError } from 'rxjs';
+import 'rxjs/add/observable/throw';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class AuthenticationInterceptorService implements HttpInterceptor {
@@ -38,9 +38,8 @@ export class AuthenticationInterceptorService implements HttpInterceptor {
        console.log(error);
 
        return throwError(error);
-     })
+     }),
     );
   }
-
 
 }

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService, AlertService } from '../shared/services';
-import { User } from '../shared/models';
 import { Router } from '@angular/router';
+import { User } from '../shared/models';
+import { AlertService, UserService } from '../shared/services';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
   user: User;
@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router,
-    private alert: AlertService
+    private alert: AlertService,
   ) {}
 
   ngOnInit() {
@@ -24,13 +24,13 @@ export class RegisterComponent implements OnInit {
   signup() {
     this.loading = true;
     this.userService.signup(this.user).subscribe(
-      result => {
+      (result) => {
         this.loading = true;
         this.router.navigate(['/home/session']);
       },
-      error => {
+      (error) => {
         this.alert.error(error);
-      }
+      },
     );
   }
 }

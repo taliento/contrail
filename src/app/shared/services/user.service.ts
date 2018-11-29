@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { AService } from './aservice.service';
-import { User } from '../models';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { User } from '../models';
+import { AService } from './aservice.service';
 
 @Injectable()
 export class UserService extends AService {
@@ -16,7 +16,7 @@ export class UserService extends AService {
   signin(user: User):  Observable<User> {
     return this.http.post<User>(this.apiUrl + '/signin', user)
     .pipe(
-      map(response => {
+      map((response) => {
         // login successful if there's a jwt token in the response
         if (response && response.token) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -24,14 +24,14 @@ export class UserService extends AService {
           return response;
         }
         return null;
-      })
+      }),
     );
   }
 
   signup(user: User): Observable<User> {
     return this.http.post<User>(this.apiUrl + '/signup', user)
     .pipe(
-      map(response => {
+      map((response) => {
         // login successful if there's a jwt token in the response
         if (response && response.token) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -39,7 +39,7 @@ export class UserService extends AService {
           return response;
         }
         return null;
-      })
+      }),
     );
   }
 

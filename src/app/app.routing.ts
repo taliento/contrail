@@ -1,19 +1,19 @@
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { BookingDetailComponent } from './booking-detail/booking-detail.component';
 import { HomeComponent } from './home/home.component';
 import { ItinerariesComponent } from './itineraries/itineraries.component';
-import { SessionComponent } from './session/session.component';
-import { BookingDetailComponent } from './booking-detail/booking-detail.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { SessionComponent } from './session/session.component';
 
 const appRoutes: Routes = [
   {
     path: 'signin',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'signup',
-    component: RegisterComponent
+    component: RegisterComponent,
   },
   {
     path: 'home',
@@ -21,18 +21,18 @@ const appRoutes: Routes = [
     children: [
       {
         path: 'session',
-        component: SessionComponent
+        component: SessionComponent,
       },
       {
         path: 'itineraries',
-        component: ItinerariesComponent
-      }
-    ]
+        component: ItinerariesComponent,
+      },
+    ],
   },
   {
     path: '**',
-    redirectTo: 'home/session'
-  }
+    redirectTo: 'home/session',
+  },
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

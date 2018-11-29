@@ -1,4 +1,4 @@
-import { ValidatorFn, AbstractControl } from '@angular/forms';
+import { AbstractControl, ValidatorFn } from '@angular/forms';
 
 export function forbiddenPlaceValidator(): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {

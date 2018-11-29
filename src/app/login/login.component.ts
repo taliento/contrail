@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService, AlertService } from '../shared/services';
-import { User } from '../shared/models';
 import { Router } from '@angular/router';
+import { User } from '../shared/models';
+import { AlertService, UserService } from '../shared/services';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   user: User;
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router,
-    private alert: AlertService
+    private alert: AlertService,
   ) {}
 
   ngOnInit() {
@@ -25,13 +25,13 @@ export class LoginComponent implements OnInit {
   signin() {
     this.loading = true;
     this.userService.signin(this.user).subscribe(
-      result => {
+      (result) => {
         this.loading = false;
         this.router.navigate(['/home/session']);
       },
-      error => {
+      (error) => {
         this.alert.error(error);
-      }
+      },
     );
   }
 }

@@ -1,14 +1,14 @@
-import { Itinerary, Leg, Segment, Carrier, Agent, PollResultPlace, Currency } from './';
+import { Agent, Carrier, Currency, Itinerary, Leg, PollResultPlace, Segment } from './';
 
 export class PollSessionResult {
   SessionKey: string;
   Query: any;
   Status: string;
-  Itineraries: Array<Itinerary>;
-  Legs: Array<Leg>;
-  Segments: Array<Segment>;
-  Carriers: Array<Carrier>;
-  Agents: Array<Agent>;
-  Places: Array<PollResultPlace>;
-  Currencies: Array<Currency>;
+  Itineraries: Itinerary[];
+  Legs: Leg[];
+  Segments: Segment[];
+  Carriers: Carrier[];
+  Agents: Agent[];
+  Places: PollResultPlace[];
+  Currencies: Currency[];
 }

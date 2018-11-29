@@ -1,15 +1,15 @@
 export class Leg {
   Id: string;
-  SegmentsId: Array<number>;
+  SegmentsId: number[];
   OriginStation: number;
   DestinationStation: number;
   Departure: Date;
   Arrival: Date;
   Duration: number;
   JourneyMode: string;
-  Stops: Array<any>;
-  Carriers: Array<number>;
-  OperatingCarriers: Array<number>;
+  Stops: any[];
+  Carriers: number[];
+  OperatingCarriers: number[];
   Directionality: string;
-  FlightNumbers: Array<any>;
+  FlightNumbers: any[];
 }
