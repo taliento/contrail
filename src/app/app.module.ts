@@ -1,29 +1,29 @@
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
+import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import localeIt from '@angular/common/locales/it';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AgentComponent } from './agent/agent.component';
+import { AlertComponent } from './alert/alert.component';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { routing } from './app.routing';
-import { SkyScannerService, UserService , AlertService } from './shared/services';
+import { BookingDetailComponent } from './booking-detail/booking-detail.component';
+import { CarrierComponent } from './carrier/carrier.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 import { ItinerariesComponent } from './itineraries/itineraries.component';
 import { ItineraryComponent } from './itinerary/itinerary.component';
 import { LegComponent } from './leg/leg.component';
-import { SessionComponent } from './session/session.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { FooterComponent } from './footer/footer.component';
-import { registerLocaleData } from '@angular/common';
-import localeIt from '@angular/common/locales/it';
-import { HoursMinutesPipe } from './shared/pipes';
-import { PlaceComponent } from './place/place.component';
-import { CarrierComponent } from './carrier/carrier.component';
-import { BookingDetailComponent } from './booking-detail/booking-detail.component';
-import { AgentComponent } from './agent/agent.component';
-import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from './login/login.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { PlaceComponent } from './place/place.component';
 import { RegisterComponent } from './register/register.component';
+import { SessionComponent } from './session/session.component';
+import { HoursMinutesPipe } from './shared/pipes';
+import { AlertService, SkyScannerService , UserService } from './shared/services';
 
 registerLocaleData(localeIt);
 
@@ -44,7 +44,7 @@ registerLocaleData(localeIt);
     AgentComponent,
     AlertComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     routing,
@@ -53,15 +53,15 @@ registerLocaleData(localeIt);
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [
     SkyScannerService,
     UserService,
     AlertService,
-    { provide: LOCALE_ID, useValue: 'it' }
+    { provide: LOCALE_ID, useValue: 'it' },
   ],
   entryComponents: [BookingDetailComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

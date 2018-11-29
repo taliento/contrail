@@ -3,7 +3,7 @@ import { BookingDetailsLink, PricingOption } from './';
 export class Itinerary {
   OutboundLegId: string;
   InboundLegId: string;
-  PricingOptions: Array<PricingOption>;
+  PricingOptions: PricingOption[];
   BookingDetailsLink: BookingDetailsLink;
   // ui param
   selected = false;

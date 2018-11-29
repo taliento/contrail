@@ -1,5 +1,5 @@
 export class PricingOption {
-  Agents: Array<number>;
+  Agents: number[];
   QuoteAgeInMinutes: number;
   Price: number;
   DeeplinkUrl: string;

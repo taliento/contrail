@@ -8,7 +8,7 @@ describe('CarrierComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CarrierComponent ]
+      declarations: [ CarrierComponent ],
     })
     .compileComponents();
   }));

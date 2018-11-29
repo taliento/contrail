@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SkySession, Itinerary, PollSession, Leg } from '../shared/models';
-import { SkyScannerService, AlertService } from '../shared/services';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Itinerary, Leg, PollSession, SkySession } from '../shared/models';
+import { AlertService, SkyScannerService } from '../shared/services';
 
 // const mockPollSessionResults = require("../shared/mock/pollSessionResult.json");
 // const MOCK_SESSION = require("../shared/mock/mockSession.json");
@@ -9,7 +9,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-itineraries',
   templateUrl: './itineraries.component.html',
-  styleUrls: ['./itineraries.component.scss']
+  styleUrls: ['./itineraries.component.scss'],
 })
 export class ItinerariesComponent implements OnInit {
   filterForm: FormGroup;
@@ -17,11 +17,11 @@ export class ItinerariesComponent implements OnInit {
   pollSession: PollSession;
   loading: boolean;
 
-  itinerariesPage: Array<Itinerary>;
+  itinerariesPage: Itinerary[];
 
   constructor(
     private skyScanner: SkyScannerService,
-    private alertService: AlertService
+    private alertService: AlertService,
   ) {
     // this.session = MOCK_SESSION; //TESTING
 
@@ -33,7 +33,7 @@ export class ItinerariesComponent implements OnInit {
     this.filterForm = new FormGroup({
       direct: new FormControl(null),
       oneStop: new FormControl(null),
-      stops: new FormControl(null)
+      stops: new FormControl(null),
     });
     this.setDefaults();
     this.load();
@@ -84,14 +84,14 @@ export class ItinerariesComponent implements OnInit {
     }
 
     this.skyScanner.pollSessionResults(this.pollSession).subscribe(
-      result => {
+      (result) => {
         this.pollSession.collectionSize = result.Itineraries.length;
         this.skyScanner.cachePollSessionResults(result);
         this.loadPage(this.pollSession.pageIndex);
       },
-      error => {
+      (error) => {
         this.alertService.error(error);
-      }
+      },
     );
   }
 

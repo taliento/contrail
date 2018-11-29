@@ -1,11 +1,11 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 
 import { AService } from './aservice.service';
 
 describe('AServiceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AService]
+      providers: [AService],
     });
   });
 

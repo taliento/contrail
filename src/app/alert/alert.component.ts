@@ -5,7 +5,7 @@ import { AlertService } from '../shared/services';
 @Component({
   moduleId: module.id,
   selector: 'app-alert',
-  templateUrl: 'alert.component.html'
+  templateUrl: 'alert.component.html',
 })
 export class AlertComponent implements OnInit {
   message: any;
@@ -16,7 +16,7 @@ export class AlertComponent implements OnInit {
     this.alertService
       .getMessage().subscribe((message) => this.message = message);
     this.alertService.getMessage().pipe(
-      debounceTime(5000)
+      debounceTime(5000),
     ).subscribe(() => this.message = null);
   }
 }

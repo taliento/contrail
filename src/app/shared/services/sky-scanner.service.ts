@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AService } from './aservice.service';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {
-  SkySession,
-  PollSessionResult,
-  PollSession,
-  Itinerary
-} from '../models';
 import { map } from 'rxjs/operators';
+import {
+  Itinerary,
+  PollSession,
+  PollSessionResult,
+  SkySession,
+} from '../models';
+import { AService } from './aservice.service';
 
 const SUFFIX = '/skyscanner';
 
@@ -75,6 +75,6 @@ export class SkyScannerService extends AService {
     // FIXME MONGO cache
     return this.http
       .get<any>(this.apiUrl + SUFFIX + `/getPlaces/${query}`)
-      .pipe(map(response => response.Places));
+      .pipe(map((response) => response.Places));
   }
 }

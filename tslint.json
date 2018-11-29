@@ -123,5 +123,13 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true
+  },
+  "extends": [
+    "tslint:recommended"           
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules"
+    ]
   }
 }

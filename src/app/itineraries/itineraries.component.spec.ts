@@ -8,7 +8,7 @@ describe('IntinerariesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ItinerariesComponent ]
+      declarations: [ ItinerariesComponent ],
     })
     .compileComponents();
   }));
