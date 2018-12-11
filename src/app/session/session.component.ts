@@ -191,8 +191,9 @@ export class SessionComponent implements OnInit {
       },
       (error) => {
         this.loading = false;
-        this.alertService.error(error);
+        this.alertService.error(JSON.stringify(error));
       },
+
     );
   }
 
