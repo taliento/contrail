@@ -1,9 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Itinerary, Leg, PollSession, SkySession } from '../shared/models';
-import { AlertService, SkyScannerService } from '../shared/services';
 import { Subject  } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { Itinerary, Leg, PollSession, SkySession } from '../shared/models';
+import { AlertService, SkyScannerService } from '../shared/services';
 
 // const mockPollSessionResults = require("../shared/mock/pollSessionResult.json");
 // const MOCK_SESSION = require("../shared/mock/mockSession.json");
@@ -100,7 +100,7 @@ export class ItinerariesComponent implements OnInit, OnDestroy {
       },
       (error) => {
         this.alertService.error(error);
-      }
+      },
     );
   }
 
