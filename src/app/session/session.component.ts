@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
-import { Observable, of } from 'rxjs';
+import { Subject, Observable, of } from 'rxjs';
 import {
   catchError,
   debounceTime,
@@ -17,13 +17,16 @@ import {
 } from '../shared/directives/session-validator.directive';
 import { Place, SkySession } from '../shared/models';
 import { AlertService, SkyScannerService, UserService } from '../shared/services';
+import { takeUntil  } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-session',
   templateUrl: './session.component.html',
   styleUrls: ['./session.component.scss'],
 })
-export class SessionComponent implements OnInit {
+
+export class SessionComponent implements OnInit, OnDestroy {
   profileForm: FormGroup;
   session: SkySession;
   loading = false;
@@ -32,6 +35,8 @@ export class SessionComponent implements OnInit {
   searchingDestination = false;
   searchFailed: boolean;
   searchDestinationFailed: boolean;
+  private unsubscribe: Subject<void> = new Subject();
+
 
   constructor(
     private ngbDateParserFormatter: NgbDateParserFormatter,
@@ -70,8 +75,15 @@ export class SessionComponent implements OnInit {
     this.onFormChanges();
   }
 
+  ngOnDestroy() {
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
+  }
+
   onFormChanges(): void {
-    this.profileForm.get('outboundDate').valueChanges.subscribe((val) => {
+  this.profileForm.get('outboundDate').valueChanges
+  .pipe(takeUntil(this.unsubscribe))
+  .subscribe((val) => {
       if (this.ticketType !== 'return') {
         return;
       }
@@ -181,7 +193,9 @@ export class SessionComponent implements OnInit {
     formValue.currency = this.session.currency;
     formValue.locale = this.session.locale;
     formValue.user = this.userService.getUser();
-    this.skyScanner.createSession(formValue).subscribe(
+    this.skyScanner.createSession(formValue)
+    .pipe(takeUntil(this.unsubscribe))
+    .subscribe(
       (result) => {
         this.loading = false;
         this.session = this.profileForm.value;
@@ -191,8 +205,9 @@ export class SessionComponent implements OnInit {
       },
       (error) => {
         this.loading = false;
-        this.alertService.error(error);
+        this.alertService.error(JSON.stringify(error));
       },
+
     );
   }
 

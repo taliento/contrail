@@ -38,6 +38,6 @@ export class AlertService {
     }
 
     getMessage(): Observable<any> {
-        return this.subject.asObservable();
+      return this.subject.asObservable();
     }
 }
