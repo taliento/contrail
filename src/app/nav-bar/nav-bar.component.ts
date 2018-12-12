@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { OnDestroy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SkySession, User } from '../shared/models';
 import { SkyScannerService, UserService } from '../shared/services';
+import { takeUntil  } from 'rxjs/operators';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss'],
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent implements OnInit, OnDestroy {
   session: SkySession;
   user: User;
   navbarOpen = false;
@@ -22,9 +23,16 @@ export class NavBarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.userValue.subscribe((nextValue) => {
+    this.userService.userValue
+    .pipe(takeUntil(this.userService.userValue))
+    .subscribe((nextValue) => {
       this.user = nextValue;
     });
+  }
+
+  ngOnDestroy() {
+    this.userService.userValue.next();
+    this.userService.userValue.complete();
   }
 
   getLocale() {
