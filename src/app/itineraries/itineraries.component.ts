@@ -100,7 +100,7 @@ export class ItinerariesComponent implements OnInit, OnDestroy {
       },
       (error) => {
         this.alertService.error(error);
-      },
+      }
     );
   }
 

@@ -199,7 +199,7 @@ export class SessionComponent implements OnInit, OnDestroy {
       (result) => {
         this.loading = false;
         this.session = this.profileForm.value;
-        this.session.sessionkey = result;
+        this.session.sessionkey = result.sessionkey;
         this.skyScanner.setCurrentSession(this.session);
         this.gotItineraries();
       },
