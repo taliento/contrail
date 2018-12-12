@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Itinerary, Leg, PollSession, SkySession } from '../shared/models';
 import { AlertService, SkyScannerService } from '../shared/services';
+import { Subject  } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 // const mockPollSessionResults = require("../shared/mock/pollSessionResult.json");
 // const MOCK_SESSION = require("../shared/mock/mockSession.json");
@@ -11,13 +13,13 @@ import { AlertService, SkyScannerService } from '../shared/services';
   templateUrl: './itineraries.component.html',
   styleUrls: ['./itineraries.component.scss'],
 })
-export class ItinerariesComponent implements OnInit {
+export class ItinerariesComponent implements OnInit, OnDestroy {
   filterForm: FormGroup;
   session: SkySession;
   pollSession: PollSession;
   loading: boolean;
-
   itinerariesPage: Itinerary[];
+  private unsubscribe: Subject<void> = new Subject();
 
   constructor(
     private skyScanner: SkyScannerService,
@@ -38,6 +40,11 @@ export class ItinerariesComponent implements OnInit {
     this.setDefaults();
     this.load();
     // this.loadMock(); //TESTING
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 
   setDefaults() {
@@ -83,7 +90,9 @@ export class ItinerariesComponent implements OnInit {
       this.pollSession.stops = 0;
     }
 
-    this.skyScanner.pollSessionResults(this.pollSession).subscribe(
+    this.skyScanner.pollSessionResults(this.pollSession)
+    .pipe(takeUntil(this.unsubscribe))
+    .subscribe(
       (result) => {
         this.pollSession.collectionSize = result.Itineraries.length;
         this.skyScanner.cachePollSessionResults(result);
