@@ -1,10 +1,9 @@
-import { OnDestroy, Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { SkySession, User } from '../shared/models';
 import { SkyScannerService, UserService } from '../shared/services';
-import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
-
 
 @Component({
   selector: 'app-nav-bar',

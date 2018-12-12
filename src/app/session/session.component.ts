@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
-import { Subject, Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import {
   catchError,
   debounceTime,
@@ -11,14 +11,13 @@ import {
   switchMap,
   tap,
 } from 'rxjs/operators';
+import { takeUntil  } from 'rxjs/operators';
 import {
   forbiddenPlaceValidator,
   inboundDateValidator,
 } from '../shared/directives/session-validator.directive';
 import { Place, SkySession } from '../shared/models';
 import { AlertService, SkyScannerService, UserService } from '../shared/services';
-import { takeUntil  } from 'rxjs/operators';
-
 
 @Component({
   selector: 'app-session',
@@ -36,7 +35,6 @@ export class SessionComponent implements OnInit, OnDestroy {
   searchFailed: boolean;
   searchDestinationFailed: boolean;
   private unsubscribe: Subject<void> = new Subject();
-
 
   constructor(
     private ngbDateParserFormatter: NgbDateParserFormatter,
@@ -199,7 +197,7 @@ export class SessionComponent implements OnInit, OnDestroy {
       (result) => {
         this.loading = false;
         this.session = this.profileForm.value;
-        this.session.sessionkey = result;
+        this.session.sessionkey = result.sessionkey;
         this.skyScanner.setCurrentSession(this.session);
         this.gotItineraries();
       },
