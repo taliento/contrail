@@ -186,6 +186,7 @@ app.post(SUFFIX + "createSession", function(req, res) {
         });
 
       } else {
+        console.log("ERROR:"+JSON.stringify(result.body))
         res.status(400).send(result.body);
       }
 
@@ -203,9 +204,12 @@ app.get(SUFFIX + "getPlaces/:query", function(req, res) {
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
     .header("X-Mashape-Host", skyscannerDomain)
     .end(function(result) {
-      return result.status >= 200 && result.status < 300
-        ? res.send(result.body)
-        : res.status(400).send(result.body);
+      if (result.status >= 200 && result.status < 300) {
+        return res.send(result.body);
+      } else {
+        console.log("ERROR:"+JSON.stringify(result.body))
+        return res.status(400).send(result.body);
+      }
     });
 });
 
@@ -222,9 +226,12 @@ app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
     .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
     .header("X-Mashape-Host", skyscannerDomain)
     .end(function(result) {
-      return result.status >= 200 && result.status < 300
-        ? res.send(result.body)
-        : res.status(400).send(result.body);
+      if (result.status >= 200 && result.status < 300) {
+        return res.send(result.body);
+      } else {
+        console.log("ERROR:"+JSON.stringify(result.body))
+        return res.status(400).send(result.body);
+      }
     });
 });
 
@@ -248,9 +255,12 @@ app.get(
       .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
       .header("X-Mashape-Host", skyscannerDomain)
       .end(function(result) {
-        return result.status >= 200 && result.status < 300
-          ? res.send(result.body)
-          : res.status(400).send(result.body);
+        if (result.status >= 200 && result.status < 300) {
+          return res.send(result.body);
+        } else {
+          console.log("ERROR:"+JSON.stringify(result.body))
+          return res.status(400).send(result.body);
+        }
       });
   }
 );
