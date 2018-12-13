@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject  } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Itinerary, Leg, PollSession, SkySession } from '../shared/models';
 import { AlertService, SkyScannerService } from '../shared/services';
-
 // const mockPollSessionResults = require("../shared/mock/pollSessionResult.json");
 // const MOCK_SESSION = require("../shared/mock/mockSession.json");
 
@@ -24,6 +24,8 @@ export class ItinerariesComponent implements OnInit, OnDestroy {
   constructor(
     private skyScanner: SkyScannerService,
     private alertService: AlertService,
+    private route: ActivatedRoute,
+    private router: Router,
   ) {
     // this.session = MOCK_SESSION; //TESTING
 
@@ -99,6 +101,7 @@ export class ItinerariesComponent implements OnInit, OnDestroy {
         this.loadPage(this.pollSession.pageIndex);
       },
       (error) => {
+        this.router.navigate(['../session'], { relativeTo: this.route  });
         this.alertService.error(error);
       },
     );
