@@ -101,8 +101,8 @@ export class ItinerariesComponent implements OnInit, OnDestroy {
         this.loadPage(this.pollSession.pageIndex);
       },
       (error) => {
-        this.router.navigate(['../session'], { relativeTo: this.route  });
-        this.alertService.error(error);
+      //this.router.navigate(['../session'], { relativeTo: this.route  });
+        this.alertService.error(JSON.stringify(error));
       },
     );
   }
