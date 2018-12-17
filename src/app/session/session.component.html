@@ -5,11 +5,11 @@
         <fieldset [disabled]="loading">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="ticketType" id="return" value="return" [(ngModel)]="ticketType" checked>
-            <label class="form-check-label" for="return">Return</label>
+            <label class="form-check-label" for="return" i18n>Return</label>
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="ticketType" id="oneWay" value="oneWay" [(ngModel)]="ticketType">
-            <label class="form-check-label" for="oneWay">One way</label>
+            <label class="form-check-label" for="oneWay" i18n>One way</label>
           </div>
         </fieldset>
       </form>
@@ -110,10 +110,10 @@
                       <div class="col-12 col-sm-12 col-md-12 form-group">
                         <label for="cabinClass" class="col-form-label" i18n>Cabin class</label>
                         <select id="cabinClass" class="form-control" formControlName="cabinClass" required>
-                          <option [value]="'economy'">Economy</option>
-                          <option [value]="'premiumeconomy'">Premium economy</option>
-                          <option [value]="'business'">Business</option>
-                          <option [value]="'first'">First</option>
+                          <option [value]="'economy'" i18n>Economy</option>
+                          <option [value]="'premiumeconomy'" i18n>Premium economy</option>
+                          <option [value]="'business'" i18n>Business</option>
+                          <option [value]="'first'" i18n>First</option>
                         </select>
                         <div *ngIf="cabinClass.invalid" class="invalid-feedback">
                           <span i18n>Choose one</span>
