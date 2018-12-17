@@ -20,7 +20,9 @@ export class AlertComponent implements OnInit, OnDestroy {
     .pipe(takeUntil(this.unsubscribe))
     .subscribe((message) => this.message = message);
 
-    this.alertService.getMessage().pipe(
+    this.alertService.getMessage()
+    .pipe(
+      takeUntil(this.unsubscribe),
       debounceTime(5000),
     ).subscribe(() => this.message = null);
   }
