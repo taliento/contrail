@@ -5,10 +5,10 @@
   display: block;
 }
 .ng-valid[required], .ng-valid.required  {
-  border-color: #28a745; /* green */
+  border-color: var(--success);
 }
 .ng-invalid:not(form)  {
-  border-color: #dc3545; /* red */
+  border-color: var(--danger);
 }
 // bootstrap form with no gutters
 .no-gutters {
