@@ -15,6 +15,7 @@
     "node": "8.x"
   },
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.5",
     "@angular/animations": "^7.2.0",
     "@angular/cli": "^7.2.1",
     "@angular/common": "^7.2.0",
@@ -28,6 +29,7 @@
     "@angular/router": "^7.2.0",
     "@fortawesome/fontawesome-free": "^5.3.1",
     "@ng-bootstrap/ng-bootstrap": "^4.0.0",
+    "@types/googlemaps": "^3.30.16",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.2.1",
@@ -35,6 +37,7 @@
     "cors": "^2.8.4",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
+    "foreman": "3.0.1",
     "jquery": "^3.3.1",
     "jsonwebtoken": "^8.4.0",
     "mongodb": "^3.1.10",
@@ -42,8 +45,7 @@
     "rxjs": "^6.3.3",
     "throng": "^4.0.0",
     "unirest": "^0.5.1",
-    "zone.js": "~0.8.27",
-    "foreman": "3.0.1"
+    "zone.js": "~0.8.27"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.12.0",

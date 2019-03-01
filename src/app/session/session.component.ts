@@ -79,9 +79,9 @@ export class SessionComponent implements OnInit, OnDestroy {
   }
 
   onFormChanges(): void {
-  this.profileForm.get('outboundDate').valueChanges
-  .pipe(takeUntil(this.unsubscribe))
-  .subscribe((val) => {
+    this.profileForm.get('outboundDate').valueChanges
+    .pipe(takeUntil(this.unsubscribe))
+    .subscribe((val) => {
       if (this.ticketType !== 'return') {
         return;
       }
@@ -192,21 +192,21 @@ export class SessionComponent implements OnInit, OnDestroy {
     formValue.locale = this.session.locale;
     formValue.user = this.userService.getUser();
     this.skyScanner.createSession(formValue)
-    .pipe(takeUntil(this.unsubscribe))
-    .subscribe(
-      (result) => {
-        this.loading = false;
-        this.session = this.profileForm.value;
-        this.session.sessionkey = result.sessionkey;
-        this.skyScanner.setCurrentSession(this.session);
-        this.gotItineraries();
-      },
-      (error) => {
-        this.loading = false;
-        this.alertService.error(JSON.stringify(error));
-      },
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe(
+        (result) => {
+          this.loading = false;
+          this.session = this.profileForm.value;
+          this.session.sessionkey = result.sessionkey;
+          this.skyScanner.setCurrentSession(this.session);
+          this.gotItineraries();
+        },
+        (error) => {
+          this.loading = false;
+          this.alertService.error(JSON.stringify(error));
+        },
 
-    );
+      );
   }
 
   gotItineraries(): void {
@@ -224,17 +224,17 @@ export class SessionComponent implements OnInit, OnDestroy {
       distinctUntilChanged(),
       tap(
         () =>
-          originPlace
-            ? (this.searching = true)
-            : (this.searchingDestination = true),
+        originPlace
+        ? (this.searching = true)
+        : (this.searchingDestination = true),
       ),
       switchMap((term) =>
         this.skyScanner.getPlaces(term).pipe(
           tap(
             () =>
-              originPlace
-                ? (this.searchFailed = false)
-                : (this.searchDestinationFailed = false),
+            originPlace
+            ? (this.searchFailed = false)
+            : (this.searchDestinationFailed = false),
           ),
           catchError((error) => {
             console.log(error);
@@ -247,9 +247,9 @@ export class SessionComponent implements OnInit, OnDestroy {
       ),
       tap(
         () =>
-          originPlace
-            ? (this.searching = false)
-            : (this.searchingDestination = false),
+        originPlace
+        ? (this.searching = false)
+        : (this.searchingDestination = false),
       ),
     )
 
