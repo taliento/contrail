@@ -247,7 +247,7 @@ app.get(
       uri +=
         "?pageIndex=" +
         req.params.pageIndex +
-        "&pageSize=̈́" +
+        "&pageSize=" +
         req.params.pageSize;
     }
     if (req.params.stops >= 0) {
