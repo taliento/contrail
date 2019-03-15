@@ -138,7 +138,7 @@
     </div>
   </div>
 </div>
-<app-suggestion mapTitle=""></app-suggestion>
+<app-suggestion mapTitle="Set current Location"></app-suggestion>
 <ng-template #rt let-r="result" let-t="term">
   <span><i class="fa" [ngClass]="{'fa-city': r.PlaceId == r.CityId, 'fa-plane': r.PlaceId != r.CityId}"></i>&nbsp;</span>
   <ngb-highlight [result]="r.PlaceName + ' - ' + r.CountryName" [term]="t"></ngb-highlight>

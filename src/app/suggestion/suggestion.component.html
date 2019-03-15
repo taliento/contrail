@@ -1,17 +1,22 @@
 <div class="row">
   <div class="col-md-4">
-    consigli
+    <span *ngIf="loading" i18n>
+      <i class='fa fa-spinner fa-spin' aria-hidden="true"></i> Search
+    </span>
+    <span *ngIf="!loading" i18n>
+      {{suggestions | json}}
+    </span>  
   </div>
   <div class="col-md-8">
     <div class="row">
       <div class="col-md-12">
         <form>
           <div class="form-group">
-            <input type="text" class="form-control" autocorrect="off" autocapitalize="off" spellcheck="off"  id="address" #search [formControl]="searchControl">
+            <input [disabled]="loading" type="text" class="form-control" autocorrect="off" autocapitalize="off" spellcheck="off"  id="address" #search [formControl]="searchControl">
           </div>
         </form>
       </div>
     </div>
-    <app-map [title]="mapTitle" [lat]="mapLat" [lng]="mapLng" [zoom]="4"></app-map>
+    <app-map (loadComplete)="loadSuggestions($event)" [autocomplete]="searchElementRef.nativeElement" [title]="mapTitle" [lat]="mapLat" [lng]="mapLng" [zoom]="4"></app-map>
   </div>
 </div>

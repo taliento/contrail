@@ -197,10 +197,14 @@ app.post(SUFFIX + "createSession", function(req, res) {
 });
 
 app.get(SUFFIX + "getPlaces/:query", function(req, res) {
+  return getPlaces(req.params.query,res);
+} );
+
+function getPlaces(query, res) {
   var uri =
     skyScannerEndPoint +
     "/autosuggest/v1.0/IT/EUR/it/?query=" +
-    req.params.query;
+    query;
 
   unirest
     .get(uri)
@@ -214,7 +218,7 @@ app.get(SUFFIX + "getPlaces/:query", function(req, res) {
         return res.status(400).send(result.body);
       }
     });
-});
+}
 
 app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
   var uri = skyScannerEndPoint + "/pricing/uk2/v1.0/" + req.params.sessionkey;
@@ -265,6 +269,64 @@ app.get(
           return res.status(400).send(result.body);
         }
       });
+  }
+);
+
+app.get(
+  SUFFIX + "getSuggestions/:country/:currency/:lang/:query/:inboundDate",
+  function(req, res) {
+
+    //let coolPlaces = ["LOND-sky","MOSC-sky","NYCA-sky"];//FIXME save mongo collection of cool places
+    let coolPlaces = ["LOND-sky"];
+    let suggest = [];
+
+    var uri =
+      skyScannerEndPoint +
+      "/autosuggest/v1.0/IT/EUR/it/?query=" +
+      req.params.query;
+
+    unirest
+      .get(uri)
+      .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
+      .header("X-Mashape-Host", skyscannerDomain)
+      .end(function(result) {
+        if (result.status >= 200 && result.status < 300) {
+
+          if(result.body.Places.length == 0) {
+            return res.status(400).send("No place found");
+          }
+
+          let originPlace = result.body.Places[0].PlaceId;
+
+          let i;
+          for(i = 0 ; i < coolPlaces.length ; i++) {
+
+            unirest.get(skyScannerEndPoint + "/browsedates/v1.0/"+req.params.country+"/"+req.params.currency+"/"+req.params.lang+"/"+originPlace+"/"+coolPlaces[i]+"/"+req.params.inboundDate)
+              .header("X-RapidAPI-Key", process.env.SKYSCANNERKEY)
+              .end(function (resBrowseDates) {
+
+                if (resBrowseDates.status >= 200 && resBrowseDates.status < 300) {
+                  suggest.push(resBrowseDates.body);
+
+                  if(i == coolPlaces.length) {
+                    return res.send({data:suggest});
+
+                  }
+
+                } else {
+                  console.log("ERROR:"+JSON.stringify(resBrowseDates.body))
+                  return res.status(400).send(resBrowseDates.body);
+                }
+              });
+
+          }
+
+        } else {
+          console.log("ERROR:"+JSON.stringify(result.body))
+          return res.status(400).send(result.body);
+        }
+      });
+
   }
 );
 

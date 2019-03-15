@@ -105,12 +105,18 @@ export class SessionComponent implements OnInit, OnDestroy {
 
   setDefaults() {
     const today = new Date();
+    // +1 week
+    today.setDate(today.getDate() + 7);
     this.profileForm.get('outboundDate').setValue({
       year: today.getFullYear(),
       month: today.getMonth() + 1,
       day: today.getDate(),
     });
-    // 1 week
+    const formValue = this.profileForm.value;
+    this.session.outboundDate = this.ngbDateParserFormatter.format(
+      formValue.outboundDate,
+    );
+    // +2 week
     today.setDate(today.getDate() + 7);
     this.profileForm.get('inboundDate').setValue({
       year: today.getFullYear(),

@@ -1,6 +1,10 @@
 import { Component, ViewChild, ElementRef, NgZone, OnInit, Input } from '@angular/core';
 import { FormControl  } from '@angular/forms';
 import { MapsAPILoader, AgmMap  } from '@agm/core';
+import { SkyScannerService } from "../shared/services/";
+import { takeUntil } from "rxjs/internal/operators/takeUntil";
+import { Subject } from "rxjs/internal/Subject";
+import { SkySession } from "../shared/models/";
 
 @Component({
   selector: 'app-suggestion',
@@ -14,44 +18,35 @@ export class SuggestionComponent implements OnInit {
   @ViewChild('search')
   public searchElementRef: ElementRef;
   public searchControl: FormControl;
+  private unsubscribe: Subject<void> = new Subject();
+  private skySession: SkySession;
+  suggestions: Array<any>;
+  loading = true;
 
   constructor(
+    private skyScannerService: SkyScannerService,
     private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone) { }
-
-  ngOnInit() {
-    if (this.mapLat == null || this.mapLng == null) { // set google maps defaults -> Narni centro geografico Italia
-      this.mapLat = 42.5176022;
-      this.mapLng = 12.5156299;
-    }
-    this.searchControl = new FormControl();
-    this.setCurrentPosition();
-    this.mapsAPILoader.load().then(() => {
-      const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-        types: ['address']
-      });
-      autocomplete.addListener('place_changed', () => {
-        this.ngZone.run(() => {
-          const place: google.maps.places.PlaceResult = autocomplete.getPlace();
-          if (place.geometry === undefined || place.geometry === null) {
-            return;
-
-          }
-          this.mapLat = place.geometry.location.lat();
-          this.mapLng = place.geometry.location.lng();
-          this.mapTitle = place.name;
-        });
-      });
-    });
+    private ngZone: NgZone) { 
+    this.skySession = this.skyScannerService.getCurrentSession();
   }
 
-  private setCurrentPosition() {
-    if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.mapLat = position.coords.latitude;
-        this.mapLng = position.coords.longitude;
+  ngOnInit() {
+    this.searchControl = new FormControl();
+  }
 
-      });
-    }
+  ngOnDestroy() {
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
+  }
+
+  loadSuggestions(place) {
+    this.loading = true;
+    this.skyScannerService.getSuggestions(this.skySession.country, this.skySession.currency, this.skySession.locale,place,this.skySession.outboundDate)
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe(
+        (result) => {
+          this.suggestions = result;
+          this.loading = false;
+        });
   }
 }
