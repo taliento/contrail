@@ -79,9 +79,9 @@ export class SkyScannerService extends AService {
       .pipe(map((response) => response.Places));
   }
 
-  getSuggestions(country: string, currency: string, lang: string, originPlace: string, inboundDate: string): Observable<any> {
+  getSuggestions(country: string, currency: string, lang: string, originPlace: string,outboundDate: string, inboundDate: string): Observable<any> {
     return this.http
-      .get<any>(this.apiUrl + SUFFIX + `/getSuggestions/${country}/${currency}/${lang}/${originPlace}/${inboundDate}`)
+      .get<any>(this.apiUrl + SUFFIX + `/getSuggestions/${country}/${currency}/${lang}/${originPlace}/${outboundDate}/${inboundDate}`)
       .pipe(map((response) => response.data));
 
   }

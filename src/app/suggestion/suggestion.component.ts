@@ -42,7 +42,7 @@ export class SuggestionComponent implements OnInit {
 
   loadSuggestions(place) {
     this.loading = true;
-    this.skyScannerService.getSuggestions(this.skySession.country, this.skySession.currency, this.skySession.locale,place,this.skySession.outboundDate)
+    this.skyScannerService.getSuggestions(this.skySession.country, this.skySession.currency, this.skySession.locale,place,this.skySession.outboundDate,this.skySession.inboundDate)
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(
         (result) => {

@@ -273,7 +273,7 @@ app.get(
 );
 
 app.get(
-  SUFFIX + "getSuggestions/:country/:currency/:lang/:query/:inboundDate",
+  SUFFIX + "getSuggestions/:country/:currency/:lang/:query/:outboundDate/:inboundDate",
   function(req, res) {
 
     //let coolPlaces = ["LOND-sky","MOSC-sky","NYCA-sky"];//FIXME save mongo collection of cool places
@@ -301,7 +301,7 @@ app.get(
           let i;
           for(i = 0 ; i < coolPlaces.length ; i++) {
 
-            unirest.get(skyScannerEndPoint + "/browsedates/v1.0/"+req.params.country+"/"+req.params.currency+"/"+req.params.lang+"/"+originPlace+"/"+coolPlaces[i]+"/"+req.params.inboundDate)
+            unirest.get(skyScannerEndPoint + "/browsedates/v1.0/"+req.params.country+"/"+req.params.currency+"/"+req.params.lang+"/"+originPlace+"/"+coolPlaces[i]+"/"+req.params.outboundDate+"?inboundpartialdate="+req.params.inboundDate)
               .header("X-RapidAPI-Key", process.env.SKYSCANNERKEY)
               .end(function (resBrowseDates) {
 
