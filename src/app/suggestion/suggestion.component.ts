@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef, NgZone, OnInit, Input } from '@angular/core';
 import { FormControl  } from '@angular/forms';
 import { MapsAPILoader, AgmMap  } from '@agm/core';
-import { SkyScannerService } from "../shared/services/";
+import { SkyScannerService, AlertService } from "../shared/services/";
 import { takeUntil } from "rxjs/internal/operators/takeUntil";
 import { Subject } from "rxjs/internal/Subject";
 import { SkySession } from "../shared/models/";
@@ -21,9 +21,10 @@ export class SuggestionComponent implements OnInit {
   private unsubscribe: Subject<void> = new Subject();
   private skySession: SkySession;
   suggestions: Array<any>;
-  loading = true;
+  loading = false;
 
   constructor(
+    private alertService: AlertService,
     private skyScannerService: SkyScannerService,
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone) { 
@@ -45,8 +46,13 @@ export class SuggestionComponent implements OnInit {
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(
         (result) => {
-          this.suggestions = result;
           this.loading = false;
-        });
+          this.suggestions = result;
+        },
+        (error) => {
+          this.loading = false;
+          this.alertService.error(JSON.stringify(error));
+        }
+      );
   }
 }

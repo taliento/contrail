@@ -12,7 +12,9 @@
       <div class="col-md-12">
         <form>
           <div class="form-group">
-            <input [disabled]="loading" type="text" class="form-control" autocorrect="off" autocapitalize="off" spellcheck="off"  id="address" #search [formControl]="searchControl">
+            <fieldset [disabled]="loading">
+            <input type="text" class="form-control" autocorrect="off" autocapitalize="off" spellcheck="off"  id="address" #search [formControl]="searchControl">
+            </fieldset> 
           </div>
         </form>
       </div>
