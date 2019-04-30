@@ -1,13 +1,13 @@
-<div class="row">
-  <div class="col-md-4">
+<div class="row"> 
+  <div class="col-md-8">
     <span *ngIf="loading" i18n>
       <i class='fa fa-spinner fa-spin' aria-hidden="true"></i> Search
     </span>
-    <span *ngIf="!loading" i18n>
-      {{suggestions | json}}
-    </span>  
+    <div class="row" *ngIf="!loading" i18n>
+      <app-suggestion-detail class="mt-3" *ngFor="let detail of suggestions" [suggestion]="detail"></app-suggestion-detail>
+    </div>  
   </div>
-  <div class="col-md-8">
+  <div class="col-md-4">
     <div class="row">
       <div class="col-md-12">
         <form>

@@ -28,6 +28,7 @@ import { AlertService, SkyScannerService, UserService } from '../shared/services
 export class SessionComponent implements OnInit, OnDestroy {
   profileForm: FormGroup;
   session: SkySession;
+  formReady = false;
   loading = false;
   ticketType = 'return';
   searching = false;
@@ -112,9 +113,8 @@ export class SessionComponent implements OnInit, OnDestroy {
       month: today.getMonth() + 1,
       day: today.getDate(),
     });
-    const formValue = this.profileForm.value;
     this.session.outboundDate = this.ngbDateParserFormatter.format(
-      formValue.outboundDate,
+      this.profileForm.value.outboundDate
     );
     // +2 week
     today.setDate(today.getDate() + 7);
@@ -123,9 +123,13 @@ export class SessionComponent implements OnInit, OnDestroy {
       month: today.getMonth() + 1,
       day: today.getDate(),
     });
+    this.session.inboundDate = this.ngbDateParserFormatter.format(
+      this.profileForm.value.inboundDate
+    );
     this.profileForm.get('adults').setValue(1);
     this.profileForm.get('children').setValue(0);
     this.profileForm.get('cabinClass').setValue('economy');
+    this.formReady = true;
   }
 
   switchPlace() {
@@ -241,7 +245,7 @@ export class SessionComponent implements OnInit, OnDestroy {
             originPlace
             ? (this.searchFailed = false)
             : (this.searchDestinationFailed = false),
-          ),
+          ),                                        
           catchError((error) => {
             console.log(error);
             originPlace

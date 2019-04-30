@@ -273,60 +273,31 @@ app.get(
 );
 
 app.get(
-  SUFFIX + "getSuggestions/:country/:currency/:lang/:query/:outboundDate/:inboundDate",
+  SUFFIX + "getSuggestions/:country/:currency/:lang/:place/:outboundDate/:inboundDate",
   function(req, res) {
-
     //let coolPlaces = ["LOND-sky","MOSC-sky","NYCA-sky"];//FIXME save mongo collection of cool places
     let coolPlaces = ["LOND-sky"];
     let suggest = [];
+    let i;
+    for(i = 0 ; i < coolPlaces.length ; i++) {
+      unirest.get(skyScannerEndPoint + "/browsedates/v1.0/"+req.params.country+"/"+req.params.currency+"/"+req.params.lang+"/"+req.params.place+"/"+coolPlaces[i]+"/"+req.params.outboundDate+"?inboundpartialdate="+req.params.inboundDate)
+        .header("X-RapidAPI-Key", process.env.SKYSCANNERKEY)
+        .end(function (resBrowseDates) {
 
-    var uri =
-      skyScannerEndPoint +
-      "/autosuggest/v1.0/IT/EUR/it/?query=" +
-      req.params.query;
+          if (resBrowseDates.status >= 200 && resBrowseDates.status < 300) {
+            suggest.push(resBrowseDates.body);
 
-    unirest
-      .get(uri)
-      .header("X-Mashape-Key", process.env.SKYSCANNERKEY)
-      .header("X-Mashape-Host", skyscannerDomain)
-      .end(function(result) {
-        if (result.status >= 200 && result.status < 300) {
+            if(i == coolPlaces.length) {
+              return res.send({data:suggest});
 
-          if(result.body.Places.length == 0) {
-            return res.status(400).send("No place found");
+            }
+
+          } else {
+            console.log("ERROR:"+JSON.stringify(resBrowseDates.body))
+            return res.status(400).send(resBrowseDates.body);
           }
-
-          let originPlace = result.body.Places[0].PlaceId;
-
-          let i;
-          for(i = 0 ; i < coolPlaces.length ; i++) {
-
-            unirest.get(skyScannerEndPoint + "/browsedates/v1.0/"+req.params.country+"/"+req.params.currency+"/"+req.params.lang+"/"+originPlace+"/"+coolPlaces[i]+"/"+req.params.outboundDate+"?inboundpartialdate="+req.params.inboundDate)
-              .header("X-RapidAPI-Key", process.env.SKYSCANNERKEY)
-              .end(function (resBrowseDates) {
-
-                if (resBrowseDates.status >= 200 && resBrowseDates.status < 300) {
-                  suggest.push(resBrowseDates.body);
-
-                  if(i == coolPlaces.length) {
-                    return res.send({data:suggest});
-
-                  }
-
-                } else {
-                  console.log("ERROR:"+JSON.stringify(resBrowseDates.body))
-                  return res.status(400).send(resBrowseDates.body);
-                }
-              });
-
-          }
-
-        } else {
-          console.log("ERROR:"+JSON.stringify(result.body))
-          return res.status(400).send(result.body);
-        }
-      });
-
+        });
+    }
   }
 );
 

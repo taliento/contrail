@@ -1,0 +1,11 @@
+<div *ngFor="let date of suggestion.Dates.OutboundDates">
+  {{date.PartialDate}}
+  <div>
+    <app-quote-leg *ngFor="let quote of date.QuoteIds" [quote]="findQuote(quote)"></app-quote-leg>
+  </div>
+</div>
+
+
+
+
+

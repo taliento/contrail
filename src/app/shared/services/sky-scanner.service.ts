@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {
   Itinerary,
   PollSession,
   PollSessionResult,
   SkySession,
+  Suggestion
 } from '../models';
 import { AService } from './aservice.service';
 
@@ -64,25 +65,24 @@ export class SkyScannerService extends AService {
   }
 
   pollSessionResults(pollSession: PollSession): Observable<PollSessionResult> {
-    console.log(JSON.stringify(pollSession));
     const uri =
-      this.apiUrl +
-      SUFFIX +
-      `/pollSessionResults/${pollSession.sessionkey}/${pollSession.stops}`;
+    this.apiUrl +
+    SUFFIX +
+    `/pollSessionResults/${pollSession.sessionkey}/${pollSession.stops}`;
     return this.http.get<PollSessionResult>(uri);
   }
 
   getPlaces(query: string): Observable<any> {
     // FIXME MONGO cache
     return this.http
-      .get<any>(this.apiUrl + SUFFIX + `/getPlaces/${query}`)
-      .pipe(map((response) => response.Places));
+    .get<any>(this.apiUrl + SUFFIX + `/getPlaces/${query}`)
+    .pipe(map((response) => response.Places));
   }
 
-  getSuggestions(country: string, currency: string, lang: string, originPlace: string,outboundDate: string, inboundDate: string): Observable<any> {
+  getSuggestions(session: SkySession): Observable<Array<Suggestion>> {
     return this.http
-      .get<any>(this.apiUrl + SUFFIX + `/getSuggestions/${country}/${currency}/${lang}/${originPlace}/${outboundDate}/${inboundDate}`)
-      .pipe(map((response) => response.data));
+    .get<any>(this.apiUrl + SUFFIX + `/getSuggestions/${session.country}/${session.currency}/${session.locale}/${session.originPlace.PlaceId}/${session.outboundDate}/${session.inboundDate}`)
+    .pipe(map((response) => response.data));
 
   }
 }

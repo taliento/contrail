@@ -26,6 +26,9 @@ import { HoursMinutesPipe } from './shared/pipes';
 import { AlertService, SkyScannerService , UserService } from './shared/services';
 import { MapModule  } from "./map/map.module";
 import { SuggestionComponent } from './suggestion/suggestion.component';
+import { SuggestionDetailComponent } from './suggestion-detail/suggestion-detail.component';
+import { QuoteComponent } from './quote/quote.component';
+import { QuoteLegComponent } from './quote-leg/quote-leg.component';
 
 
 
@@ -49,7 +52,10 @@ registerLocaleData(localeIt);
   AlertComponent,
   LoginComponent,
   RegisterComponent,
-  SuggestionComponent
+  SuggestionComponent,
+  SuggestionDetailComponent,
+  QuoteComponent,
+  QuoteLegComponent
   ],
   imports: [
   routing,

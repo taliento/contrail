@@ -12,3 +12,5 @@ export { BookingDetailsLink } from './booking-details-link';
 export { PricingOption } from './pricing-option';
 export { PollSession } from './poll-session';
 export { User } from './user';
+export { Suggestion } from './suggestion';
+export { Quote, QuoteLeg } from './quote';

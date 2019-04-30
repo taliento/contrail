@@ -20,7 +20,7 @@ export class MapComponent implements OnInit{
   }
 
   ngOnInit() {
-    if (this.lat == null || this.lng == null) { // set google maps defaults -> Narni centro geografico Italia
+    if (this.lat == null || this.lng == null) { // set google maps default location -> Narni centro geografico Italia
       this.lat = 42.5176022;
       this.lng = 12.5156299;
     }
@@ -64,7 +64,6 @@ export class MapComponent implements OnInit{
             }
             that.title = result.address_components[2].long_name;
             that.loadComplete.emit(that.title);
-
           }  
         });    
       });
