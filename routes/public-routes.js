@@ -12,7 +12,8 @@ const publicRoutes = [
   "/api/signup",
   "/api/skyscanner/createSession",
   /^\/api\/skyscanner\/getPlaces\/.*/,
-  /^\/api\/skyscanner\/pollSessionResults\/.*/
+  /^\/api\/skyscanner\/pollSessionResults\/.*/,
+  /^\/api\/skyscanner\/getSuggestions\/.*/
 ];
 
 module.exports = publicRoutes;

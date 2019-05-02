@@ -5,6 +5,7 @@ import { ItinerariesComponent } from './itineraries/itineraries.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SessionComponent } from './session/session.component';
+import { SuggestionComponent } from './suggestion/suggestion.component';
 
 const appRoutes: Routes = [
   {

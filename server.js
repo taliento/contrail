@@ -197,10 +197,14 @@ app.post(SUFFIX + "createSession", function(req, res) {
 });
 
 app.get(SUFFIX + "getPlaces/:query", function(req, res) {
+  return getPlaces(req.params.query,res);
+} );
+
+function getPlaces(query, res) {
   var uri =
     skyScannerEndPoint +
     "/autosuggest/v1.0/IT/EUR/it/?query=" +
-    req.params.query;
+    query;
 
   unirest
     .get(uri)
@@ -214,7 +218,7 @@ app.get(SUFFIX + "getPlaces/:query", function(req, res) {
         return res.status(400).send(result.body);
       }
     });
-});
+}
 
 app.get(SUFFIX + "pollSessionResults/:sessionkey/:stops", function(req, res) {
   var uri = skyScannerEndPoint + "/pricing/uk2/v1.0/" + req.params.sessionkey;
@@ -247,7 +251,7 @@ app.get(
       uri +=
         "?pageIndex=" +
         req.params.pageIndex +
-        "&pageSize=̈́" +
+        "&pageSize=" +
         req.params.pageSize;
     }
     if (req.params.stops >= 0) {
@@ -265,6 +269,35 @@ app.get(
           return res.status(400).send(result.body);
         }
       });
+  }
+);
+
+app.get(
+  SUFFIX + "getSuggestions/:country/:currency/:lang/:place/:outboundDate/:inboundDate",
+  function(req, res) {
+    //let coolPlaces = ["LOND-sky","MOSC-sky","NYCA-sky"];//FIXME save mongo collection of cool places
+    let coolPlaces = ["LOND-sky"];
+    let suggest = [];
+    let i;
+    for(i = 0 ; i < coolPlaces.length ; i++) {
+      unirest.get(skyScannerEndPoint + "/browsedates/v1.0/"+req.params.country+"/"+req.params.currency+"/"+req.params.lang+"/"+req.params.place+"/"+coolPlaces[i]+"/"+req.params.outboundDate+"?inboundpartialdate="+req.params.inboundDate)
+        .header("X-RapidAPI-Key", process.env.SKYSCANNERKEY)
+        .end(function (resBrowseDates) {
+
+          if (resBrowseDates.status >= 200 && resBrowseDates.status < 300) {
+            suggest.push(resBrowseDates.body);
+
+            if(i == coolPlaces.length) {
+              return res.send({data:suggest});
+
+            }
+
+          } else {
+            console.log("ERROR:"+JSON.stringify(resBrowseDates.body))
+            return res.status(400).send(resBrowseDates.body);
+          }
+        });
+    }
   }
 );
 

@@ -22,9 +22,9 @@
               <label for="originPlace" class="col-form-label" i18n>From</label>
               <div class="input-group">
                 <input id="originPlace" type="text" class="form-control"
-              [inputFormatter]="formatter" [class.is-invalid]="searchFailed"
-              formControlName="originPlace" [ngbTypeahead]="searchOriginPlace"
-              placeholder="Search" [resultTemplate]="rt" aria-describedby="originPlaceAddon" required/>
+                                                    [inputFormatter]="formatter" [class.is-invalid]="searchFailed"
+                                                    formControlName="originPlace" [ngbTypeahead]="searchOriginPlace"
+                                                    placeholder="Search" [resultTemplate]="rt" aria-describedby="originPlaceAddon" required/>
                 <div class="input-group-append" id="originPlaceAddon">
                   <button *ngIf="searching" class="btn btn-sm btn-outline-secondary" type="button">
                     <span><i class='fa fa-spinner fa-spin'></i></span>
@@ -34,38 +34,38 @@
                   </button>
                 </div>
               </div>
-                <div class="invalid-feedback" *ngIf="searchFailed">
-                  <span i18n>Sorry, suggestions could not be loaded.</span>
-                </div>
-                <div *ngIf="originPlace.invalid && !searchFailed" class="invalid-feedback">
-                  <span i18n>Please choose a location.</span>
-                </div>
+              <div class="invalid-feedback" *ngIf="searchFailed">
+                <span i18n>Sorry, suggestions could not be loaded.</span>
+              </div>
+              <div *ngIf="originPlace.invalid && !searchFailed" class="invalid-feedback">
+                <span i18n>Please choose a location.</span>
+              </div>
             </div>
             <div class="col-12 col-sm-6 col-md-2 form-group">
-                <label for="destinationPlace" class="col-form-label" i18n>To</label>
-                <div class="input-group">
-                  <input id="destinationPlace" type="text" class="form-control"
-                  [inputFormatter]="formatter" [class.is-invalid]="searchDestinationFailed"
-                  formControlName="destinationPlace" [ngbTypeahead]="searchDestinationPlace"
-                  placeholder="Search" [resultTemplate]="rt" aria-describedby="destinationPlaceAddon" required/>
-                  <div class="input-group-append" id="destinationPlaceAddon">
-                    <button *ngIf="searchingDestination" class="btn btn-sm btn-outline-secondary" type="button" >
-                      <span>
-                        <i class='fa fa-spinner fa-spin'></i>
-                      </span>
-                    </button>
-                  </div>
+              <label for="destinationPlace" class="col-form-label" i18n>To</label>
+              <div class="input-group">
+                <input id="destinationPlace" type="text" class="form-control"
+                                                         [inputFormatter]="formatter" [class.is-invalid]="searchDestinationFailed"
+                                                         formControlName="destinationPlace" [ngbTypeahead]="searchDestinationPlace"
+                                                         placeholder="Search" [resultTemplate]="rt" aria-describedby="destinationPlaceAddon" required/>
+                <div class="input-group-append" id="destinationPlaceAddon">
+                  <button *ngIf="searchingDestination" class="btn btn-sm btn-outline-secondary" type="button" >
+                    <span>
+                      <i class='fa fa-spinner fa-spin'></i>
+                    </span>
+                  </button>
                 </div>
-                <div class="invalid-feedback" *ngIf="searchDestinationFailed"><span i18n>Sorry, suggestions could not be loaded.</span></div>
-                <div *ngIf="destinationPlace.invalid && !searchDestinationFailed" class="invalid-feedback">
-                  <span i18n>Please choose a location.</span>
-                </div>
+              </div>
+              <div class="invalid-feedback" *ngIf="searchDestinationFailed"><span i18n>Sorry, suggestions could not be loaded.</span></div>
+              <div *ngIf="destinationPlace.invalid && !searchDestinationFailed" class="invalid-feedback">
+                <span i18n>Please choose a location.</span>
+              </div>
             </div>
             <div class="col-12 col-sm-6 col-md-2 form-group">
               <label for="outboundDate" class="col-form-label" i18n>Depart</label>
               <div class="input-group">
                 <input id="outboundDate" class="form-control"
-                    formControlName="outboundDate" ngbDatepicker #outboundDatePicker="ngbDatepicker" (click)="outboundDatePicker.toggle()" aria-describedby="outboundDateAddon" required>
+                                         formControlName="outboundDate" ngbDatepicker #outboundDatePicker="ngbDatepicker" (click)="outboundDatePicker.toggle()" aria-describedby="outboundDateAddon" required>
                 <div class="input-group-append" id="outboundDateAddon">
                   <button type="button" class="btn btn-sm btn-outline-primary" (click)="switchDate()">
                     <span><i class="fa fa-arrows-alt-h"></i></span>
@@ -79,7 +79,7 @@
             <div class="col-12 col-sm-6 col-md-2 form-group">
               <label for="inboundDate" class="col-form-label" i18n>Return</label>
               <input id="inboundDate" [disabled]="ticketType == 'oneWay'" class="form-control"
-                   formControlName="inboundDate" ngbDatepicker #inboundDatePicker="ngbDatepicker" (click)="inboundDatePicker.toggle()" required>
+                                                                          formControlName="inboundDate" ngbDatepicker #inboundDatePicker="ngbDatepicker" (click)="inboundDatePicker.toggle()" required>
               <div *ngIf="inboundDate.invalid" class="invalid-feedback">
                 <span i18n>Please choose a Date.</span>
               </div>
@@ -138,6 +138,7 @@
     </div>
   </div>
 </div>
+<app-suggestion *ngIf="formReady" [mapTitle]="'Set current Location'"></app-suggestion>
 <ng-template #rt let-r="result" let-t="term">
   <span><i class="fa" [ngClass]="{'fa-city': r.PlaceId == r.CityId, 'fa-plane': r.PlaceId != r.CityId}"></i>&nbsp;</span>
   <ngb-highlight [result]="r.PlaceName + ' - ' + r.CountryName" [term]="t"></ngb-highlight>

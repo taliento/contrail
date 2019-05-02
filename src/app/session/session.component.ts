@@ -28,6 +28,7 @@ import { AlertService, SkyScannerService, UserService } from '../shared/services
 export class SessionComponent implements OnInit, OnDestroy {
   profileForm: FormGroup;
   session: SkySession;
+  formReady = false;
   loading = false;
   ticketType = 'return';
   searching = false;
@@ -79,9 +80,9 @@ export class SessionComponent implements OnInit, OnDestroy {
   }
 
   onFormChanges(): void {
-  this.profileForm.get('outboundDate').valueChanges
-  .pipe(takeUntil(this.unsubscribe))
-  .subscribe((val) => {
+    this.profileForm.get('outboundDate').valueChanges
+    .pipe(takeUntil(this.unsubscribe))
+    .subscribe((val) => {
       if (this.ticketType !== 'return') {
         return;
       }
@@ -105,21 +106,30 @@ export class SessionComponent implements OnInit, OnDestroy {
 
   setDefaults() {
     const today = new Date();
+    // +1 week
+    today.setDate(today.getDate() + 7);
     this.profileForm.get('outboundDate').setValue({
       year: today.getFullYear(),
       month: today.getMonth() + 1,
       day: today.getDate(),
     });
-    // 1 week
+    this.session.outboundDate = this.ngbDateParserFormatter.format(
+      this.profileForm.value.outboundDate
+    );
+    // +2 week
     today.setDate(today.getDate() + 7);
     this.profileForm.get('inboundDate').setValue({
       year: today.getFullYear(),
       month: today.getMonth() + 1,
       day: today.getDate(),
     });
+    this.session.inboundDate = this.ngbDateParserFormatter.format(
+      this.profileForm.value.inboundDate
+    );
     this.profileForm.get('adults').setValue(1);
     this.profileForm.get('children').setValue(0);
     this.profileForm.get('cabinClass').setValue('economy');
+    this.formReady = true;
   }
 
   switchPlace() {
@@ -192,21 +202,21 @@ export class SessionComponent implements OnInit, OnDestroy {
     formValue.locale = this.session.locale;
     formValue.user = this.userService.getUser();
     this.skyScanner.createSession(formValue)
-    .pipe(takeUntil(this.unsubscribe))
-    .subscribe(
-      (result) => {
-        this.loading = false;
-        this.session = this.profileForm.value;
-        this.session.sessionkey = result.sessionkey;
-        this.skyScanner.setCurrentSession(this.session);
-        this.gotItineraries();
-      },
-      (error) => {
-        this.loading = false;
-        this.alertService.error(JSON.stringify(error));
-      },
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe(
+        (result) => {
+          this.loading = false;
+          this.session = this.profileForm.value;
+          this.session.sessionkey = result.sessionkey;
+          this.skyScanner.setCurrentSession(this.session);
+          this.gotItineraries();
+        },
+        (error) => {
+          this.loading = false;
+          this.alertService.error(JSON.stringify(error));
+        },
 
-    );
+      );
   }
 
   gotItineraries(): void {
@@ -224,18 +234,18 @@ export class SessionComponent implements OnInit, OnDestroy {
       distinctUntilChanged(),
       tap(
         () =>
-          originPlace
-            ? (this.searching = true)
-            : (this.searchingDestination = true),
+        originPlace
+        ? (this.searching = true)
+        : (this.searchingDestination = true),
       ),
       switchMap((term) =>
         this.skyScanner.getPlaces(term).pipe(
           tap(
             () =>
-              originPlace
-                ? (this.searchFailed = false)
-                : (this.searchDestinationFailed = false),
-          ),
+            originPlace
+            ? (this.searchFailed = false)
+            : (this.searchDestinationFailed = false),
+          ),                                        
           catchError((error) => {
             console.log(error);
             originPlace
@@ -247,9 +257,9 @@ export class SessionComponent implements OnInit, OnDestroy {
       ),
       tap(
         () =>
-          originPlace
-            ? (this.searching = false)
-            : (this.searchingDestination = false),
+        originPlace
+        ? (this.searching = false)
+        : (this.searchingDestination = false),
       ),
     )
 

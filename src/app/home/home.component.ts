@@ -10,6 +10,7 @@ import { SkyScannerService } from '../shared/services';
 export class HomeComponent implements OnInit {
 
   session: SkySession;
+  
 
   constructor(private skyScanner: SkyScannerService) {
     this.session = new SkySession(null);

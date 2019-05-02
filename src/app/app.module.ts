@@ -24,42 +24,54 @@ import { RegisterComponent } from './register/register.component';
 import { SessionComponent } from './session/session.component';
 import { HoursMinutesPipe } from './shared/pipes';
 import { AlertService, SkyScannerService , UserService } from './shared/services';
+import { MapModule  } from "./map/map.module";
+import { SuggestionComponent } from './suggestion/suggestion.component';
+import { SuggestionDetailComponent } from './suggestion-detail/suggestion-detail.component';
+import { QuoteComponent } from './quote/quote.component';
+import { QuoteLegComponent } from './quote-leg/quote-leg.component';
+
+
 
 registerLocaleData(localeIt);
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    ItinerariesComponent,
-    ItineraryComponent,
-    LegComponent,
-    SessionComponent,
-    NavBarComponent,
-    FooterComponent,
-    HoursMinutesPipe,
-    PlaceComponent,
-    CarrierComponent,
-    BookingDetailComponent,
-    AgentComponent,
-    AlertComponent,
-    LoginComponent,
-    RegisterComponent,
+  AppComponent,
+  HomeComponent,
+  ItinerariesComponent,
+  ItineraryComponent,
+  LegComponent,
+  SessionComponent,
+  NavBarComponent,
+  FooterComponent,
+  HoursMinutesPipe,
+  PlaceComponent,
+  CarrierComponent,
+  BookingDetailComponent,
+  AgentComponent,
+  AlertComponent,
+  LoginComponent,
+  RegisterComponent,
+  SuggestionComponent,
+  SuggestionDetailComponent,
+  QuoteComponent,
+  QuoteLegComponent
   ],
   imports: [
-    routing,
-    CommonModule,
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    NgbModule,
+  routing,
+  CommonModule,
+  BrowserModule,
+  FormsModule,
+  HttpClientModule,
+  ReactiveFormsModule,
+  NgbModule,
+  MapModule
   ],
   providers: [
-    SkyScannerService,
-    UserService,
-    AlertService,
-    { provide: LOCALE_ID, useValue: 'it' },
+  SkyScannerService,
+  UserService,
+  AlertService,
+  { provide: LOCALE_ID, useValue: 'it' },
   ],
   entryComponents: [BookingDetailComponent],
   bootstrap: [AppComponent],
