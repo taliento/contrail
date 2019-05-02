@@ -11,7 +11,7 @@ export class SuggestionDate {
 }
 
 export class Suggestion {
-  Dates: Array<SuggestionDates>;
+  Dates: SuggestionDates;
   Quotes: Array<Quote>;
   Places: Array<any>;
   Carriers: Array<any>;
