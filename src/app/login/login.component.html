@@ -2,15 +2,15 @@
   <app-alert></app-alert>
   <form class="form-signin">
     <img class="mb-4" src="assets/img/contrail.png" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail" class="sr-only">Email address</label>
+    <h1 class="h3 mb-3 font-weight-normal" i18n>Please sign in</h1>
+    <label for="inputEmail" class="sr-only" i18n>Email address</label>
     <input type="email" name="email" [(ngModel)]="user.email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
+    <label for="inputPassword" class="sr-only" i18n>Password</label>
     <input type="password" name="password" [(ngModel)]="user.password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="signin()">
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="signin()" i18n>
       Login <span *ngIf="loading"><i class='fa fa-spinner fa-spin'></i></span>
     </button>
-    <p class="small mt-5 mb-3 text-muted">Don't have an account yet? <a routerLink="/signup">Sign up</a></p>
-    <p class="small mt-5 mb-3 text-muted text-right"><a routerLink="/home/session">Home</a></p>
+    <p class="small mt-5 mb-3 text-muted">Don't have an account yet? <a routerLink="/signup" i18n>Sign up</a></p>
+    <p class="small mt-5 mb-3 text-muted text-right"><a routerLink="/home/session" i18n>Home</a></p>
   </form>
 </div>
