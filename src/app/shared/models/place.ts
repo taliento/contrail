@@ -7,6 +7,4 @@ export class Place {
   RegionId: string;
   CityId: string;
   CountryName: string;
-  Name: string;
-  SkyscannerCode: string;
 }
