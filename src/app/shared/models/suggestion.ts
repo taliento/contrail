@@ -1,5 +1,6 @@
 import { Quote } from '.';
 
+
 export class SuggestionDates {
   OutboundDates: Array<SuggestionDate>;
 }
