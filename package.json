@@ -4,12 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "nf start",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "./node_modules/.bin/mocha && ./node_modules/.bin/karma start",
     "lint": "ng lint contrail",
     "lint-fix": "ng lint contrail --fix",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --prod"
+    "e2e": "ng e2e"
   },
   "engines": {
     "node": "8.x"
