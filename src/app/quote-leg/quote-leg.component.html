@@ -1,9 +1,10 @@
 <span *ngFor="let carrier of quote.OutboundLeg.Carriers" [innerText]="carrier.Name"></span>
 <h5>
-  <span class="badge success" [innerHtml]="quote.OutboundLeg.Origin.SkyscannerCode"
+  <span class="badge" class="primary" [innerHtml]="quote.OutboundLeg.Origin.SkyscannerCode"
   [ngbPopover]="quote.OutboundLeg.Origin.Name" triggers="mouseenter:mouseleave"></span>
 </h5>
 <h5>
-  <span class="badge danger" [innerHtml]="quote.OutboundLeg.Destination.SkyscannerCode"
+  <span class="badge" class="secondary" [innerHtml]="quote.OutboundLeg.Destination.SkyscannerCode"
+
   [ngbPopover]="quote.OutboundLeg.Destination.Name" triggers="mouseenter:mouseleave"></span>
 </h5>

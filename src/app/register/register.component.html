@@ -2,22 +2,22 @@
   <app-alert></app-alert>
   <form>
     <div class="form-group">
-      <label for="email">Email address</label>
+      <label for="email" i18n>Email address</label>
       <input type="email" [(ngModel)]="user.email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <small id="emailHelp" class="form-text text-muted" i18n>We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
-      <label for="name">Nickname</label>
+      <label for="name" i18n>Nickname</label>
       <input type="text" [(ngModel)]="user.name" class="form-control" id="name" name="name" placeholder="Nickname">
     </div>
     <div class="form-group">
-      <label for="password">Password</label>
+      <label for="password" i18n>Password</label>
       <input type="password" [(ngModel)]="user.password" class="form-control" id="password" name="password" placeholder="Password">
     </div>
-    <button type="submit" class="btn btn-primary" (click)="signup()">
+    <button type="submit" class="btn btn-primary" (click)="signup()" i18n>
       Submit <span *ngIf="loading"><i class='fa fa-spinner fa-spin'></i></span>
     </button>
     <br/>
-    <p class="small mt-5 mb-3 text-muted text-right"><a routerLink="/home/session">Home</a></p>
+    <p class="small mt-5 mb-3 text-muted text-right"><a routerLink="/home/session" i18n>Home</a></p>
   </form>
 </div>

@@ -1,16 +1,18 @@
 import { Quote } from '.';
 
-export class OutboundDate {
-  PartialDate: any;
-  QuoteIds: Array<any>;
+
+export class SuggestionDates {
+  OutboundDates: Array<SuggestionDate>;
 }
 
-export class Dates {
-  OutboundDates: Array<OutboundDate>;
+
+export class SuggestionDate {
+  PartialDate: string;
+  QuoteIds: Array<string>;
 }
 
 export class Suggestion {
-  Dates: Dates;
+  Dates: SuggestionDates;
   Quotes: Array<Quote>;
   Places: Array<any>;
   Carriers: Array<any>;
