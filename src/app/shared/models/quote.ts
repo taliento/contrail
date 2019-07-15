@@ -1,8 +1,8 @@
-import { Carrier, Place } from ".";
+import { Carrier, Place } from '.';
 
 export class QuoteLeg {
   CarrierIds: number[];
-  Carriers: Array<Carrier>;
+  Carriers: Carrier[];
   OriginId: number;
   DestinationId: number;
   Origin: Place;

@@ -18,19 +18,17 @@ import { ItinerariesComponent } from './itineraries/itineraries.component';
 import { ItineraryComponent } from './itinerary/itinerary.component';
 import { LegComponent } from './leg/leg.component';
 import { LoginComponent } from './login/login.component';
+import { MapModule  } from './map/map.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PlaceComponent } from './place/place.component';
+import { QuoteLegComponent } from './quote-leg/quote-leg.component';
+import { QuoteComponent } from './quote/quote.component';
 import { RegisterComponent } from './register/register.component';
 import { SessionComponent } from './session/session.component';
 import { HoursMinutesPipe } from './shared/pipes';
 import { AlertService, SkyScannerService , UserService } from './shared/services';
-import { MapModule  } from "./map/map.module";
-import { SuggestionComponent } from './suggestion/suggestion.component';
 import { SuggestionDetailComponent } from './suggestion-detail/suggestion-detail.component';
-import { QuoteComponent } from './quote/quote.component';
-import { QuoteLegComponent } from './quote-leg/quote-leg.component';
-
-
+import { SuggestionComponent } from './suggestion/suggestion.component';
 
 registerLocaleData(localeIt);
 
@@ -55,7 +53,7 @@ registerLocaleData(localeIt);
   SuggestionComponent,
   SuggestionDetailComponent,
   QuoteComponent,
-  QuoteLegComponent
+  QuoteLegComponent,
   ],
   imports: [
   routing,
@@ -65,7 +63,7 @@ registerLocaleData(localeIt);
   HttpClientModule,
   ReactiveFormsModule,
   NgbModule,
-  MapModule
+  MapModule,
   ],
   providers: [
   SkyScannerService,

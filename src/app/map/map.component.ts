@@ -1,12 +1,12 @@
-import { Component, Input,Output, NgZone, OnInit, EventEmitter } from '@angular/core';
-import { MapsAPILoader, AgmMap } from "@agm/core";
+import { AgmMap, MapsAPILoader } from '@agm/core';
+import { Component, EventEmitter, Input, NgZone, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-map',
   templateUrl: 'map.component.html',
   styleUrls: ['map.component.scss'],
 })
-export class MapComponent implements OnInit{
+export class MapComponent implements OnInit {
   @Input() title: string;
   @Input() lat: number;
   @Input() lng: number;
@@ -16,7 +16,7 @@ export class MapComponent implements OnInit{
 
   constructor(
     private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone) { 
+    private ngZone: NgZone) {
   }
 
   ngOnInit() {
@@ -27,7 +27,7 @@ export class MapComponent implements OnInit{
     this.mapsAPILoader.load().then(() => {
       this.setCurrentPosition();
       const autocomplete = new google.maps.places.Autocomplete(this.autocomplete, {
-        types: ['(cities)']
+        types: ['(cities)'],
       });
       autocomplete.addListener('place_changed', () => {
         this.ngZone.run(() => {
@@ -45,16 +45,16 @@ export class MapComponent implements OnInit{
   }
 
   private setCurrentPosition() {
-    let that = this;
+    const that = this;
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
-        var geocoder = new google.maps.Geocoder();
-        var geolocate = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        geocoder.geocode({'location': geolocate}, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-            var result;
+        const geocoder = new google.maps.Geocoder();
+        const geolocate = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        geocoder.geocode({location: geolocate}, (results, status) => {
+          if (status === google.maps.GeocoderStatus.OK) {
+            let result;
             if (results.length > 1) {
               result = results[1];
 
@@ -64,8 +64,8 @@ export class MapComponent implements OnInit{
             }
             that.title = result.address_components[2].long_name;
             that.loadComplete.emit(that.title);
-          }  
-        });    
+          }
+        });
       });
     }
   }

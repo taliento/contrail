@@ -9,7 +9,7 @@ import {
   distinctUntilChanged,
   map,
   switchMap,
-  takeUntil, 
+  takeUntil,
   tap,
 } from 'rxjs/operators';
 import {
@@ -114,7 +114,7 @@ export class SessionComponent implements OnInit, OnDestroy {
       day: today.getDate(),
     });
     this.session.outboundDate = this.ngbDateParserFormatter.format(
-      this.profileForm.value.outboundDate
+      this.profileForm.value.outboundDate,
     );
     // +2 week
     today.setDate(today.getDate() + 7);
@@ -124,7 +124,7 @@ export class SessionComponent implements OnInit, OnDestroy {
       day: today.getDate(),
     });
     this.session.inboundDate = this.ngbDateParserFormatter.format(
-      this.profileForm.value.inboundDate
+      this.profileForm.value.inboundDate,
     );
     this.profileForm.get('adults').setValue(1);
     this.profileForm.get('children').setValue(0);
@@ -245,7 +245,7 @@ export class SessionComponent implements OnInit, OnDestroy {
             originPlace
             ? (this.searchFailed = false)
             : (this.searchDestinationFailed = false),
-          ),                                        
+          ),
           catchError((error) => {
             console.log(error);
             originPlace

@@ -1,20 +1,18 @@
 import { Quote } from '.';
 
-
 export class SuggestionDates {
-  OutboundDates: Array<SuggestionDate>;
+  OutboundDates: SuggestionDate[];
 }
-
 
 export class SuggestionDate {
   PartialDate: string;
-  QuoteIds: Array<string>;
+  QuoteIds: string[];
 }
 
 export class Suggestion {
   Dates: SuggestionDates;
-  Quotes: Array<Quote>;
-  Places: Array<any>;
-  Carriers: Array<any>;
-  Currencies: Array<any>;
+  Quotes: Quote[];
+  Places: any[];
+  Carriers: any[];
+  Currencies: any[];
 }

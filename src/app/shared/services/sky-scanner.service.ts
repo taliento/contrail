@@ -7,7 +7,7 @@ import {
   PollSession,
   PollSessionResult,
   SkySession,
-  Suggestion
+  Suggestion,
 } from '../models';
 import { AService } from './aservice.service';
 
@@ -79,9 +79,11 @@ export class SkyScannerService extends AService {
     .pipe(map((response) => response.Places));
   }
 
-  getSuggestions(session: SkySession): Observable<Array<Suggestion>> {
+  getSuggestions(session: SkySession): Observable<Suggestion[]> {
     return this.http
-    .get<any>(this.apiUrl + SUFFIX + `/getSuggestions/${session.country}/${session.currency}/${session.locale}/${session.originPlace.PlaceId}/${session.outboundDate}/${session.inboundDate}`)
+    .get<any>(this.apiUrl + SUFFIX +
+    `/getSuggestions/${session.country}/${session.currency}/${session.locale}/${session.originPlace.PlaceId}/${session.outboundDate}/${session.inboundDate}`
+    )
     .pipe(map((response) => response.data));
 
   }
